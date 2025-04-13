@@ -129,11 +129,12 @@ export default function ContactForm() {
                     Message
                   </label>
                   <Field
+                    as="textarea"
                     type="text"
                     name="message"
                     onChange={handleChange}
                     values={values.message}
-                    className="block w-full h-20 rounded-md border-0 p-1.5 bg-white text-dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-slate-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 p-1.5 bg-white text-dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-slate-600 sm:text-sm sm:leading-6"
                   />
                   {touched.message && errors.message ? (
                     <div>{errors.message}</div>
