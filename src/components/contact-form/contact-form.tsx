@@ -60,7 +60,7 @@ export default function ContactForm() {
                     className="block w-full rounded-md border-0 p-1.5 bg-white text-dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-slate-600 sm:text-sm sm:leading-6"
                   />
                   {touched.name && errors.name ? (
-                    <div>{errors.name}</div>
+                    <div className="text-red-700 text-xs">{errors.name}</div>
                   ) : null}
                 </div>
                 <div>
@@ -79,7 +79,7 @@ export default function ContactForm() {
                     className="block w-full rounded-md border-0 p-1.5 bg-white text-dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-slate-600 sm:text-sm sm:leading-6"
                   />
                   {touched.phone && errors.phone ? (
-                    <div>{errors.phone}</div>
+                    <div className="text-red-700 text-xs">{errors.phone}</div>
                   ) : null}
                 </div>
                 <div>
@@ -98,7 +98,7 @@ export default function ContactForm() {
                     className="block w-full rounded-md border-0 p-1.5 bg-white text-dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-slate-600 sm:text-sm sm:leading-6"
                   />
                   {touched.email && errors.email ? (
-                    <div>{errors.email}</div>
+                    <div className="text-red-700 text-xs">{errors.email}</div>
                   ) : null}
                 </div>
                 <div>
@@ -117,7 +117,7 @@ export default function ContactForm() {
                     className="block w-full rounded-md border-0 p-1.5 bg-white text-dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-slate-600 sm:text-sm sm:leading-6"
                   />
                   {touched.subject && errors.subject ? (
-                    <div>{errors.subject}</div>
+                    <div className="text-red-700 text-xs">{errors.subject}</div>
                   ) : null}
                 </div>
                 <div>
@@ -137,7 +137,7 @@ export default function ContactForm() {
                     className="block w-full rounded-md border-0 p-1.5 bg-white text-dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-slate-600 sm:text-sm sm:leading-6"
                   />
                   {touched.message && errors.message ? (
-                    <div>{errors.message}</div>
+                    <div className="text-red-700 text-xs">{errors.message}</div>
                   ) : null}
                 </div>
                 <div className="flex justify-center">
