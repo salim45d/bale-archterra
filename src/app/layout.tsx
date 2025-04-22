@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -27,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mulish.className}`}>{children}</body>
+      <body className={`${mulish.className}`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
