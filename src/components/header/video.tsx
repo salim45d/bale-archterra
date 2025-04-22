@@ -1,15 +1,15 @@
 "use client";
-import { IReduxSlice, closeModal } from "@/store/slice/slice";
+import { IModal, closeModal } from "@/store/slice/modal";
 import { useDispatch, useSelector } from "react-redux";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 
 export default function VideoModal() {
-  const modal = useSelector((state: { click: IReduxSlice }) => state.click);
+  const modal = useSelector((state: { modal: IModal }) => state.modal);
   const dispatch = useDispatch();
 
   return (
     <Dialog
-      open={modal.isModal}
+      open={modal.isOpen}
       onClose={() => dispatch(closeModal())}
       className="relative z-10"
     >

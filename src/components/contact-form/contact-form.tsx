@@ -1,13 +1,43 @@
 "use client";
 import { Formik, Form, Field, FormikProps } from "formik";
 import { useDispatch } from "react-redux";
-import { notifySend } from "@/store/slice/slice";
-
+import { notify } from "@/store/slice/notify";
+import { sendEmail } from "@/api/sendEmail";
 import IUsers from "./users.interface";
 import Schema from "./schema";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
+
+  const emailHandler = async (data: IUsers) => {
+    const emailHTML = `<div>
+                          <h4 style="text-align: left;">Hey Bale Archterra,</h4>
+                          <p style="text-align: justify;">
+                            Woowee! My name is <strong>${data.name}</strong>. I would like to discussing new projects, creative ideas or opportunities to be part of <strong>Bale Archterra</strong> visions. I wanted to recap our discussion about <strong>${data.subject}</strong> and express my enthusiasm about the potential collaboration. I wanted to follow up with an email to provide a information and summary of the key points:
+                          </p>
+                          <p style="text-align: justify;">
+                            ${data.message}
+                          </p>
+                          <p style="text-align: justify;">
+                            I believe these points could be incredibly valuable for our next new projects, creative ideas or opportunities. Feel free to get in touch with me via email to <a href="mailto:${data.email}" style="text-decoration: none; font-weight: bold; color: black;">${data.email}</a> or call me back via <a href="tel:+62${data.phone}" style="text-decoration: none; font-weight: bold; color: black;">+62${data.phone}</a>. Looking forward to taking the next steps. Let’s schedule a quick call to discuss this further. Please let me know your availability.
+                          </p>
+                          <p style="text-align: left;  margin-bottom: 25px;  margin-top: 50px;">Best Regards,</p>
+                          <p style="text-align: left;">${data.name}</p>
+                        </div>`;
+
+    const response = await sendEmail({
+      email: data.email,
+      sendFrom: data.name,
+      subject: data.subject,
+      html: emailHTML,
+    });
+
+    if (response?.messageId) {
+      dispatch(notify("Message Submitted Successfully"));
+    } else {
+      dispatch(notify("Failed to send message"));
+    }
+  };
 
   return (
     <div>
@@ -22,8 +52,8 @@ export default function ContactForm() {
         }}
         validationSchema={Schema}
         onSubmit={(values, { resetForm }) => {
+          emailHandler(values);
           resetForm();
-          dispatch(notifySend());
         }}
       >
         {(props: FormikProps<IUsers>) => {

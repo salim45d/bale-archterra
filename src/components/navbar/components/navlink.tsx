@@ -1,10 +1,10 @@
-import { IReduxSlice } from "@/store/slice/slice";
+import { INavbar } from "@/store/slice/navbar";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 
 export default function Navlink(Prop: { class: string; classLi: string }) {
   const navItem = useSelector(
-    (state: { click: IReduxSlice }) => state.click.navItem
+    (state: { navbar: INavbar }) => state.navbar.navItem
   );
 
   return (

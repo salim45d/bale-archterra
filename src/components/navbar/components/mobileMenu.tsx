@@ -1,4 +1,4 @@
-import { closeNav, IReduxSlice } from "@/store/slice/slice";
+import { closeNav, INavbar } from "@/store/slice/navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineClose } from "react-icons/ai";
 import { NavContacticon, NavSocialIcon } from "./navicon";
@@ -6,13 +6,13 @@ import Link from "next/link";
 import Navlogo from "./navlogo";
 
 export default function MobileMenu() {
-  const isCLick = useSelector((state: { click: IReduxSlice }) => state.click);
+  const navbar = useSelector((state: { navbar: INavbar }) => state.navbar);
   const dispatch = useDispatch();
 
   return (
     <div
       className={`fixed flex flex-col justify-between p-5 z-10 top-0 right-0 h-screen w-screen bg-black text-white transition-transform duration-300 transform ${
-        isCLick.isClick ? "translate-x-0" : "translate-x-full"
+        navbar.isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
       <div>
@@ -25,15 +25,15 @@ export default function MobileMenu() {
         </button>
         <Navlogo />
         <ul className="flex flex-col space-y-1 pt-10">
-          {isCLick.navItem.map((item) => (
-            <li
+          {navbar.navItem.map((item) => (
+            <Link
               key={item.id}
+              href={item.href}
+              onClick={() => dispatch(closeNav())}
               className="text-lg font-semibold hover:bg-yellow-500 rounded-lg p-2 hover:text-black"
             >
-              <Link href={item.href} onClick={() => dispatch(closeNav())}>
-                {item.navtext}
-              </Link>
-            </li>
+              {item.navtext}
+            </Link>
           ))}
         </ul>
       </div>

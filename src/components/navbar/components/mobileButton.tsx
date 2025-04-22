@@ -1,4 +1,4 @@
-import { openNav } from "@/store/slice/slice";
+import { openNav } from "@/store/slice/navbar";
 import { SlMenu } from "react-icons/sl";
 import { useDispatch } from "react-redux";
 

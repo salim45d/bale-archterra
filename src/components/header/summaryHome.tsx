@@ -1,12 +1,12 @@
 "use client";
-import { IReduxSlice, openModal } from "@/store/slice/slice";
+import { IModal, openModal } from "@/store/slice/modal";
 import { useDispatch, useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
 import Image from "next/image";
 import VideoModal from "./video";
 
 export default function SummaryHome() {
-  const modal = useSelector((state: { click: IReduxSlice }) => state.click);
+  const modal = useSelector((state: { modal: IModal }) => state.modal);
   const dispatch = useDispatch();
 
   return (
@@ -66,7 +66,7 @@ export default function SummaryHome() {
           </h2>
           <p className="font-light text-right mt-10">Best Regards</p>
         </div>
-        {modal.isModal && <VideoModal />}
+        {modal.isOpen && <VideoModal />}
       </div>
     </section>
   );

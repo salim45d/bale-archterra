@@ -1,7 +1,7 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
 import { NavContacticon, NavSocialIcon } from "./components/navicon";
-import { IReduxSlice, scrollNav } from "@/store/slice/slice";
+import { INavbar, scrollNav } from "@/store/slice/navbar";
 import MobileButton from "./components/mobileButton";
 import MobileMenu from "./components/mobileMenu";
 import Navlink from "./components/navlink";
@@ -9,12 +9,12 @@ import Navlogo from "./components/navlogo";
 import { useEffect } from "react";
 
 export default function Navbar() {
-  const scrolled = useSelector((state: { click: IReduxSlice }) => state.click);
+  const navbar = useSelector((state: { navbar: INavbar }) => state.navbar);
   const dispatch = useDispatch();
 
   useEffect(() => {
     window.addEventListener("scroll", () => dispatch(scrollNav()));
-  }, [scrolled]);
+  }, [navbar]);
 
   return (
     <div>
@@ -28,7 +28,7 @@ export default function Navbar() {
         </div>
         <nav
           className={
-            scrolled.isScroll
+            navbar.isScroll
               ? "bg-black transitions fixed py-1 top-0 z-10 w-screen"
               : "bg-transparent  transitions fixed top-7 py-2 z-10 w-screen"
           }
@@ -45,7 +45,7 @@ export default function Navbar() {
       {/* Mobile Navbar */}
       <nav
         className={
-          scrolled.isScroll
+          navbar.isScroll
             ? "sm:hidden fixed top-0 py-1 z-10 w-screen bg-black pl-5 transitions"
             : "sm:hidden fixed top-0 py-3 z-10 w-screen bg-black pl-5 transitions"
         }
