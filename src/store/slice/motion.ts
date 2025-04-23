@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface IMotion {
-  motionTitle: {
+  motionUpslide: {
     initial: { y: string };
     animate: (custom: number) => {
       y: string;
@@ -12,7 +12,7 @@ export interface IMotion {
       };
     };
   };
-  motionDiv: {
+  motionOpacity: {
     initial: { opacity: number; y: string };
     animate: (custom: number) => {
       y: number;
@@ -25,12 +25,8 @@ export interface IMotion {
   };
 }
 
-interface IPayload {
-  payload: number;
-}
-
 const initialState = {
-  motionTitle: {
+  motionUpslide: {
     initial: { y: "100%" },
     animate: (custom: number) => ({
       y: "0%",
@@ -41,7 +37,7 @@ const initialState = {
       },
     }),
   },
-  motionDiv: {
+  motionOpacity: {
     initial: { opacity: 0, y: "10%" },
     animate: (custom: number) => ({
       y: 1,

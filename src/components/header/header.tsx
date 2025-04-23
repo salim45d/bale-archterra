@@ -11,7 +11,7 @@ interface IHeader {
 
 export default function Header(prop: IHeader) {
   const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variant = frame.motionTitle;
+  const variant = frame.motionUpslide;
 
   return (
     <header>

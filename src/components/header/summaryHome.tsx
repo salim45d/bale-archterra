@@ -4,9 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
 import Image from "next/image";
 import VideoModal from "./video";
+import { IMotion } from "@/store/slice/motion";
+import { motion } from "motion/react";
 
 export default function SummaryHome() {
   const modal = useSelector((state: { modal: IModal }) => state.modal);
+  const frame = useSelector((state: { motion: IMotion }) => state.motion);
+  const variant = frame.motionUpslide;
+  const variantOpacity = frame.motionOpacity;
   const dispatch = useDispatch();
 
   return (
@@ -15,7 +20,13 @@ export default function SummaryHome() {
       id="about-home"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-2 lg:max-w-7xl">
-        <div className="order-last md:order-first relative mx-5">
+        <motion.div
+          variants={variantOpacity}
+          custom={0}
+          initial="initial"
+          whileInView="animate"
+          className="order-last md:order-first relative mx-5"
+        >
           <Image
             className="rounded-md object-cover w-full h-96"
             src={"/header-summary.jpg"}
@@ -43,28 +54,63 @@ export default function SummaryHome() {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="font-extrabold text-[#063852]">
-          <h1 className="text-3xl md:text-4xl">Welcome to Bale Archterra</h1>
-          <h2 className=" mb-5 text-lg">
+          <motion.h1
+            variants={variant}
+            custom={1}
+            initial="initial"
+            whileInView="animate"
+            className="text-3xl md:text-4xl"
+          >
+            Welcome to Bale Archterra
+          </motion.h1>
+          <motion.h2
+            variants={variant}
+            custom={2}
+            initial="initial"
+            whileInView="animate"
+            className=" mb-5 text-lg"
+          >
             Build Properties for Your Statisfaction
-          </h2>
-          <p className="font-bold text-sm mb-2 italic">
+          </motion.h2>
+          <motion.p
+            variants={variant}
+            custom={3}
+            initial="initial"
+            whileInView="animate"
+            className="font-bold text-sm mb-2 italic"
+          >
             "Our Company provides a full range of services for the contruction
             of private houses and cottages since 2000"
-          </p>
-          <p className="text-sm font-light mb-5 text-justify">
-            We successfully cope with tasks of varying complexity, provide
-            long-term guarantees and regularly master new technologies. Our
-            portfolio includes dozens of successfully completed projects of
-            houses of different storeys, with high–quality finishes and good
-            repairs. Building houses is our vocation!
-          </p>
-          <h2 className="text-sm mb-12">
-            Let's work together to create sustainable and innovative
-            construction solutions.
-          </h2>
-          <p className="font-light text-right mt-10">Best Regards</p>
+          </motion.p>
+          <motion.div
+            variants={variantOpacity}
+            custom={4}
+            initial="initial"
+            whileInView="animate"
+          >
+            <p className="text-sm font-light mb-5 text-justify">
+              We successfully cope with tasks of varying complexity, provide
+              long-term guarantees and regularly master new technologies. Our
+              portfolio includes dozens of successfully completed projects of
+              houses of different storeys, with high–quality finishes and good
+              repairs. Building houses is our vocation!
+            </p>
+            <h2 className="text-sm mb-12">
+              Let's work together to create sustainable and innovative
+              construction solutions.
+            </h2>
+          </motion.div>
+          <motion.p
+            variants={variant}
+            custom={6}
+            initial="initial"
+            whileInView="animate"
+            className="font-light text-right mt-10"
+          >
+            Best Regards
+          </motion.p>
         </div>
         {modal.isOpen && <VideoModal />}
       </div>

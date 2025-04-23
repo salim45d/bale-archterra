@@ -9,7 +9,7 @@ export default function Navlink(Prop: { class: string; classLi: string }) {
     (state: { navbar: INavbar }) => state.navbar.navItem
   );
   const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variant = frame.motionTitle;
+  const variant = frame.motionUpslide;
 
   return (
     <div className="font-semibold content-center">

@@ -2,20 +2,20 @@
 import Image from "next/image";
 import RedButton from "../button/redButton";
 import { motion } from "motion/react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { IMotion } from "@/store/slice/motion";
 
 export default function HeaderHome() {
   const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variant = frame.motionTitle;
-  const motionDiv = frame.motionDiv;
+  const variant = frame.motionUpslide;
+  const motionOpacity = frame.motionOpacity;
 
   return (
     <header>
       <div className="relative bg-black pt-14 sm:pt-0">
         <div className="absolute gradient"></div>
         <Image
-          className="w-full h-[32rem] object-cover"
+          className="w-full h-[39rem] object-cover"
           src="/header-img.jpg"
           alt="Building Image"
           width={500}
@@ -60,7 +60,7 @@ export default function HeaderHome() {
             "Build Properties for Your Statisfaction"
           </motion.p>
           <motion.div
-            variants={motionDiv}
+            variants={motionOpacity}
             custom={5}
             initial={"initial"}
             animate={"animate"}
