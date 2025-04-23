@@ -37,7 +37,7 @@ export default function Navbar() {
             <Navlogo />
             <Navlink
               class={"justify-between  w-80"}
-              classLi={"hover:scale-110"}
+              classLi={"hover:scale-110 overflow-hidden"}
             />
           </div>
         </nav>

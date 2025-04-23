@@ -23,7 +23,10 @@ export default function Navlogo() {
         width={30}
         height={30}
       />
-      <Link className="content-end text-md sm:text-2xl" href={"/"}>
+      <Link
+        className="content-end text-md sm:text-2xl overflow-hidden"
+        href={"/"}
+      >
         {" "}
         <h1>Bale Archterra</h1>
       </Link>
