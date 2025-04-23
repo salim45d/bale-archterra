@@ -1,4 +1,4 @@
-export default interface IUsers {
+export default interface IMailBox {
   id: number;
   name: string;
   phone: string;

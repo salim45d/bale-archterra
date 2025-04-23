@@ -1,6 +1,6 @@
 import { getTeam } from "@/api/api";
 import RedButton from "@/components/button/redButton";
-import { ITeam } from "./team.interface";
+import { ITeam } from "@/types/team.interface";
 
 export default async function TeamHome(Prop: {
   class: string;

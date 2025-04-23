@@ -1,7 +1,7 @@
 import WhiteButton from "@/components/button/whiteButton";
 import RedButton from "../button/redButton";
 import { getServiceContentful } from "@/api/api";
-import { IAsset } from "@/contentful/types/service.type";
+import { IAsset } from "@/types/contentful.type";
 
 export default async function ServiceHome() {
   const service = await getServiceContentful();

@@ -3,13 +3,13 @@ import { Formik, Form, Field, FormikProps } from "formik";
 import { useDispatch } from "react-redux";
 import { notify } from "@/store/slice/notify";
 import { sendEmail } from "@/api/sendEmail";
-import IUsers from "./users.interface";
-import Schema from "./schema";
+import IMailBox from "@/types/mailBox.interface";
+import Schema from "@/schema/schema";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
 
-  const emailHandler = async (data: IUsers) => {
+  const emailHandler = async (data: IMailBox) => {
     const emailHTML = `<div>
                           <h4 style="text-align: left;">Hey Bale Archterra,</h4>
                           <p style="text-align: justify;">
@@ -56,7 +56,7 @@ export default function ContactForm() {
           resetForm();
         }}
       >
-        {(props: FormikProps<IUsers>) => {
+        {(props: FormikProps<IMailBox>) => {
           const { values, errors, touched, handleChange, handleSubmit } = props;
 
           return (

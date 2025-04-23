@@ -1,3 +1,4 @@
+import IButton from "@/types/button.interface";
 import Link from "next/link";
 
 export default function WhiteButton(Prop: IButton) {

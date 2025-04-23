@@ -1,5 +1,5 @@
 import { getTeam } from "@/api/api";
-import { ITeam } from "./team.interface";
+import { ITeam } from "@/types/team.interface";
 
 export default async function TeamSection() {
   const teams: ITeam = await getTeam();

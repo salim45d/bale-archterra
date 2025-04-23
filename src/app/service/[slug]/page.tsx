@@ -4,7 +4,7 @@ import Header from "@/components/header/header";
 import Headline from "@/components/headline/headline";
 import RichText from "@/components/richtext/richText";
 import ServiceHome from "@/components/service/serviceHome";
-import { IAsset } from "@/contentful/types/service.type";
+import { IAsset } from "@/types/contentful.type";
 
 export default async function ServiceSection({
   params,

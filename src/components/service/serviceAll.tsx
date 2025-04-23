@@ -1,7 +1,7 @@
 import { getServiceContentful } from "@/api/api";
 import RedButton from "@/components/button/redButton";
 import RichText from "@/components/richtext/richText";
-import { IAsset } from "@/contentful/types/service.type";
+import { IAsset } from "@/types/contentful.type";
 import { Asset, UnresolvedLink } from "contentful";
 
 export default async function ServiceSectionAll() {

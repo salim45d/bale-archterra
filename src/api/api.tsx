@@ -2,7 +2,7 @@ import contentfulClient from "@/contentful/contentfulClients";
 import {
   TypeAboutSkeleton,
   TypeServiceSkeleton,
-} from "@/contentful/types/service.type";
+} from "@/types/contentful.type";
 import axios from "axios";
 
 export const getAboutContentfulPage = async (id: string) => {
