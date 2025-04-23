@@ -44,7 +44,7 @@ export default function Headline() {
             variants={variantOpacity}
             custom={idx + 1}
             initial="initial"
-            animate="animate"
+            whileInView="animate"
             className={`${item.class} bg-yellow-500 p-2 sm:p-5 text-center overflow-hidden`}
           >
             <div className="flex justify-center">
@@ -69,7 +69,7 @@ export default function Headline() {
           variants={variantOpacity}
           custom={4}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
           className="bg-red-700 text-white p-2 sm:p-5 text-center rounded-br-2xl overflow-hidden"
         >
           <div>

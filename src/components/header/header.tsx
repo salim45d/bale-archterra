@@ -30,7 +30,7 @@ export default function Header(prop: IHeader) {
             variants={variant}
             custom={0}
             initial="initial"
-            animate="animate"
+            whileInView="animate"
             className="text-2xl sm:text-4xl font-extrabold text-yellow-500 mb-20"
           >
             {prop.tittle}

@@ -20,7 +20,7 @@ export default function Navlink(Prop: { class: string; classLi: string }) {
             variants={variant}
             custom={idx + 1}
             initial="initial"
-            animate="animate"
+            whileInView="animate"
             className={Prop.classLi}
           >
             <Link href={item.href} className="hover:scale-150">

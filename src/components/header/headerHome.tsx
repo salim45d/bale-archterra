@@ -27,7 +27,7 @@ export default function HeaderHome() {
             variants={variant}
             custom={0}
             initial={"initial"}
-            animate={"animate"}
+            whileInView={"animate"}
             className=" text-xl sm:text-3xl m-1 overflow-hidden"
           >
             We Are Certified Engineers
@@ -36,7 +36,7 @@ export default function HeaderHome() {
             variants={variant}
             custom={1}
             initial={"initial"}
-            animate={"animate"}
+            whileInView={"animate"}
             className="text-2xl sm:text-4xl text-yellow-500 m-1 overflow-hidden"
           >
             CONSTRUCTION SERVICES
@@ -45,7 +45,7 @@ export default function HeaderHome() {
             variants={variant}
             custom={2}
             initial={"initial"}
-            animate={"animate"}
+            whileInView={"animate"}
             className="text-2xl sm:text-4xl text-yellow-500 m-1 overflow-hidden"
           >
             CREATIVE AND PROFESSIONAL
@@ -54,7 +54,7 @@ export default function HeaderHome() {
             variants={variant}
             custom={3}
             initial={"initial"}
-            animate={"animate"}
+            whileInView={"animate"}
             className="italic text-md sm:text-lg overflow-hidden"
           >
             "Build Properties for Your Statisfaction"
@@ -63,7 +63,7 @@ export default function HeaderHome() {
             variants={motionOpacity}
             custom={5}
             initial={"initial"}
-            animate={"animate"}
+            whileInView={"animate"}
             className="mt-20"
           >
             <RedButton href={"/#about-home"} tittle={"Find more"} />

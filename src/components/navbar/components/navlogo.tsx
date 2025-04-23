@@ -13,7 +13,7 @@ export default function Navlogo() {
       variants={variant}
       custom={0}
       initial="initial"
-      animate="animate"
+      whileInView="animate"
       className="text-2xl font-bold text-yellow-500 flex"
     >
       <Image
