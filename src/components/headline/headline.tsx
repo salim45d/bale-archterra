@@ -1,7 +1,14 @@
+"use client";
 import Image from "next/image";
 import WhiteButton from "../button/whiteButton";
+import { useSelector } from "react-redux";
+import { IMotion } from "@/store/slice/motion";
+import { motion } from "motion/react";
 
 export default function Headline() {
+  const frame = useSelector((state: { motion: IMotion }) => state.motion);
+  const variant = frame.motionDiv;
+
   const headLineItem = [
     {
       id: 1,
@@ -31,10 +38,14 @@ export default function Headline() {
   return (
     <summary className="flex justify-center bg-[whitesmoke]">
       <div className="grid grid-cols-2 sm:grid-cols-4 -mt-16 w-[95%] lg:max-w-5xl z-0 gap-1">
-        {headLineItem.map((item) => (
-          <div
-            key={item.id}
-            className={`${item.class} bg-yellow-500 p-2 sm:p-5 text-center`}
+        {headLineItem.map((item, idx) => (
+          <motion.div
+            key={idx}
+            variants={variant}
+            custom={idx}
+            initial="initial"
+            animate="animate"
+            className={`${item.class} bg-yellow-500 p-2 sm:p-5 text-center overflow-hidden`}
           >
             <div className="flex justify-center">
               <Image
@@ -52,9 +63,15 @@ export default function Headline() {
                 {item.textBody}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-        <div className="bg-red-700 text-white p-2 sm:p-5 text-center rounded-br-2xl">
+        <motion.div
+          variants={variant}
+          custom={4}
+          initial="initial"
+          animate="animate"
+          className="bg-red-700 text-white p-2 sm:p-5 text-center rounded-br-2xl overflow-hidden"
+        >
           <div>
             <h1 className="font-bold mb-4 text-sm md:text-md lg:text-lg">
               Get Started
@@ -64,7 +81,7 @@ export default function Headline() {
             </p>
             <WhiteButton href={"/team#contact-form"} tittle={"Contact us"} />
           </div>
-        </div>
+        </motion.div>
       </div>
     </summary>
   );

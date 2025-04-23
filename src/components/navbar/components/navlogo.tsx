@@ -1,9 +1,21 @@
+import { IMotion } from "@/store/slice/motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 export default function Navlogo() {
+  const frame = useSelector((state: { motion: IMotion }) => state.motion);
+  const variant = frame.motionTitle;
+
   return (
-    <div className="text-2xl font-bold text-yellow-500 flex">
+    <motion.div
+      variants={variant}
+      custom={0}
+      initial="initial"
+      animate="animate"
+      className="text-2xl font-bold text-yellow-500 flex"
+    >
       <Image
         className="mr-2 mb-1.5"
         src={"/bale-archterra.png"}
@@ -15,6 +27,6 @@ export default function Navlogo() {
         {" "}
         <h1>Bale Archterra</h1>
       </Link>
-    </div>
+    </motion.div>
   );
 }

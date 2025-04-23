@@ -1,4 +1,8 @@
+"use client";
+import { IMotion } from "@/store/slice/motion";
+import { motion } from "motion/react";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 
 interface IHeader {
   img: string;
@@ -6,6 +10,9 @@ interface IHeader {
 }
 
 export default function Header(prop: IHeader) {
+  const frame = useSelector((state: { motion: IMotion }) => state.motion);
+  const variant = frame.motionTitle;
+
   return (
     <header>
       <div className="relative bg-black pt-14 sm:pt-0">
@@ -19,9 +26,15 @@ export default function Header(prop: IHeader) {
           priority={true}
         />
         <div className="absolute w-[100%] h-[100%] top-0 text-center content-center">
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-yellow-500 mb-20">
+          <motion.h1
+            variants={variant}
+            custom={0}
+            initial="initial"
+            animate="animate"
+            className="text-2xl sm:text-4xl font-extrabold text-yellow-500 mb-20"
+          >
             {prop.tittle}
-          </h1>
+          </motion.h1>
         </div>
       </div>
     </header>
