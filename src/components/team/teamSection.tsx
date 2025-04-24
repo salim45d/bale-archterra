@@ -1,6 +1,11 @@
 import { getTeam } from "@/api/api";
 import { ITeam } from "@/types/team.interface";
-import { MotionDiv, variantOpacity, variantOpacityX } from "../motion/motion";
+import {
+  MotionDiv,
+  variantOpacity,
+  variantOpacityX,
+  variantUpslide,
+} from "../motion/motion";
 
 export default async function TeamSection() {
   const teams: ITeam = await getTeam();
@@ -10,14 +15,16 @@ export default async function TeamSection() {
       <div className="grid grid-cols-2 lg:grid-cols-4 p-[4%] gap-1 sm:gap-2 lg:max-w-7xl">
         {teams?.results.map((team, idx) => (
           <MotionDiv
+            key={idx}
             initial="initial"
             whileInView="animate"
-            key={idx}
+            variants={variantUpslide}
+            custom={idx}
             className="bg-[whitesmoke] rounded-md p-2 flex justify-between flex-col hover:bg-[#063852] hover:text-white hover:scale-[1.02]"
           >
             <MotionDiv
               variants={variantOpacity}
-              custom={idx}
+              custom={idx + 2}
               className="flex justify-center p-5"
             >
               <img
@@ -26,7 +33,7 @@ export default async function TeamSection() {
                 className="rounded-full sm:w-28 w-20 h-20 sm:h-28 ring-2 p-1 ring-gray-300"
               />
             </MotionDiv>
-            <MotionDiv variants={variantOpacityX} custom={2 + idx}>
+            <MotionDiv variants={variantOpacityX} custom={idx + 3}>
               <h2 className="text-red-700 font-bold text-md sm:text-lg text-center">
                 {team.name.first} {team.name.last}
               </h2>{" "}

@@ -21,20 +21,22 @@ export default async function TeamHome(Prop: {
   return (
     <section className={`${Prop.class} flex justify-center`}>
       <div className="flex justify-center content-center p-[5%] lg:max-w-7xl">
-        <div
+        <MotionDiv
+          variants={variantUpslide}
+          custom={0}
+          initial="initial"
+          whileInView="animate"
           className={`grid ${Prop.grid} grid-cols-1 bg-[whitesmoke] p-5 sm:p-8 gap-5 sm:gap-8
-        lg:gap-5`}
+        lg:gap-5 overflow-hidden`}
         >
           <div
             className={`flex flex-wrap content-center justify-around ${Prop.display}`}
           >
             {teams?.results.map((team, idx) => (
               <MotionDiv
-                key={idx}
+                key={idx + 1}
                 variants={variantOpacity}
                 custom={idx}
-                initial="initial"
-                whileInView="animate"
                 className={`m-1 md:m-5`}
               >
                 <img
@@ -48,28 +50,24 @@ export default async function TeamHome(Prop: {
               </MotionDiv>
             ))}{" "}
           </div>
-          <MotionDiv
-            className="text-center"
-            initial="initial"
-            whileInView="animate"
-          >
+          <div className="text-center">
             <MotionH1
               variants={variantUpslide}
-              custom={8}
+              custom={1}
               className="text-xs mb-5"
             >
               OUR TEAM
             </MotionH1>
             <MotionH1
               variants={variantUpslide}
-              custom={9}
+              custom={2}
               className="text-2xl sm:text-4xl text-red-700 font-extrabold mb-10"
             >
               Bale Archterra Specialist Team
             </MotionH1>
             <MotionP
               variants={variantOpacityX}
-              custom={10}
+              custom={3}
               className="text-justify"
             >
               Fuelled by unbound creativity and cutting-edge technology, our
@@ -84,13 +82,13 @@ export default async function TeamHome(Prop: {
             </MotionP>
             <MotionDiv
               variants={variantOpacityX}
-              custom={11}
+              custom={4}
               className={`${Prop.display} text-right mt-10`}
             >
               <RedButton href={"/team"} tittle={"Find more"} />
             </MotionDiv>
-          </MotionDiv>
-        </div>
+          </div>
+        </MotionDiv>
       </div>
     </section>
   );

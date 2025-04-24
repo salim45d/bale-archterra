@@ -103,7 +103,7 @@ export default function Testimonials(Prop: { class: string }) {
               key={idx}
               variants={variantOpacityX}
               custom={3 + idx}
-              className={` bg-[#063852] p-3 text-white sm:p-5 text-center hover:scale-[1.02] hover:bg-red-700 rounded-md flex flex-col justify-between overflow-hidden`}
+              className={` bg-[#063852] p-3 text-white sm:p-5 text-center hover:scale-[1.02] hover:bg-red-700 rounded-md flex flex-col justify-between`}
             >
               <div>
                 <p className="text-[10px] md:text-xs lg:text-sm italic font-extralight mb-3">

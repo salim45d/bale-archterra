@@ -44,7 +44,7 @@ export default function Headline() {
             key={idx}
             variants={variantOpacityX}
             custom={idx + 1}
-            className={`${item.class} bg-yellow-500 p-2 sm:p-5 text-center overflow-hidden`}
+            className={`${item.class} bg-yellow-500 p-2 sm:p-5 text-center`}
           >
             <div className="flex justify-center">
               <Image

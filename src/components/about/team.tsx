@@ -35,14 +35,14 @@ export default async function Team() {
             <MotionH1
               variants={variantUpslide}
               custom={2}
-              className="text-2xl sm:text-4xl text-red-700 font-extrabold mb-3 overflow-hidden"
+              className="text-2xl sm:text-4xl text-red-700 font-extrabold mb-3"
             >
               {about?.fields.title}
             </MotionH1>
             <MotionP
               variants={variantUpslide}
               custom={3}
-              className="text-[#063852] font-extrabold overflow-hidden"
+              className="text-[#063852] font-extrabold"
             >
               {about?.fields.subtitle}
             </MotionP>

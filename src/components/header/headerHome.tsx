@@ -25,28 +25,28 @@ export default function HeaderHome() {
           <motion.h1
             variants={variantUpslide}
             custom={0}
-            className=" text-xl sm:text-3xl m-1 overflow-hidden"
+            className=" text-xl sm:text-3xl m-1"
           >
             We Are Certified Engineers
           </motion.h1>
           <motion.h1
             variants={variantUpslide}
             custom={1}
-            className="text-2xl sm:text-4xl text-yellow-500 m-1 overflow-hidden"
+            className="text-2xl sm:text-4xl text-yellow-500 m-1"
           >
             CONSTRUCTION SERVICES
           </motion.h1>
           <motion.h1
             variants={variantUpslide}
             custom={2}
-            className="text-2xl sm:text-4xl text-yellow-500 m-1 overflow-hidden"
+            className="text-2xl sm:text-4xl text-yellow-500 m-1"
           >
             CREATIVE AND PROFESSIONAL
           </motion.h1>
           <motion.p
             variants={variantUpslide}
             custom={3}
-            className="italic text-md sm:text-lg overflow-hidden"
+            className="italic text-md sm:text-lg"
           >
             "Build Properties for Your Statisfaction"
           </motion.p>

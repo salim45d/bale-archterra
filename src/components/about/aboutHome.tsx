@@ -15,25 +15,29 @@ export default function AboutHome(Prop: { class: string; display: string }) {
   return (
     <section className={`${Prop.class}`}>
       <div className="flex justify-center content-center p-[5%]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.2fr_1fr] lg:max-w-7xl">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.2fr_1fr] lg:max-w-7xl overflow-hidden"
+        >
           <motion.div
-            initial="initial"
-            whileInView="animate"
+            variants={variantUpslide}
+            custom={0}
             className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-l-xl"
           >
             <div>
               <motion.h1
                 variants={variantUpslide}
-                custom={0}
+                custom={1}
                 className="text-xs mb-5"
               >
                 ABOUT US
               </motion.h1>
               <div className="text-2xl sm:text-4xl text-red-700 font-extrabold">
-                <motion.h1 variants={variantUpslide} custom={1}>
+                <motion.h1 variants={variantUpslide} custom={2}>
                   Bale Archterra.
                 </motion.h1>
-                <motion.h1 variants={variantUpslide} custom={2}>
+                <motion.h1 variants={variantUpslide} custom={3}>
                   Build Properties for Your Statisfaction
                 </motion.h1>
               </div>
@@ -41,7 +45,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             <div>
               <motion.p
                 variants={variantOpacityX}
-                custom={3}
+                custom={4}
                 className="mt-5 text-justify"
               >
                 "With years of experience in the industry, we are commited to
@@ -55,11 +59,9 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             <div className="grid grid-cols-3 gap-1">
               {source.map((item, idx) => (
                 <motion.img
-                  variants={variantOpacityX}
-                  custom={idx + 4}
-                  initial={"initial"}
-                  whileInView={"animate"}
                   key={idx}
+                  variants={variantOpacityX}
+                  custom={idx + 5}
                   className="rounded-md"
                   src={item.src}
                   width={300}
@@ -70,11 +72,11 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             </div>
           </div>
           <motion.div
-            initial="initial"
-            whileInView="animate"
+            variants={variantUpslide}
+            custom={0}
             className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-r-xl"
           >
-            <motion.div variants={variantOpacityX} custom={5}>
+            <motion.div variants={variantOpacityX} custom={6}>
               <div className="text-red-700 font-bold flex mb-3">
                 <GiCompass className="m-2 text-3xl" />
                 <h1 className="content-center text-lg">Our Mission</h1>
@@ -85,7 +87,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
                 environmental & economic needs.
               </p>
             </motion.div>
-            <motion.div variants={variantOpacityX} custom={6}>
+            <motion.div variants={variantOpacityX} custom={7}>
               <div className="text-red-700 font-bold flex mb-3">
                 <FaRocket className="m-2 text-3xl" />
                 <h1 className="text-lg content-center">Our Vission</h1>
@@ -98,7 +100,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             </motion.div>
             <motion.div
               variants={variantOpacityX}
-              custom={7}
+              custom={8}
               className={`${Prop.display} text-right`}
             >
               <RedButton href={"/about"} tittle={"Find more"} />
@@ -108,11 +110,9 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             {source.map((item, idx) => (
               <motion.img
                 variants={variantOpacityX}
-                custom={idx + 8}
-                initial={"initial"}
-                whileInView={"animate"}
+                custom={idx + 3}
                 key={idx}
-                className={`${item.class} rounded-tl-2xl rounded-br-2xl overflow-hidden`}
+                className={`${item.class} rounded-tl-2xl rounded-br-2xl`}
                 src={item.src}
                 width={item.xy}
                 height={item.xy}
@@ -120,7 +120,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

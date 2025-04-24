@@ -1,4 +1,12 @@
 import ContactForm from "../contact-form/contact-form";
+import {
+  MotionDiv,
+  MotionH1,
+  MotionP,
+  variantOpacity,
+  variantOpacityX,
+  variantUpslide,
+} from "../motion/motion";
 
 export default function ContactSection() {
   return (
@@ -6,25 +14,43 @@ export default function ContactSection() {
       className="bg-[whitesmoke] p-[5%] flex justify-center"
       id="contact-form"
     >
-      <div className=" lg:max-w-7xl">
+      <MotionDiv
+        initial="initial"
+        whileInView="animate"
+        className=" lg:max-w-7xl"
+      >
         <div className="text-center">
-          <h1 className="text-xs mb-5">OUR CONTACT</h1>
-          <h1 className="text-2xl sm:text-4xl text-red-700 font-extrabold">
+          <MotionH1
+            custom={0}
+            variants={variantUpslide}
+            className="text-xs mb-5"
+          >
+            OUR CONTACT
+          </MotionH1>
+          <MotionH1
+            custom={1}
+            variants={variantUpslide}
+            className="text-2xl sm:text-4xl text-red-700 font-extrabold"
+          >
             Bale Archterra Get in Touch
-          </h1>
+          </MotionH1>
           <div className="mt-2">
-            <p>
+            <MotionP custom={2} variants={variantUpslide}>
               Feel free to get in touch with us via contact form, email or
               phone.
-            </p>
-            <p>
+            </MotionP>
+            <MotionP custom={3} variants={variantUpslide}>
               We are always open to discussing new projects, creative ideas or
               opportunities to be part of your visions.
-            </p>
+            </MotionP>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-5">
-          <div className="pd-0 md:pd-5 lg:p-10 text-center">
+          <MotionDiv
+            custom={4}
+            variants={variantOpacity}
+            className="pd-0 md:pd-5 lg:p-10 text-center"
+          >
             <h2 className=" text-md md:text-xl font-bold leading-9 tracking-tight text-[#063852]">
               Our Address
             </h2>
@@ -41,12 +67,12 @@ export default function ContactSection() {
                 title="Maps"
               ></iframe>
             </div>
-          </div>
-          <div>
+          </MotionDiv>
+          <MotionDiv custom={5} variants={variantOpacityX}>
             <ContactForm />
-          </div>
+          </MotionDiv>
         </div>
-      </div>
+      </MotionDiv>
     </section>
   );
 }
