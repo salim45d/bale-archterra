@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 
 export default function Headline() {
   const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variantOpacity = frame.motionOpacity;
+  const variantOpacityX = frame.motionOpacityX;
 
   const headLineItem = [
     {
@@ -41,7 +41,7 @@ export default function Headline() {
         {headLineItem.map((item, idx) => (
           <motion.div
             key={idx}
-            variants={variantOpacity}
+            variants={variantOpacityX}
             custom={idx + 1}
             initial="initial"
             whileInView="animate"
@@ -66,7 +66,7 @@ export default function Headline() {
           </motion.div>
         ))}
         <motion.div
-          variants={variantOpacity}
+          variants={variantOpacityX}
           custom={4}
           initial="initial"
           whileInView="animate"

@@ -9,7 +9,7 @@ import { motion } from "motion/react";
 
 export default function AboutHome(Prop: { class: string; display: string }) {
   const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variantX = frame.motionUpslide;
+  const variant = frame.motionUpslide;
   const variantOpacityX = frame.motionOpacityX;
   const source = [
     { id: 1, class: "lg:ml-40", src: "/about-green.jpg", xy: 150 },
@@ -24,7 +24,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
           <div className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-l-xl">
             <div>
               <motion.h1
-                variants={variantX}
+                variants={variant}
                 custom={0}
                 initial={"initial"}
                 whileInView={"animate"}
@@ -34,7 +34,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
               </motion.h1>
               <div className="text-2xl sm:text-4xl text-red-700 font-extrabold">
                 <motion.h1
-                  variants={variantX}
+                  variants={variant}
                   custom={1}
                   initial={"initial"}
                   whileInView={"animate"}
@@ -42,7 +42,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
                   Bale Archterra.
                 </motion.h1>
                 <motion.h1
-                  variants={variantX}
+                  variants={variant}
                   custom={2}
                   initial={"initial"}
                   whileInView={"animate"}

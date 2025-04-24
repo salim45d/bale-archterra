@@ -10,9 +10,10 @@ import { motion } from "motion/react";
 export default function SummaryHome() {
   const modal = useSelector((state: { modal: IModal }) => state.modal);
   const frame = useSelector((state: { motion: IMotion }) => state.motion);
+  const dispatch = useDispatch();
   const variant = frame.motionUpslide;
   const variantOpacity = frame.motionOpacity;
-  const dispatch = useDispatch();
+  const variantOpacityX = frame.motionOpacityX;
 
   return (
     <section
