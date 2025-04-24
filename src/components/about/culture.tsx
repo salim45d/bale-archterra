@@ -6,6 +6,7 @@ import {
   MotionP,
   variantUpslide,
   variantOpacityX,
+  variantOpacity,
 } from "@/components/motion/motion";
 
 export default async function Team() {
@@ -54,7 +55,7 @@ export default async function Team() {
             <RichText document={about?.fields.opening} />
           </MotionDiv>
           <MotionDiv
-            variants={variantOpacityX}
+            variants={variantOpacity}
             custom={6}
             className="text-justify leading-relaxed col-span-2"
           >

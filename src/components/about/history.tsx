@@ -4,6 +4,7 @@ import {
   MotionDiv,
   MotionH1,
   MotionP,
+  variantOpacity,
   variantOpacityX,
   variantUpslide,
 } from "../motion/motion";
@@ -54,7 +55,7 @@ export default async function History() {
             <RichText document={about?.fields.opening} />
           </MotionDiv>
           <MotionDiv
-            variants={variantOpacityX}
+            variants={variantOpacity}
             custom={5}
             className="col-span-2 text-justify leading-relaxed"
           >
