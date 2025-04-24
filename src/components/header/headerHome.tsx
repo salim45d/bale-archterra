@@ -10,7 +10,7 @@ export default function HeaderHome() {
       <div className="relative bg-black pt-14 sm:pt-0">
         <div className="absolute gradient"></div>
         <Image
-          className="w-full h-[39rem] object-cover"
+          className="w-full h-[30rem] object-cover"
           src="/header-img.jpg"
           alt="Building Image"
           width={500}
@@ -22,13 +22,13 @@ export default function HeaderHome() {
           whileInView="animate"
           className="absolute w-[100%] h-[100%] top-0 text-center content-center text-white font-extrabold"
         >
-          <motion.h2
+          <motion.h1
             variants={variantUpslide}
             custom={0}
             className=" text-xl sm:text-3xl m-1 overflow-hidden"
           >
             We Are Certified Engineers
-          </motion.h2>
+          </motion.h1>
           <motion.h1
             variants={variantUpslide}
             custom={1}
