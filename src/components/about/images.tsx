@@ -1,0 +1,46 @@
+import { div } from "motion/react-client";
+import Image from "next/image";
+
+export default function ImageSlider() {
+  const image = [
+    { id: 1, href: "/history3.jpg" },
+    { id: 2, href: "/history1.jpg" },
+    { id: 3, href: "/history2.jpg" },
+    { id: 4, href: "/history.jpg" },
+  ];
+
+  return (
+    <summary>
+      <div className="flex overflow-hidden space-x-2 my-[7%]">
+        <div className="flex space-x-2 animate-loop-scroll">
+          {image.map((item, idx) => (
+            <div key={idx} className="inline-block content-center">
+              <Image
+                src={item.href}
+                className={`rounded-lg object-cover max-w-none`}
+                width={380}
+                height={480}
+                alt={`History Image ${idx}`}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex space-x-2 animate-loop-scroll" aria-hidden="true">
+          {image.map((item, idx) => (
+            <div key={idx} className="inline-block content-center">
+              <Image
+                src={item.href}
+                className={`rounded-lg object-cover max-w-none`}
+                width={380}
+                height={480}
+                alt={`History Image ${idx}`}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </summary>
+  );
+}

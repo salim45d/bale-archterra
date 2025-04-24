@@ -5,7 +5,7 @@ import AboutHome from "@/components/about/aboutHome";
 import TeamSection from "@/components/team/teamSection";
 import Team from "@/components/about/team";
 import Culture from "@/components/about/culture";
-import Summary from "@/components/about/summary";
+import ImageSlider from "@/components/about/images";
 
 export default function AboutPage() {
   return (
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <Headline />
       <AboutHome class={"bg-[whitesmoke]"} display={"hidden"} />
       <History />
-      <Summary />
+      <ImageSlider />
       <Team />
       <TeamSection />
       <Culture />
