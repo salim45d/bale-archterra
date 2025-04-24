@@ -4,7 +4,7 @@ import Link from "next/link";
 import { IMotion } from "@/store/slice/motion";
 import { motion } from "motion/react";
 
-export default function Navlink(Prop: { class: string; classLi: string }) {
+export default function Navlink() {
   const navItem = useSelector(
     (state: { navbar: INavbar }) => state.navbar.navItem
   );
@@ -13,7 +13,7 @@ export default function Navlink(Prop: { class: string; classLi: string }) {
 
   return (
     <div className="font-semibold content-center">
-      <ul className={`${Prop.class} flex`}>
+      <ul className="flex justify-between  w-80">
         {navItem.map((item, idx) => (
           <motion.li
             key={idx}
@@ -21,7 +21,7 @@ export default function Navlink(Prop: { class: string; classLi: string }) {
             custom={idx + 1}
             initial="initial"
             whileInView="animate"
-            className={Prop.classLi}
+            className="hover:scale-110 overflow-hidden"
           >
             <Link href={item.href} className="hover:scale-150">
               {item.navtext}

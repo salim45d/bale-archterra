@@ -1,9 +1,14 @@
 import Link from "next/link";
-import Navlink from "../navbar/components/navlink";
-import { NavContacticon, NavSocialIcon } from "../navbar/components/navicon";
 import Image from "next/image";
+import { NavContacticon, NavSocialIcon } from "../navbar/components/navicon";
+import { useSelector } from "react-redux";
+import { INavbar } from "@/store/slice/navbar";
 
 export default function Footer() {
+  const navItem = useSelector(
+    (state: { navbar: INavbar }) => state.navbar.navItem
+  );
+
   return (
     <footer className="">
       <div className="bg-[#333333] py-[5%] flex justify-center">
@@ -26,13 +31,17 @@ export default function Footer() {
             <h2 className="text-sm md:text-md lg:text-lg font-extrabold mb-2">
               Navigation
             </h2>
-            <div>
-              <Navlink
-                class={"flex-col text-sm md:text-md lg:text-lg"}
-                classLi={
-                  "hover:text-yellow-500 m-1 flex-col text-sm md:text-md lg:text-base"
-                }
-              />
+            <div className="font-semibold content-center">
+              <div className="flex flex-col text-sm md:text-md lg:text-lg">
+                {navItem.map((item, idx) => (
+                  <Link
+                    href={item.href}
+                    className="hover:text-yellow-500 m-1 flex-col text-sm md:text-md lg:text-base over:scale-150"
+                  >
+                    {item.navtext}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
           <div>

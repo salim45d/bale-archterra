@@ -35,10 +35,7 @@ export default function Navbar() {
         >
           <div className="flex text-white px-[5%] justify-between">
             <Navlogo />
-            <Navlink
-              class={"justify-between  w-80"}
-              classLi={"hover:scale-110 overflow-hidden"}
-            />
+            <Navlink />
           </div>
         </nav>
       </div>

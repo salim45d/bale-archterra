@@ -1,6 +1,14 @@
+"use client";
+import { IMotion } from "@/store/slice/motion";
 import { RxAvatar } from "react-icons/rx";
+import { useSelector } from "react-redux";
+import { motion } from "motion/react";
 
 export default function Testimonials(Prop: { class: string }) {
+  const frame = useSelector((state: { motion: IMotion }) => state.motion);
+  const variant = frame.motionUpslide;
+  const variantOpacityX = frame.motionOpacityX;
+
   const testimonials = [
     {
       id: 1,
@@ -74,20 +82,44 @@ export default function Testimonials(Prop: { class: string }) {
     >
       <div>
         <div className="text-center">
-          <h1 className="text-xs mb-5">OUR TESTIMONIALS</h1>
-          <h1 className="text-2xl sm:text-4xl text-red-700 font-extrabold">
+          <motion.h1
+            variants={variant}
+            custom={0}
+            initial="initial"
+            whileInView="animate"
+            className="text-xs mb-5"
+          >
+            OUR TESTIMONIALS
+          </motion.h1>
+          <motion.h1
+            variants={variant}
+            custom={1}
+            initial="initial"
+            whileInView="animate"
+            className="text-2xl sm:text-4xl text-red-700 font-extrabold"
+          >
             Bale Archterra Feedback from Our Clients
-          </h1>
-          <p className="mt-2 mb-10">
+          </motion.h1>
+          <motion.p
+            variants={variant}
+            custom={2}
+            initial="initial"
+            whileInView="animate"
+            className="mt-2 mb-10"
+          >
             We are proudly driven to help design a better world, We are trusted
             by our clients and experienced to plan better.
-          </p>
+          </motion.p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 lg:max-w-7xl">
-          {testimonials.map((item) => (
-            <div
-              key={item.id}
-              className={` bg-[#063852] p-3 text-white sm:p-5 text-center hover:scale-[1.02] hover:bg-red-700 rounded-md flex flex-col justify-between`}
+          {testimonials.map((item, idx) => (
+            <motion.div
+              key={idx}
+              variants={variantOpacityX}
+              custom={3 + idx}
+              initial="initial"
+              whileInView="animate"
+              className={` bg-[#063852] p-3 text-white sm:p-5 text-center hover:scale-[1.02] hover:bg-red-700 rounded-md flex flex-col justify-between overflow-hidden`}
             >
               <div>
                 <p className="text-[10px] md:text-xs lg:text-sm italic font-extralight mb-3">
@@ -107,7 +139,7 @@ export default function Testimonials(Prop: { class: string }) {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
