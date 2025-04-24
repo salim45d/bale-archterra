@@ -6,6 +6,7 @@ import React from "react";
 type MotionDivProps = HTMLMotionProps<"div">;
 type MotionH1Props = HTMLMotionProps<"h1">;
 type MotionPProps = HTMLMotionProps<"p">;
+type MotionImgProps = HTMLMotionProps<"img">;
 
 const variantUpslide = {
   initial: { y: "100%" },
@@ -75,10 +76,21 @@ const MotionP = React.forwardRef<HTMLHeadingElement, MotionPProps>(
   }
 );
 
+const MotionImg = React.forwardRef<HTMLImageElement, MotionImgProps>(
+  function MotionImg({ children, ...props }, ref) {
+    return (
+      <motion.img ref={ref} {...props}>
+        {children}
+      </motion.img>
+    );
+  }
+);
+
 export {
   MotionDiv,
   MotionH1,
   MotionP,
+  MotionImg,
   variantUpslide,
   variantOpacityX,
   variantOpacity,

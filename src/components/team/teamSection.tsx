@@ -1,6 +1,11 @@
 import { getTeam } from "@/api/api";
 import { ITeam } from "@/types/team.interface";
-import { MotionDiv, variantOpacity, variantOpacityX } from "../motion/motion";
+import {
+  MotionDiv,
+  MotionImg,
+  variantOpacity,
+  variantOpacityX,
+} from "../motion/motion";
 
 export default async function TeamSection() {
   const teams: ITeam = await getTeam();
@@ -15,17 +20,15 @@ export default async function TeamSection() {
             key={idx}
             className="bg-[whitesmoke] rounded-md p-2 flex justify-between flex-col hover:bg-[#063852] hover:text-white hover:scale-[1.02]"
           >
-            <MotionDiv
-              variants={variantOpacity}
-              custom={0}
-              className="flex justify-center p-5"
-            >
-              <img
+            <div className="flex justify-center p-5">
+              <MotionImg
+                variants={variantOpacity}
+                custom={0}
                 alt="Team-profile"
                 src={team.picture.large}
                 className="rounded-full sm:w-28 w-20 h-20 sm:h-28 ring-2 p-1 ring-gray-300"
               />
-            </MotionDiv>
+            </div>
             <MotionDiv variants={variantOpacityX} custom={2}>
               <h2 className="text-red-700 font-bold text-md sm:text-lg text-center">
                 {team.name.first} {team.name.last}
