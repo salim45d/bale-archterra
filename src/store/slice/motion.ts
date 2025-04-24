@@ -23,6 +23,17 @@ export interface IMotion {
       };
     };
   };
+  motionOpacityX: {
+    initial: { opacity: number; y: string };
+    animate: (custom: number) => {
+      y: number;
+      opacity: number;
+      transition: {
+        duration: number;
+        ease: number[];
+      };
+    };
+  };
 }
 
 const initialState = {
@@ -41,6 +52,18 @@ const initialState = {
     initial: { opacity: 0, y: "10%" },
     animate: (custom: number) => ({
       y: 1,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        ease: [0.34, 1.56, 0.64, 1],
+        delay: 0.2 * custom,
+      },
+    }),
+  },
+  motionOpacityX: {
+    initial: { opacity: 0, x: "10%" },
+    animate: (custom: number) => ({
+      x: 1,
       opacity: 1,
       transition: {
         duration: 1.5,

@@ -19,10 +19,10 @@ export default function SummaryHome() {
       className="bg-[whitesmoke] p-[5%] flex justify-center"
       id="about-home"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-2 lg:max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-2 lg:max-w-7xl">
         <motion.div
           variants={variantOpacity}
-          custom={0}
+          custom={5}
           initial="initial"
           whileInView="animate"
           className="order-last md:order-first relative mx-5"
@@ -58,7 +58,7 @@ export default function SummaryHome() {
         <div className="font-extrabold text-[#063852]">
           <motion.h1
             variants={variant}
-            custom={1}
+            custom={0}
             initial="initial"
             whileInView="animate"
             className="text-3xl md:text-4xl"
@@ -67,7 +67,7 @@ export default function SummaryHome() {
           </motion.h1>
           <motion.h2
             variants={variant}
-            custom={2}
+            custom={1}
             initial="initial"
             whileInView="animate"
             className=" mb-5 text-lg"
@@ -76,7 +76,7 @@ export default function SummaryHome() {
           </motion.h2>
           <motion.p
             variants={variant}
-            custom={3}
+            custom={2}
             initial="initial"
             whileInView="animate"
             className="font-bold text-sm mb-2 italic"
@@ -86,7 +86,7 @@ export default function SummaryHome() {
           </motion.p>
           <motion.div
             variants={variantOpacity}
-            custom={4}
+            custom={3}
             initial="initial"
             whileInView="animate"
           >
@@ -101,16 +101,8 @@ export default function SummaryHome() {
               Let's work together to create sustainable and innovative
               construction solutions.
             </h2>
+            <p className="font-light text-right mt-10">Best Regards</p>
           </motion.div>
-          <motion.p
-            variants={variant}
-            custom={6}
-            initial="initial"
-            whileInView="animate"
-            className="font-light text-right mt-10"
-          >
-            Best Regards
-          </motion.p>
         </div>
         {modal.isOpen && <VideoModal />}
       </div>
