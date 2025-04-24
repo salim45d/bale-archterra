@@ -35,6 +35,7 @@ export default function Footer() {
               <div className="flex flex-col text-sm md:text-md lg:text-lg">
                 {navItem.map((item, idx) => (
                   <Link
+                    key={idx}
                     href={item.href}
                     className="hover:text-yellow-500 m-1 flex-col text-sm md:text-md lg:text-base over:scale-150"
                   >

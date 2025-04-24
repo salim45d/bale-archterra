@@ -1,8 +1,7 @@
 "use client";
-import { IMotion } from "@/store/slice/motion";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { useSelector } from "react-redux";
+import { variantUpslide } from "../motion/motion";
 
 interface IHeader {
   img: string;
@@ -10,9 +9,6 @@ interface IHeader {
 }
 
 export default function Header(prop: IHeader) {
-  const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variant = frame.motionUpslide;
-
   return (
     <header>
       <div className="relative bg-black pt-14 sm:pt-0">
@@ -27,7 +23,7 @@ export default function Header(prop: IHeader) {
         />
         <div className="absolute w-[100%] h-[100%] top-0 text-center content-center">
           <motion.h1
-            variants={variant}
+            variants={variantUpslide}
             custom={0}
             initial="initial"
             whileInView="animate"

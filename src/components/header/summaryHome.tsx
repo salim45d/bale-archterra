@@ -4,28 +4,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
 import Image from "next/image";
 import VideoModal from "./video";
-import { IMotion } from "@/store/slice/motion";
+import {
+  variantUpslide,
+  variantOpacity,
+  variantOpacityX,
+} from "../motion/motion";
 import { motion } from "motion/react";
 
 export default function SummaryHome() {
   const modal = useSelector((state: { modal: IModal }) => state.modal);
-  const frame = useSelector((state: { motion: IMotion }) => state.motion);
   const dispatch = useDispatch();
-  const variant = frame.motionUpslide;
-  const variantOpacity = frame.motionOpacity;
-  const variantOpacityX = frame.motionOpacityX;
 
   return (
     <section
       className="bg-[whitesmoke] p-[5%] flex justify-center"
       id="about-home"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-2 lg:max-w-7xl">
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-2 lg:max-w-7xl"
+      >
         <motion.div
           variants={variantOpacity}
           custom={5}
-          initial="initial"
-          whileInView="animate"
           className="order-last md:order-first relative mx-5"
         >
           <Image
@@ -58,39 +60,28 @@ export default function SummaryHome() {
         </motion.div>
         <div className="font-extrabold text-[#063852]">
           <motion.h1
-            variants={variant}
+            variants={variantUpslide}
             custom={0}
-            initial="initial"
-            whileInView="animate"
             className="text-3xl md:text-4xl"
           >
             Welcome to Bale Archterra
           </motion.h1>
           <motion.h2
-            variants={variant}
+            variants={variantUpslide}
             custom={1}
-            initial="initial"
-            whileInView="animate"
             className=" mb-5 text-lg"
           >
             Build Properties for Your Statisfaction
           </motion.h2>
           <motion.p
-            variants={variant}
+            variants={variantUpslide}
             custom={2}
-            initial="initial"
-            whileInView="animate"
             className="font-bold text-sm mb-2 italic"
           >
             "Our Company provides a full range of services for the contruction
             of private houses and cottages since 2000"
           </motion.p>
-          <motion.div
-            variants={variantOpacity}
-            custom={3}
-            initial="initial"
-            whileInView="animate"
-          >
+          <motion.div variants={variantOpacity} custom={3}>
             <p className="text-sm font-light mb-5 text-justify">
               We successfully cope with tasks of varying complexity, provide
               long-term guarantees and regularly master new technologies. Our
@@ -106,7 +97,7 @@ export default function SummaryHome() {
           </motion.div>
         </div>
         {modal.isOpen && <VideoModal />}
-      </div>
+      </motion.div>
     </section>
   );
 }

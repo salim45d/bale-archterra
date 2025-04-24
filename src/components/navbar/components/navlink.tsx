@@ -1,15 +1,13 @@
+import Link from "next/link";
 import { INavbar } from "@/store/slice/navbar";
 import { useSelector } from "react-redux";
-import Link from "next/link";
-import { IMotion } from "@/store/slice/motion";
 import { motion } from "motion/react";
+import { variantUpslide } from "@/components/motion/motion";
 
 export default function Navlink() {
   const navItem = useSelector(
     (state: { navbar: INavbar }) => state.navbar.navItem
   );
-  const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variant = frame.motionUpslide;
 
   return (
     <div className="font-semibold content-center">
@@ -17,7 +15,7 @@ export default function Navlink() {
         {navItem.map((item, idx) => (
           <motion.li
             key={idx}
-            variants={variant}
+            variants={variantUpslide}
             custom={idx + 1}
             initial="initial"
             whileInView="animate"

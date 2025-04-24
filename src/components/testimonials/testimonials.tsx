@@ -1,14 +1,10 @@
 "use client";
-import { IMotion } from "@/store/slice/motion";
+
 import { RxAvatar } from "react-icons/rx";
-import { useSelector } from "react-redux";
 import { motion } from "motion/react";
+import { MotionDiv, variantOpacityX, variantUpslide } from "../motion/motion";
 
 export default function Testimonials(Prop: { class: string }) {
-  const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variant = frame.motionUpslide;
-  const variantOpacityX = frame.motionOpacityX;
-
   const testimonials = [
     {
       id: 1,
@@ -80,33 +76,23 @@ export default function Testimonials(Prop: { class: string }) {
     <section
       className={`${Prop.class} flex justify-center content-center p-[5%]`}
     >
-      <div>
+      <MotionDiv initial="initial" whileInView="animate">
         <div className="text-center">
           <motion.h1
-            variants={variant}
+            variants={variantUpslide}
             custom={0}
-            initial="initial"
-            whileInView="animate"
             className="text-xs mb-5"
           >
             OUR TESTIMONIALS
           </motion.h1>
           <motion.h1
-            variants={variant}
+            variants={variantUpslide}
             custom={1}
-            initial="initial"
-            whileInView="animate"
             className="text-2xl sm:text-4xl text-red-700 font-extrabold"
           >
             Bale Archterra Feedback from Our Clients
           </motion.h1>
-          <motion.p
-            variants={variant}
-            custom={2}
-            initial="initial"
-            whileInView="animate"
-            className="mt-2 mb-10"
-          >
+          <motion.p variants={variantUpslide} custom={2} className="mt-2 mb-10">
             We are proudly driven to help design a better world, We are trusted
             by our clients and experienced to plan better.
           </motion.p>
@@ -117,8 +103,6 @@ export default function Testimonials(Prop: { class: string }) {
               key={idx}
               variants={variantOpacityX}
               custom={3 + idx}
-              initial="initial"
-              whileInView="animate"
               className={` bg-[#063852] p-3 text-white sm:p-5 text-center hover:scale-[1.02] hover:bg-red-700 rounded-md flex flex-col justify-between overflow-hidden`}
             >
               <div>
@@ -142,7 +126,7 @@ export default function Testimonials(Prop: { class: string }) {
             </motion.div>
           ))}
         </div>
-      </div>
+      </MotionDiv>
     </section>
   );
 }

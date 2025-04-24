@@ -2,14 +2,9 @@
 import Image from "next/image";
 import RedButton from "../button/redButton";
 import { motion } from "motion/react";
-import { useSelector } from "react-redux";
-import { IMotion } from "@/store/slice/motion";
+import { variantUpslide, variantOpacityX } from "../motion/motion";
 
 export default function HeaderHome() {
-  const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variant = frame.motionUpslide;
-  const motionOpacity = frame.motionOpacity;
-
   return (
     <header>
       <div className="relative bg-black pt-14 sm:pt-0">
@@ -22,53 +17,43 @@ export default function HeaderHome() {
           height={200}
           priority={true}
         />
-        <div className="absolute w-[100%] h-[100%] top-0 text-center content-center text-white font-extrabold">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          className="absolute w-[100%] h-[100%] top-0 text-center content-center text-white font-extrabold"
+        >
           <motion.h2
-            variants={variant}
+            variants={variantUpslide}
             custom={0}
-            initial={"initial"}
-            whileInView={"animate"}
             className=" text-xl sm:text-3xl m-1 overflow-hidden"
           >
             We Are Certified Engineers
           </motion.h2>
           <motion.h1
-            variants={variant}
+            variants={variantUpslide}
             custom={1}
-            initial={"initial"}
-            whileInView={"animate"}
             className="text-2xl sm:text-4xl text-yellow-500 m-1 overflow-hidden"
           >
             CONSTRUCTION SERVICES
           </motion.h1>
           <motion.h1
-            variants={variant}
+            variants={variantUpslide}
             custom={2}
-            initial={"initial"}
-            whileInView={"animate"}
             className="text-2xl sm:text-4xl text-yellow-500 m-1 overflow-hidden"
           >
             CREATIVE AND PROFESSIONAL
           </motion.h1>
           <motion.p
-            variants={variant}
+            variants={variantUpslide}
             custom={3}
-            initial={"initial"}
-            whileInView={"animate"}
             className="italic text-md sm:text-lg overflow-hidden"
           >
             "Build Properties for Your Statisfaction"
           </motion.p>
-          <motion.div
-            variants={motionOpacity}
-            custom={5}
-            initial={"initial"}
-            whileInView={"animate"}
-            className="mt-20"
-          >
+          <motion.div variants={variantOpacityX} custom={5} className="mt-20">
             <RedButton href={"/#about-home"} tittle={"Find more"} />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </header>
   );

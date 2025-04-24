@@ -2,13 +2,10 @@
 import Image from "next/image";
 import WhiteButton from "../button/whiteButton";
 import { useSelector } from "react-redux";
-import { IMotion } from "@/store/slice/motion";
 import { motion } from "motion/react";
+import { variantOpacityX } from "../motion/motion";
 
 export default function Headline() {
-  const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variantOpacityX = frame.motionOpacityX;
-
   const headLineItem = [
     {
       id: 1,
@@ -37,14 +34,16 @@ export default function Headline() {
   ];
   return (
     <summary className="flex justify-center bg-[whitesmoke]">
-      <div className="grid grid-cols-2 sm:grid-cols-4 -mt-16 w-[95%] lg:max-w-5xl z-0 gap-1">
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        className="grid grid-cols-2 sm:grid-cols-4 -mt-16 w-[95%] lg:max-w-5xl z-0 gap-1"
+      >
         {headLineItem.map((item, idx) => (
           <motion.div
             key={idx}
             variants={variantOpacityX}
             custom={idx + 1}
-            initial="initial"
-            whileInView="animate"
             className={`${item.class} bg-yellow-500 p-2 sm:p-5 text-center overflow-hidden`}
           >
             <div className="flex justify-center">
@@ -68,8 +67,6 @@ export default function Headline() {
         <motion.div
           variants={variantOpacityX}
           custom={4}
-          initial="initial"
-          whileInView="animate"
           className="bg-red-700 text-white p-2 sm:p-5 text-center rounded-br-2xl overflow-hidden"
         >
           <div>
@@ -82,7 +79,7 @@ export default function Headline() {
             <WhiteButton href={"/team#contact-form"} tittle={"Contact us"} />
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </summary>
   );
 }

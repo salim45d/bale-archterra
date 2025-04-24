@@ -1,16 +1,13 @@
-import { IMotion } from "@/store/slice/motion";
+import { variantUpslide } from "@/components/motion/motion";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 
 export default function Navlogo() {
-  const frame = useSelector((state: { motion: IMotion }) => state.motion);
-  const variant = frame.motionUpslide;
-
   return (
     <motion.div
-      variants={variant}
+      variants={variantUpslide}
       custom={0}
       initial="initial"
       whileInView="animate"

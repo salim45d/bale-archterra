@@ -2,29 +2,53 @@ import WhiteButton from "@/components/button/whiteButton";
 import RedButton from "../button/redButton";
 import { getServiceContentful } from "@/api/api";
 import { IAsset } from "@/types/contentful.type";
+import {
+  MotionDiv,
+  MotionH1,
+  MotionP,
+  variantOpacityX,
+  variantUpslide,
+} from "../motion/motion";
 
 export default async function ServiceHome() {
   const service = await getServiceContentful();
 
   return (
     <section className="flex justify-center content-center p-[5%] bg-[whitesmoke]">
-      <div>
-        <div className="text-center">
-          <h1 className="text-xs mb-5">OUR SERVICE</h1>
-          <h1 className="text-2xl sm:text-4xl text-red-700 font-extrabold">
+      <MotionDiv
+        className="text-center"
+        initial="initial"
+        whileInView="animate"
+      >
+        {" "}
+        <div>
+          <MotionH1
+            variants={variantUpslide}
+            custom={0}
+            className="text-xs mb-5"
+          >
+            OUR SERVICE
+          </MotionH1>
+          <MotionH1
+            variants={variantUpslide}
+            custom={1}
+            className="text-2xl sm:text-4xl text-red-700 font-extrabold"
+          >
             Bale Archterra Provide Best Service
-          </h1>
-          <p className="mt-2 mb-10">
+          </MotionH1>
+          <MotionP variants={variantUpslide} custom={2} className="mt-2 mb-10">
             Look for contruction services with a proven back record of success
             in plan and build better properties
-          </p>
+          </MotionP>
         </div>
         <div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 max-w-7xl">
             {service &&
               service.map((item, idx) => (
-                <div
+                <MotionDiv
                   key={idx}
+                  variants={variantOpacityX}
+                  custom={idx + 3}
                   className={` bg-yellow-500 p-2 sm:p-3 text-center hover:scale-[1.02] hover:bg-red-700 hover:text-white rounded-md`}
                 >
                   <img
@@ -55,14 +79,18 @@ export default async function ServiceHome() {
                       />
                     </div>
                   </div>
-                </div>
+                </MotionDiv>
               ))}
           </div>
         </div>
-        <div className=" mt-5 sm:mt-10 text-right">
+        <MotionDiv
+          variants={variantOpacityX}
+          custom={7}
+          className=" mt-5 sm:mt-10 text-right"
+        >
           <RedButton href={"/service"} tittle={"All Service"} />
-        </div>
-      </div>
+        </MotionDiv>
+      </MotionDiv>
     </section>
   );
 }
