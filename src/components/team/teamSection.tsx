@@ -11,7 +11,7 @@ export default async function TeamSection() {
   const teams: ITeam = await getTeam();
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center overflow-hidden">
       <div className="grid grid-cols-2 lg:grid-cols-4 p-[4%] gap-1 sm:gap-2 lg:max-w-7xl">
         {teams?.results.map((team, idx) => (
           <MotionDiv
