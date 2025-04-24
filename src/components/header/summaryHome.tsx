@@ -16,10 +16,7 @@ export default function SummaryHome() {
   const dispatch = useDispatch();
 
   return (
-    <section
-      className="bg-[whitesmoke] p-[5%] flex justify-center"
-      id="about-home"
-    >
+    <section className="bg-[whitesmoke] p-[5%] flex justify-center">
       <motion.div
         initial="initial"
         whileInView="animate"

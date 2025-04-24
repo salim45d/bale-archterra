@@ -50,7 +50,12 @@ export default function HeaderHome() {
           >
             "Build Properties for Your Statisfaction"
           </motion.p>
-          <motion.div variants={variantOpacityX} custom={5} className="mt-20">
+          <motion.div
+            variants={variantOpacityX}
+            custom={5}
+            className="mt-20"
+            id="about-home"
+          >
             <RedButton href={"/#about-home"} tittle={"Find more"} />
           </motion.div>
         </motion.div>
