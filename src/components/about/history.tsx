@@ -16,7 +16,9 @@ export default async function History() {
   return (
     <div>
       <section
-        className="bg-[whitesmoke] p-[5%] flex justify-center"
+        className={`bg-[whitesmoke] p-[5%] flex justify-center ${
+          about === undefined ? "hidden" : "block"
+        }`}
         id={about?.fields.slug}
       >
         <MotionDiv

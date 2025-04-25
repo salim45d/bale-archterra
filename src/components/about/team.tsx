@@ -15,7 +15,9 @@ export default async function Team() {
 
   return (
     <section
-      className="p-[5%] flex justify-center overflow-hidden"
+      className={`p-[5%] flex justify-center overflow-hidden ${
+        about === undefined ? "hidden" : "block"
+      }`}
       id={about?.fields.slug}
     >
       <MotionDiv

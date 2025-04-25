@@ -13,10 +13,14 @@ export default async function Team() {
   const entry = process.env.NEXT_PUBLIC_CONTENTFUL_ENTRY_ID_CULTURE || "";
   const about = await getAboutContentfulPage(entry);
 
+  console.log(about);
+
   return (
     <div>
       <section
-        className="bg-[whitesmoke] p-[5%] mt-1 flex justify-center"
+        className={`bg-[whitesmoke] p-[5%] mt-1 flex justify-center ${
+          about === undefined ? "hidden" : "block"
+        }`}
         id={about?.fields.slug}
       >
         <MotionDiv
