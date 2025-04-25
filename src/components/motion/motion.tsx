@@ -16,19 +16,6 @@ const variantUpslide = {
     transition: {
       duration: 2,
       delay: 0.2 * custom,
-      ease: [0.34, 1.56, 0.64, 1],
-    },
-  }),
-};
-
-const variantUpslideX = {
-  initial: { x: "100%", opacity: 0.3 },
-  animate: (custom: number) => ({
-    x: "0%",
-    opacity: 1,
-    transition: {
-      duration: 2,
-      delay: 0.2 * custom,
       ease: [0.25, 1, 0.5, 1],
     },
   }),
@@ -106,7 +93,6 @@ export {
   MotionP,
   MotionImg,
   variantUpslide,
-  variantUpslideX,
   variantOpacityX,
   variantOpacity,
 };

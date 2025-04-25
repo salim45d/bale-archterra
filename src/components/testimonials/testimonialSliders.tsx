@@ -59,9 +59,45 @@ export default function TestimonialsSlider(Prop: {
             by our clients and experienced to plan better.{" "}
           </motion.p>
         </MotionDiv>
+        {/* Testimonial image*/}
+        <div className="relative h-32">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-red-800/25 before:via-red-800/5 before:via-25% before:to-red-800/0 before:to-75% before:rounded-full before:-z-10">
+            <div className="h-32 text-[#063852]">
+              {Prop.testimonials.map((testimonial, index) => (
+                <Transition
+                  as="div"
+                  key={index}
+                  show={active === index}
+                  className="absolute inset-0 h-full -z-10"
+                  enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 order-first"
+                  enterFrom="opacity-0 -rotate-[60deg]"
+                  enterTo="opacity-100 rotate-0"
+                  leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700"
+                  leaveFrom="opacity-100 rotate-0"
+                  leaveTo="opacity-0 rotate-[60deg]"
+                  beforeEnter={() => heightFix()}
+                >
+                  <div className="relative top-4 left-1/2 -translate-x-1/2">
+                    <div className="text-4xl justify-items-center font-extrabold ">
+                      <RxAvatar />
+                    </div>
+                    <div className="ml-2">
+                      <h1 className="font-bold text-md lg:text-lg">
+                        {testimonial.name}
+                      </h1>
+                      <p className="font-semibold text-xs sm:text-sm">
+                        {testimonial.job}
+                      </p>
+                    </div>
+                  </div>
+                </Transition>
+              ))}
+            </div>
+          </div>
+        </div>
         <div className="mb-9 transition-all duration-150 delay-300 ease-in-out justify-items-center">
           <div
-            className="relative  flex flex-col  max-w-2xl"
+            className="relative  flex flex-col max-w-2xl"
             ref={testimonialsRef}
           >
             {Prop.testimonials.map((testimonial, index) => (
@@ -78,22 +114,9 @@ export default function TestimonialsSlider(Prop: {
                 beforeEnter={() => heightFix()}
               >
                 <div>
-                  <p className="text-base sm:text-lg lg:text-xl font-bold text-black italic mb-3">
+                  <p className="text-sm sm:text-md lg:text-lg font-bold text-black italic mb-3">
                     "{testimonial.testimony}"
                   </p>
-                </div>
-                <div className="flex mt-5 justify-center">
-                  <div className="text-4xl content-center text-yellow-500 font-extrabold">
-                    <RxAvatar />
-                  </div>
-                  <div className="text-left ml-2">
-                    <h1 className="font-bold mb-1 mt-3 text-xs lg:text-md">
-                      {testimonial.name}
-                    </h1>
-                    <p className="font-extralight text-[10px] sm:text-xs">
-                      {testimonial.job}
-                    </p>
-                  </div>
                 </div>
               </Transition>
             ))}
@@ -114,7 +137,12 @@ export default function TestimonialsSlider(Prop: {
                 setAutorotate(false);
               }}
             >
-              {testimonial.name}
+              <span>{testimonial.name}</span>{" "}
+              <span
+                className={`${
+                  active === index ? "text-indigo-200" : "text-slate-300"
+                }`}
+              ></span>
             </button>
           ))}
         </div>

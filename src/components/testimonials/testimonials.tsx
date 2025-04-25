@@ -1,4 +1,4 @@
-import { MotionDiv, variantUpslideX } from "../motion/motion";
+import { MotionDiv, variantOpacityX } from "../motion/motion";
 import TestimonialsSlider from "./testimonialSliders";
 
 export default function Testimonials(Prop: {
@@ -76,7 +76,7 @@ export default function Testimonials(Prop: {
     <MotionDiv
       initial="initial"
       whileInView="animate"
-      variants={variantUpslideX}
+      variants={variantOpacityX}
       custom={2}
     >
       <TestimonialsSlider
