@@ -1,10 +1,10 @@
-"use client";
+import { MotionDiv, variantUpslideX } from "../motion/motion";
+import TestimonialsSlider from "./testimonialSliders";
 
-import { RxAvatar } from "react-icons/rx";
-import { motion } from "motion/react";
-import { MotionDiv, variantOpacityX, variantUpslide } from "../motion/motion";
-
-export default function Testimonials(Prop: { class: string }) {
+export default function Testimonials(Prop: {
+  classHome: string;
+  classTeam: string;
+}) {
   const testimonials = [
     {
       id: 1,
@@ -73,60 +73,17 @@ export default function Testimonials(Prop: { class: string }) {
   ];
 
   return (
-    <section
-      className={`${Prop.class} flex justify-center content-center p-[5%]`}
+    <MotionDiv
+      initial="initial"
+      whileInView="animate"
+      variants={variantUpslideX}
+      custom={2}
     >
-      <MotionDiv initial="initial" whileInView="animate">
-        <div className="text-center">
-          <motion.h1
-            variants={variantUpslide}
-            custom={0}
-            className="text-xs mb-5"
-          >
-            OUR TESTIMONIALS
-          </motion.h1>
-          <motion.h1
-            variants={variantUpslide}
-            custom={1}
-            className="text-2xl sm:text-4xl text-red-700 font-extrabold"
-          >
-            Bale Archterra Feedback from Our Clients
-          </motion.h1>
-          <motion.p variants={variantUpslide} custom={2} className="mt-2 mb-10">
-            We are proudly driven to help design a better world, We are trusted
-            by our clients and experienced to plan better.
-          </motion.p>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 lg:max-w-7xl">
-          {testimonials.map((item, idx) => (
-            <motion.div
-              key={idx}
-              variants={variantOpacityX}
-              custom={3 + idx}
-              className={` bg-[#063852] p-3 text-white sm:p-5 text-center hover:scale-[1.02] hover:bg-red-700 rounded-md flex flex-col justify-between`}
-            >
-              <div>
-                <p className="text-[10px] md:text-xs lg:text-sm italic font-extralight mb-3">
-                  "{item.testimony}"
-                </p>
-              </div>
-              <div className="flex mt-5">
-                <div className="text-4xl content-center text-yellow-500 font-extrabold">
-                  <RxAvatar />
-                </div>
-                <div className="text-left ml-2">
-                  <h1 className="font-bold mb-1 mt-3 text-xs lg:text-md">
-                    {item.name}
-                  </h1>
-                  <p className="font-extralight text-[10px] sm:text-xs">
-                    {item.job}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </MotionDiv>
-    </section>
+      <TestimonialsSlider
+        testimonials={testimonials}
+        classHome={Prop.classHome}
+        classTeam={Prop.classTeam}
+      />
+    </MotionDiv>
   );
 }

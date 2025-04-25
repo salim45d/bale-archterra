@@ -21,6 +21,19 @@ const variantUpslide = {
   }),
 };
 
+const variantUpslideX = {
+  initial: { x: "100%", opacity: 0.3 },
+  animate: (custom: number) => ({
+    x: "0%",
+    opacity: 1,
+    transition: {
+      duration: 2,
+      delay: 0.2 * custom,
+      ease: [0.25, 1, 0.5, 1],
+    },
+  }),
+};
+
 const variantOpacity = {
   initial: { opacity: 0, y: "10%" },
   animate: (custom: number) => ({
@@ -93,6 +106,7 @@ export {
   MotionP,
   MotionImg,
   variantUpslide,
+  variantUpslideX,
   variantOpacityX,
   variantOpacity,
 };

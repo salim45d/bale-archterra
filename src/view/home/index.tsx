@@ -15,7 +15,7 @@ export default function HomeView() {
       <AboutHome class={""} display={""} />
       <ServiceHome />
       <TeamHome class={""} display={""} grid={"sm:grid-cols-2"} />
-      <Testimonials class={"bg-[whitesmoke]"} />
+      <Testimonials classHome={"bg-[whitesmoke] p-[5%]"} classTeam={""} />
     </div>
   );
 }

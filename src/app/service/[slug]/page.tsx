@@ -35,21 +35,21 @@ export default async function ServiceSection({
             <div className="text-center col-span-1 md:col-span-2">
               <MotionH1
                 variants={variantUpslide}
-                custom={0}
+                custom={1}
                 className="text-xs mb-5"
               >
                 OUR SERVICE
               </MotionH1>
               <MotionH1
                 variants={variantUpslide}
-                custom={1}
+                custom={2}
                 className="text-2xl sm:text-4xl text-red-700 font-extrabold"
               >
                 {service?.fields.tittle}
               </MotionH1>
               <MotionP
                 variants={variantUpslide}
-                custom={2}
+                custom={3}
                 className="text-[#063852] font-extrabold mb-5"
               >
                 {service?.fields.subtitle}
@@ -60,7 +60,7 @@ export default async function ServiceSection({
                 <div className="inline-block content-end">
                   <MotionImg
                     variants={variantUpslide}
-                    custom={1}
+                    custom={2}
                     className={`rounded-md w-full object-cover h-auto`}
                     src={`https:${
                       (service?.fields.image1 as IAsset).fields.file.url
@@ -73,7 +73,7 @@ export default async function ServiceSection({
                 <div className="inline-block content-end">
                   <MotionImg
                     variants={variantUpslide}
-                    custom={2}
+                    custom={3}
                     className={`rounded-md w-full object-cover h-auto`}
                     src={`https:${
                       (service?.fields.image2 as IAsset).fields.file.url
@@ -85,7 +85,7 @@ export default async function ServiceSection({
                 </div>
                 <MotionImg
                   variants={variantOpacity}
-                  custom={3}
+                  custom={4}
                   className={`rounded-md w-full object-cover h-auto`}
                   src={`https:${
                     (service?.fields.image3 as IAsset).fields.file.url
@@ -96,7 +96,7 @@ export default async function ServiceSection({
                 />{" "}
                 <MotionImg
                   variants={variantOpacity}
-                  custom={4}
+                  custom={5}
                   className={`rounded-md w-full object-cover h-auto`}
                   src={`https:${
                     (service?.fields.image4 as IAsset).fields.file.url
@@ -110,7 +110,7 @@ export default async function ServiceSection({
             <div>
               <MotionDiv
                 variants={variantOpacityX}
-                custom={2}
+                custom={4}
                 className="text-justify"
               >
                 <RichText document={service?.fields.opening} />
@@ -120,7 +120,7 @@ export default async function ServiceSection({
 
               <MotionP
                 variants={variantOpacityX}
-                custom={3}
+                custom={4}
                 className="text-md lg:text-lg font-extrabold italic content-center text-red-700 pb-5 pt-16"
               >
                 Start from Rp{service?.fields.price}/m<sup>2</sup>
