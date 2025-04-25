@@ -13,8 +13,6 @@ export default async function Team() {
   const entry = process.env.NEXT_PUBLIC_CONTENTFUL_ENTRY_ID_CULTURE || "";
   const about = await getAboutContentfulPage(entry);
 
-  console.log(about);
-
   return (
     <div>
       <section

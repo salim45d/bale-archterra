@@ -18,8 +18,8 @@ export default function ImageSlider() {
               <Image
                 src={item.href}
                 className={`rounded-lg object-cover max-w-none`}
-                width={380}
-                height={480}
+                width={300}
+                height={400}
                 alt={`History Image ${idx}`}
                 loading="lazy"
               />
@@ -32,8 +32,8 @@ export default function ImageSlider() {
               <Image
                 src={item.href}
                 className={`rounded-lg object-cover max-w-none`}
-                width={380}
-                height={480}
+                width={300}
+                height={400}
                 alt={`History Image ${idx}`}
                 loading="lazy"
               />
