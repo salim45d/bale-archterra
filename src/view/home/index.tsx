@@ -8,7 +8,7 @@ import Testimonials from "@/components/testimonials/testimonials";
 
 export default function HomeView() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <HeaderHome />
       <Headline />
       <SummaryHome />

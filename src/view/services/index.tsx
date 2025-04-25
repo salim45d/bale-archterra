@@ -4,7 +4,7 @@ import ServiceSectionAll from "@/components/service/serviceAll";
 
 export default function ServicesPage() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header img={"/service.jpg"} tittle={"Our Service"} />
       <Headline />
       <ServiceSectionAll />

@@ -61,7 +61,7 @@ export default function TestimonialsSlider(Prop: {
         </MotionDiv>
         {/* Testimonial image*/}
         <div className="relative h-32">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-red-800/25 before:via-red-800/5 before:via-25% before:to-red-800/0 before:to-75% before:rounded-full before:-z-10">
+          <div className="absolute top-0  left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-red-800/25 before:via-red-800/5 before:via-25% before:to-red-800/0 before:to-75% before:rounded-full before:-z-10">
             <div className="h-32 text-[#063852]">
               {Prop.testimonials.map((testimonial, index) => (
                 <Transition
@@ -127,7 +127,7 @@ export default function TestimonialsSlider(Prop: {
           {Prop.testimonials.map((testimonial, index) => (
             <button
               key={index}
-              className={`rounded-md px-3 py-2 text-xs sm:text-sm font-bold leading-6 shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 mr-1 my-1 ${
+              className={`rounded-md px-3 py-2 text-xs sm:text-sm font-bold leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 mr-1 my-1 ${
                 active === index
                   ? "bg-white text-red-700 hover:text-white  hover:bg-red-800 border border-red-800"
                   : "bg-red-700 hover:bg-red-800 text-white"

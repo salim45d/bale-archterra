@@ -7,7 +7,7 @@ import Testimonials from "@/components/testimonials/testimonials";
 
 export default function TeamsPage() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header img={"/team.jpg"} tittle={"Our Team"} />
       <Headline />
       <TeamHome class={"bg-[whitesmoke]"} display={"hidden"} grid={""} />

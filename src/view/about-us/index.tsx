@@ -9,7 +9,7 @@ import ImageSlider from "@/components/about/images";
 
 export default function AboutPage() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header img={"/building.jpg"} tittle={"About us"} />
       <Headline />
       <AboutHome class={"bg-[whitesmoke]"} display={"hidden"} />
