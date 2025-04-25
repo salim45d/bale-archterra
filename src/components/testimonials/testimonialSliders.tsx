@@ -39,7 +39,7 @@ export default function TestimonialsSlider(Prop: {
   return (
     <section className={`flex justify-center content-center ${Prop.classHome}`}>
       <div className={`w-full max-w-7xl mx-auto text-center ${Prop.classTeam}`}>
-        <MotionDiv initial="initial" whileInView="animate" className="mb-14">
+        <MotionDiv initial="initial" whileInView="animate" className="mb-24">
           <motion.h1
             variants={variantUpslide}
             custom={3}
@@ -54,7 +54,7 @@ export default function TestimonialsSlider(Prop: {
           >
             Bale Archterra Feedback from Our Clients
           </motion.h1>
-          <motion.p variants={variantUpslide} custom={5} className="mt-2 mb-10">
+          <motion.p variants={variantUpslide} custom={5} className="mt-2">
             We are proudly driven to help design a better world, We are trusted
             by our clients and experienced to plan better.{" "}
           </motion.p>
