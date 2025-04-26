@@ -2,7 +2,6 @@ import Header from "@/components/header/header";
 import Headline from "@/components/headline/headline";
 import History from "@/components/about/history";
 import AboutHome from "@/components/about/aboutHome";
-import TeamSection from "@/components/team/teamSection";
 import Team from "@/components/about/team";
 import Culture from "@/components/about/culture";
 import ImageSlider from "@/components/about/images";
