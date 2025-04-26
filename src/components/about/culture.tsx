@@ -1,6 +1,6 @@
 import ContentfulPage from "./components/contentfulPage";
 
-export default async function Culture() {
+export default function Culture() {
   const entry = process.env.NEXT_PUBLIC_CONTENTFUL_ENTRY_ID_CULTURE || "";
 
   return (

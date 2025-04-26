@@ -1,6 +1,6 @@
 import ContentfulPage from "./components/contentfulPage";
 
-export default async function History() {
+export default function History() {
   const entry = process.env.NEXT_PUBLIC_CONTENTFUL_ENTRY_ID_HISTORY || "";
 
   return (

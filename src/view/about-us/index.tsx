@@ -16,7 +16,6 @@ export default function AboutPage() {
       <History />
       <ImageSlider />
       <Team />
-      <TeamSection />
       <Culture />
     </div>
   );

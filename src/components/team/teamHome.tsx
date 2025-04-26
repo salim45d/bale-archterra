@@ -8,7 +8,6 @@ import {
   variantUpslide,
   variantOpacity,
 } from "../motion/motion";
-import { animate } from "motion";
 import ITitle from "@/types/title.interface";
 import TitleSlice from "../tittle/title";
 
@@ -32,8 +31,7 @@ export default async function TeamHome(Prop: {
           custom={0}
           initial="initial"
           whileInView="animate"
-          className={`grid ${Prop.grid} grid-cols-1 bg-[whitesmoke] p-5 sm:p-8 gap-5 sm:gap-8
-        lg:gap-5 overflow-hidden`}
+          className={`grid ${Prop.grid} grid-cols-1 bg-[whitesmoke] overflow-hidden`}
         >
           <div
             className={`flex flex-wrap content-center justify-around ${Prop.display}`}
