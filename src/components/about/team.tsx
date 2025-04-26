@@ -1,4 +1,4 @@
-import TeamSection from "../team/teamSection";
+import TeamSection from "../team/components/teamSection";
 import ContentfulPage from "./components/contentfulPage";
 
 export default function Team() {

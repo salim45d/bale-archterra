@@ -3,8 +3,8 @@ import HeaderHome from "@/components/header/headerHome";
 import Headline from "@/components/headline/headline";
 import ServiceHome from "@/components/service/serviceHome";
 import SummaryHome from "@/components/header/summaryHome";
-import TeamHome from "@/components/team/teamHome";
 import Testimonials from "@/components/testimonials/testimonials";
+import TeamHome from "@/components/team/components/teamHome";
 
 export default function HomeView() {
   return (

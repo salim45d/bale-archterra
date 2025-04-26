@@ -1,11 +1,11 @@
 import { getTeam } from "@/api/api";
 import { ITeam } from "@/types/team.interface";
 import {
+  variantUpslide,
   MotionDiv,
   variantOpacity,
   variantOpacityX,
-  variantUpslide,
-} from "../motion/motion";
+} from "@/components/motion/motion";
 
 export default async function TeamSection() {
   const teams: ITeam = await getTeam();
@@ -19,7 +19,7 @@ export default async function TeamSection() {
             initial="initial"
             whileInView="animate"
             variants={variantUpslide}
-            custom={idx}
+            custom={idx + 1}
             className="bg-[whitesmoke] rounded-md p-2 flex justify-between flex-col hover:bg-[#063852] hover:text-white hover:scale-[1.02]"
           >
             <MotionDiv

@@ -1,15 +1,15 @@
 import { getTeam } from "@/api/api";
-import RedButton from "@/components/button/redButton";
-import { ITeam } from "@/types/team.interface";
 import {
   MotionDiv,
   MotionP,
   variantOpacityX,
   variantUpslide,
   variantOpacity,
-} from "../motion/motion";
+} from "@/components/motion/motion";
+import { ITeam } from "@/types/team.interface";
+import RedButton from "@/components/button/redButton";
 import ITitle from "@/types/title.interface";
-import TitleSlice from "../tittle/title";
+import TitleSlice from "@/components/tittle/title";
 
 export default async function TeamHome(Prop: {
   class: string;

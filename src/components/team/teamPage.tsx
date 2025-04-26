@@ -1,5 +1,5 @@
-import TeamHome from "./teamHome";
-import TeamSection from "./teamSection";
+import TeamHome from "./components/teamHome";
+import TeamSection from "./components/teamSection";
 
 export default function TeamPages() {
   return (
