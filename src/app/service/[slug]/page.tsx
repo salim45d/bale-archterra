@@ -7,13 +7,13 @@ import ServiceHome from "@/components/service/serviceHome";
 import { IAsset } from "@/types/contentful.type";
 import {
   MotionDiv,
-  MotionH1,
   MotionP,
   MotionImg,
   variantUpslide,
   variantOpacity,
   variantOpacityX,
 } from "@/components/motion/motion";
+import TitleSlice from "@/components/tittle/title";
 
 export default async function ServiceSection({
   params,
@@ -33,27 +33,11 @@ export default async function ServiceSection({
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
             <div className="text-center col-span-1 md:col-span-2">
-              <MotionH1
-                variants={variantUpslide}
-                custom={1}
-                className="text-xs mb-5"
-              >
-                OUR SERVICE
-              </MotionH1>
-              <MotionH1
-                variants={variantUpslide}
-                custom={2}
-                className="text-2xl sm:text-4xl text-red-700 font-extrabold"
-              >
-                {service?.fields.tittle}
-              </MotionH1>
-              <MotionP
-                variants={variantUpslide}
-                custom={3}
-                className="text-[#063852] font-extrabold mb-5"
-              >
-                {service?.fields.subtitle}
-              </MotionP>
+              <TitleSlice
+                subtitle={"ABOUT US"}
+                title={service?.fields.tittle}
+                quote={service?.fields.subtitle}
+              />
             </div>
             <div className="px-2 md:px-0 lg:px-5">
               <div className="grid grid-cols-2 gap-2">

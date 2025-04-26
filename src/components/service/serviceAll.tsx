@@ -4,16 +4,23 @@ import RichText from "@/components/richtext/richText";
 import { IAsset } from "@/types/contentful.type";
 import {
   MotionDiv,
-  MotionH1,
   MotionP,
   MotionImg,
   variantUpslide,
   variantOpacity,
   variantOpacityX,
 } from "../motion/motion";
+import ITitle from "@/types/title.interface";
+import TitleSlice from "../tittle/title";
 
 export default async function ServiceSectionAll() {
   const service = await getServiceContentful();
+  const title: ITitle = {
+    subtitle: "OUR SERVICE",
+    title: "Bale Archterra Provide Best Service",
+    quote: `"Look for contruction services with a proven back record of success
+              in plan and build better properties"`,
+  };
   return (
     <MotionDiv
       initial="initial"
@@ -22,24 +29,15 @@ export default async function ServiceSectionAll() {
     >
       <div className="lg:max-w-7xl">
         <div className="text-center px-[5%]">
-          <MotionH1
-            variants={variantUpslide}
-            custom={0}
-            className="text-xs mb-5"
-          >
-            OUR SERVICE
-          </MotionH1>
-          <MotionH1
-            variants={variantUpslide}
-            custom={1}
-            className="text-2xl sm:text-4xl text-red-700 font-extrabold"
-          >
-            Bale Archterra Provide Best Service
-          </MotionH1>
+          <TitleSlice
+            subtitle={title.subtitle}
+            title={title.title}
+            quote={title.quote}
+          />
           <MotionP
             variants={variantOpacityX}
             custom={2}
-            className="mt-5 text-justify"
+            className="text-justify"
           >
             Look for contruction services with a proven back record of success
             in plan and build better properties. Fuelled by unbound creativity
@@ -61,28 +59,12 @@ export default async function ServiceSectionAll() {
                 whileInView="animate"
                 className="grid grid-cols-1 md:grid-cols-2 gap-5 "
               >
-                <div className="text-center col-span-1 md:col-span-2 mb-14">
-                  <MotionH1
-                    variants={variantUpslide}
-                    custom={idx}
-                    className="text-xs mb-5"
-                  >
-                    OUR SERVICE
-                  </MotionH1>
-                  <MotionH1
-                    variants={variantUpslide}
-                    custom={idx + 1}
-                    className="text-2xl sm:text-4xl text-red-700 font-extrabold mb-2"
-                  >
-                    {item?.fields.tittle}
-                  </MotionH1>
-                  <MotionP
-                    variants={variantUpslide}
-                    custom={idx + 2}
-                    className="text-[#063852] font-extrabold"
-                  >
-                    {item?.fields.subtitle}
-                  </MotionP>
+                <div className="text-center col-span-1 md:col-span-2">
+                  <TitleSlice
+                    subtitle={"ABOUT US"}
+                    title={item?.fields.tittle}
+                    quote={item?.fields.subtitle}
+                  />
                 </div>
                 <div className="px-2 md:px-0 lg:px-5">
                   <div className="grid grid-cols-2 gap-2 ">

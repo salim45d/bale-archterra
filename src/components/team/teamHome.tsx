@@ -3,13 +3,14 @@ import RedButton from "@/components/button/redButton";
 import { ITeam } from "@/types/team.interface";
 import {
   MotionDiv,
-  MotionH1,
   MotionP,
   variantOpacityX,
   variantUpslide,
   variantOpacity,
 } from "../motion/motion";
 import { animate } from "motion";
+import ITitle from "@/types/title.interface";
+import TitleSlice from "../tittle/title";
 
 export default async function TeamHome(Prop: {
   class: string;
@@ -17,6 +18,11 @@ export default async function TeamHome(Prop: {
   grid: string;
 }) {
   const teams: ITeam = await getTeam();
+  const title: ITitle = {
+    subtitle: " OUR TEAM",
+    title: "Bale Archterra Specialist Team",
+    quote: `"A successful team is a group of many hands and one mind."`,
+  };
 
   return (
     <section className={`${Prop.class} flex justify-center`}>
@@ -51,23 +57,14 @@ export default async function TeamHome(Prop: {
             ))}{" "}
           </div>
           <div className="text-center">
-            <MotionH1
-              variants={variantUpslide}
-              custom={1}
-              className="text-xs mb-5"
-            >
-              OUR TEAM
-            </MotionH1>
-            <MotionH1
-              variants={variantUpslide}
-              custom={2}
-              className="text-2xl sm:text-4xl text-red-700 font-extrabold mb-10"
-            >
-              Bale Archterra Specialist Team
-            </MotionH1>
+            <TitleSlice
+              subtitle={title.subtitle}
+              title={title.title}
+              quote={title.quote}
+            />
             <MotionP
               variants={variantOpacityX}
-              custom={3}
+              custom={4}
               className="text-justify"
             >
               Fuelled by unbound creativity and cutting-edge technology, our
@@ -82,7 +79,7 @@ export default async function TeamHome(Prop: {
             </MotionP>
             <MotionDiv
               variants={variantOpacityX}
-              custom={4}
+              custom={5}
               className={`${Prop.display} text-right mt-10`}
             >
               <RedButton href={"/team"} tittle={"Find more"} />

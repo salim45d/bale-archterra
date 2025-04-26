@@ -1,14 +1,20 @@
+import ITitle from "@/types/title.interface";
 import ContactForm from "../contact-form/contact-form";
-import {
-  MotionDiv,
-  MotionH1,
-  MotionP,
-  variantOpacity,
-  variantOpacityX,
-  variantUpslide,
-} from "../motion/motion";
+import { MotionDiv, variantOpacity, variantOpacityX } from "../motion/motion";
+import TitleSlice from "../tittle/title";
 
 export default function ContactSection() {
+  const title: ITitle = {
+    subtitle: "OUR CONTACT",
+    title: "Bale Archterra Get in Touch",
+    quote: `Feel free to get in touch with us via contact form, email or
+              phone.
+              
+              
+              We are always open to discussing new projects, creative ideas or
+              opportunities to be part of your visions.`,
+  };
+
   return (
     <section
       className="bg-[whitesmoke] p-[5%] flex justify-center mt-[5%]"
@@ -20,30 +26,11 @@ export default function ContactSection() {
         className=" lg:max-w-7xl"
       >
         <div className="text-center">
-          <MotionH1
-            custom={0}
-            variants={variantUpslide}
-            className="text-xs mb-5"
-          >
-            OUR CONTACT
-          </MotionH1>
-          <MotionH1
-            custom={1}
-            variants={variantUpslide}
-            className="text-2xl sm:text-4xl text-red-700 font-extrabold"
-          >
-            Bale Archterra Get in Touch
-          </MotionH1>
-          <div className="mt-2">
-            <MotionP custom={2} variants={variantUpslide}>
-              Feel free to get in touch with us via contact form, email or
-              phone.
-            </MotionP>
-            <MotionP custom={3} variants={variantUpslide}>
-              We are always open to discussing new projects, creative ideas or
-              opportunities to be part of your visions.
-            </MotionP>
-          </div>
+          <TitleSlice
+            subtitle={title.subtitle}
+            title={title.title}
+            quote={title.quote}
+          />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-5">
           <MotionDiv

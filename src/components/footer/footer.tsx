@@ -111,7 +111,7 @@ export default function Footer() {
             </h2>
             <NavContacticon
               class={"flex-col text-xl"}
-              classText={"text-base lg:text-lg"}
+              classText={"text-sm lg:text-base"}
             />
             <div className="w-[50%] md:w-[30%] lg:w-full mt-4">
               <NavSocialIcon class={"justify-between text-2xl"} />

@@ -19,9 +19,12 @@ export default function Navlink() {
             custom={idx + 1}
             initial="initial"
             whileInView="animate"
-            className="hover:scale-110 overflow-hidden"
+            className="overflow-hidden"
           >
-            <Link href={item.href} className="hover:scale-150">
+            <Link
+              href={item.href}
+              className="hover:text-yellow-500 hover:font-extrabold"
+            >
               {item.navtext}
             </Link>
           </motion.li>

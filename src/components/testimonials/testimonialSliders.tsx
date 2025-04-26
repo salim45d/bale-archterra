@@ -2,9 +2,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import { RxAvatar } from "react-icons/rx";
-import { motion } from "motion/react";
-import { MotionDiv, variantUpslide } from "../motion/motion";
 import ITestimonials from "@/types/testimonials.interface";
+import TitleSlice from "../tittle/title";
+import ITitle from "@/types/title.interface";
 
 export default function TestimonialsSlider(Prop: {
   classHome: string;
@@ -15,6 +15,12 @@ export default function TestimonialsSlider(Prop: {
   const [active, setActive] = useState<number>(0);
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const autorotateTiming: number = 5000;
+
+  const title: ITitle = {
+    subtitle: "OUR TESTIMONIALS",
+    title: "Bale Archterra Feedback from Our Clients",
+    quote: `"We are proudly driven to help design a better world, We are trusted by our clients and experienced to plan better"`,
+  };
 
   useEffect(() => {
     if (!autorotate) return;
@@ -39,28 +45,13 @@ export default function TestimonialsSlider(Prop: {
   return (
     <section className={`flex justify-center content-center ${Prop.classHome}`}>
       <div className={`w-full max-w-7xl mx-auto text-center ${Prop.classTeam}`}>
-        <MotionDiv initial="initial" whileInView="animate" className="mb-24">
-          <motion.h1
-            variants={variantUpslide}
-            custom={3}
-            className="text-xs mb-5"
-          >
-            OUR TESTIMONIALS
-          </motion.h1>
-          <motion.h1
-            variants={variantUpslide}
-            custom={4}
-            className="text-2xl sm:text-4xl text-red-700 font-extrabold"
-          >
-            Bale Archterra Feedback from Our Clients
-          </motion.h1>
-          <motion.p variants={variantUpslide} custom={5} className="mt-2">
-            We are proudly driven to help design a better world, We are trusted
-            by our clients and experienced to plan better.{" "}
-          </motion.p>
-        </MotionDiv>
+        <TitleSlice
+          subtitle={title.subtitle}
+          title={title.title}
+          quote={title.quote}
+        />
         {/* Testimonial image*/}
-        <div className="relative h-32">
+        <div className="relative h-32 mt-20">
           <div className="absolute top-0  left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-red-800/25 before:via-red-800/5 before:via-25% before:to-red-800/0 before:to-75% before:rounded-full before:-z-10">
             <div className="h-32 text-[#063852]">
               {Prop.testimonials.map((testimonial, index) => (
