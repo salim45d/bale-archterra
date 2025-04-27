@@ -7,7 +7,7 @@ import WhiteButton from "@/components/button/whiteButton";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { MotionDiv, variantUpslide } from "@/components/motion/motion";
+import { MotionDiv, variantOpacityX } from "@/components/motion/motion";
 
 export default function ServiceCardSwiper(Prop: {
   service: Entry<TypeServiceSkeleton, undefined, string>[] | undefined;
@@ -16,7 +16,7 @@ export default function ServiceCardSwiper(Prop: {
     <div className="w-full">
       <Swiper
         modules={[Pagination, Navigation, Autoplay]}
-        spaceBetween={10}
+        spaceBetween={5}
         slidesPerView={1}
         pagination={{ clickable: true }}
         navigation={true}
@@ -28,9 +28,11 @@ export default function ServiceCardSwiper(Prop: {
         breakpoints={{
           450: {
             slidesPerView: 2,
+            spaceBetween: 10,
           },
           900: {
             slidesPerView: 3,
+            spaceBetween: 20,
           },
         }}
       >
@@ -39,9 +41,9 @@ export default function ServiceCardSwiper(Prop: {
             <MotionDiv
               initial="initial"
               whileInView="animate"
-              variants={variantUpslide}
+              variants={variantOpacityX}
               custom={idx}
-              className={`bg-yellow-500 text-center hover:bg-red-700 hover:text-white rounded-md mb-10 p-1`}
+              className={`bg-yellow-500 text-center hover:bg-red-700 hover:text-white rounded-md mb-10 p-1 overflow-hidden`}
             >
               <img
                 className={`rounded-md rounded-b-none`}
