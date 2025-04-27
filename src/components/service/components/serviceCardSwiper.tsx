@@ -7,7 +7,7 @@ import WhiteButton from "@/components/button/whiteButton";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { MotionDiv, variantOpacityX } from "@/components/motion/motion";
+import { MotionDiv, variantUpslide } from "@/components/motion/motion";
 
 export default function ServiceCardSwiper(Prop: {
   service: Entry<TypeServiceSkeleton, undefined, string>[] | undefined;
@@ -39,8 +39,8 @@ export default function ServiceCardSwiper(Prop: {
             <MotionDiv
               initial="initial"
               whileInView="animate"
-              variants={variantOpacityX}
-              custom={idx + 1}
+              variants={variantUpslide}
+              custom={idx}
               className={`bg-yellow-500 text-center hover:bg-red-700 hover:text-white rounded-md mb-10 p-1`}
             >
               <img
@@ -57,13 +57,11 @@ export default function ServiceCardSwiper(Prop: {
                   <h1 className="font-extrabold mb-2 text-lg lg:text-xl">
                     {item.fields.tittle}
                   </h1>
-                  <p className="text-sm md:text-base lg:text-lg">
-                    {item.fields.cardText}
-                  </p>
+                  <p className="text-sm md:text-base">{item.fields.cardText}</p>
                 </div>
                 <div>
-                  <p className="text-sm sm:text-base font-bold italic mb-5 mt-10">
-                    from Rp{item.fields.price}/m<sup>2</sup>
+                  <p className="text-sm md:text-base font-bold italic mb-5 mt-10">
+                    Start from Rp{item.fields.price}/m<sup>2</sup>
                   </p>
                   <WhiteButton
                     href={`/service/${item.fields.slug}`}

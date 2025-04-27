@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import RedButton from "../button/redButton";
 import { motion } from "motion/react";
 import { variantUpslide, variantOpacityX } from "../motion/motion";
 
@@ -46,18 +45,10 @@ export default function HeaderHome() {
           <motion.p
             variants={variantUpslide}
             custom={3}
-            className="italic text-md sm:text-lg"
+            className="text-md sm:text-lg"
           >
             "Build Properties for Your Statisfaction"
           </motion.p>
-          <motion.div
-            variants={variantOpacityX}
-            custom={5}
-            className="mt-20"
-            id="about-home"
-          >
-            <RedButton href={"/#about-home"} tittle={"Find more"} />
-          </motion.div>
         </motion.div>
       </div>
     </header>
