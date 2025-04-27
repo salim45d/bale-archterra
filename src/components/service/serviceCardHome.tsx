@@ -30,11 +30,7 @@ export default async function ServiceCardHome() {
           quote={title.quote}
         />
         <ServiceCardSwiper service={service} />
-        <MotionDiv
-          variants={variantOpacityX}
-          custom={3}
-          className=" mt-5 text-right"
-        >
+        <MotionDiv variants={variantOpacityX} custom={3} className="text-right">
           <RedButton href={"/service"} tittle={"All Service"} />
         </MotionDiv>
       </MotionDiv>
