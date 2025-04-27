@@ -105,7 +105,7 @@ export default function TestimonialsSlider(Prop: {
                 beforeEnter={() => heightFix()}
               >
                 <div>
-                  <p className="text-sm sm:text-md lg:text-lg font-bold text-black italic mb-3">
+                  <p className="text-base lg:text-lg font-bold text-black italic mb-3">
                     "{testimonial.testimony}"
                   </p>
                 </div>
@@ -128,12 +128,7 @@ export default function TestimonialsSlider(Prop: {
                 setAutorotate(false);
               }}
             >
-              <span>{testimonial.name}</span>{" "}
-              <span
-                className={`${
-                  active === index ? "text-indigo-200" : "text-slate-300"
-                }`}
-              ></span>
+              {testimonial.name}
             </button>
           ))}
         </div>

@@ -17,7 +17,7 @@ export default function TitleSlice(Prop: ITitle) {
       <MotionP
         variants={variantUpslide}
         custom={3}
-        className="mt-2 text-[#063852] font-extrabold"
+        className="mt-2 text-[#063852] font-semibold"
       >
         {Prop.quote}
       </MotionP>

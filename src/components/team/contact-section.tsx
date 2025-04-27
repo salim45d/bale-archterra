@@ -25,7 +25,7 @@ export default function ContactSection() {
         whileInView="animate"
         className=" lg:max-w-7xl"
       >
-        <div className="text-center">
+        <div className="text-center mx-0 sm:mx-[10%]">
           <TitleSlice
             subtitle={title.subtitle}
             title={title.title}

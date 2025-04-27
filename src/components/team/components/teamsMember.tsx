@@ -7,7 +7,7 @@ import {
   variantOpacityX,
 } from "@/components/motion/motion";
 
-export default async function TeamSection() {
+export default async function TeamsMember() {
   const teams: ITeam = await getTeam();
 
   return (

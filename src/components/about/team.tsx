@@ -1,4 +1,4 @@
-import TeamSection from "../team/components/teamSection";
+import TeamsMember from "../team/components/teamsMember";
 import ContentfulPage from "./components/contentfulPage";
 
 export default function Team() {
@@ -11,7 +11,7 @@ export default function Team() {
         class={"px-[5%]"}
         classTeam={"bg-[whitesmoke] p-5 sm:p-[5%] rounded-md"}
       />
-      <TeamSection />
+      <TeamsMember />
     </>
   );
 }
