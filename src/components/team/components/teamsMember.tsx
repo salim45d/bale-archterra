@@ -1,3 +1,4 @@
+"use server";
 import { getTeam } from "@/api/api";
 import { ITeam } from "@/types/team.interface";
 import {
@@ -19,12 +20,12 @@ export default async function TeamsMember() {
             initial="initial"
             whileInView="animate"
             variants={variantUpslide}
-            custom={idx + 1}
+            custom={idx}
             className="bg-[whitesmoke] rounded-md p-2 flex justify-between flex-col hover:bg-[#063852] hover:text-white hover:scale-[1.02]"
           >
             <MotionDiv
               variants={variantOpacity}
-              custom={idx + 2}
+              custom={idx + 1}
               className="flex justify-center p-5"
             >
               <img
@@ -33,7 +34,7 @@ export default async function TeamsMember() {
                 className="rounded-full sm:w-28 w-20 h-20 sm:h-28 ring-2 p-1 ring-gray-300"
               />
             </MotionDiv>
-            <MotionDiv variants={variantOpacityX} custom={idx + 3}>
+            <MotionDiv variants={variantOpacityX} custom={idx + 2}>
               <h2 className="text-red-700 font-bold text-md sm:text-lg text-center">
                 {team.name.first} {team.name.last}
               </h2>{" "}

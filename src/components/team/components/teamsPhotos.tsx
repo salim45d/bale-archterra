@@ -1,3 +1,4 @@
+"use server";
 import { getTeam } from "@/api/api";
 import { MotionDiv, variantOpacity } from "@/components/motion/motion";
 import { ITeam } from "@/types/team.interface";

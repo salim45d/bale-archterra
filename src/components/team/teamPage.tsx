@@ -1,5 +1,5 @@
 import TeamsMember from "./components/teamsMember";
-import TeamsTittle from "./components/teamsTitle";
+import TeamsTittle from "./teamsTitle";
 
 export default function TeamPages() {
   return (

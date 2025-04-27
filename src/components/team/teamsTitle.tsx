@@ -21,7 +21,7 @@ export default function TeamsTittle(Prop: { display: string }) {
         title={title.title}
         quote={title.quote}
       />
-      <MotionP variants={variantOpacityX} custom={4} className="text-justify">
+      <MotionP variants={variantOpacityX} custom={2} className="text-justify">
         Fuelled by unbound creativity and cutting-edge technology, our
         Architectural, Civil and Interior Design Services are spearheaded to
         exceed the expectations of all those in need of an innovation,
@@ -34,7 +34,7 @@ export default function TeamsTittle(Prop: { display: string }) {
       </MotionP>
       <MotionDiv
         variants={variantOpacityX}
-        custom={5}
+        custom={3}
         className={`${Prop.display} text-right mt-10`}
       >
         <RedButton href={"/team"} tittle={"Find more"} />
