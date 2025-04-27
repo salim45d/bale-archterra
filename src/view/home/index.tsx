@@ -3,15 +3,15 @@ import HeaderHome from "@/components/home/headerHome";
 import Testimonials from "@/components/testimonials/testimonials";
 import TeamsHome from "@/components/team/teamHome";
 import HeaderHeadline from "@/components/home/headerHeadline";
-import VideoModalHome from "@/components/home/videoHome";
 import ServiceCardHome from "@/components/service/serviceCardHome";
+import WelcomeToHome from "@/components/home/welcomeToHome";
 
 export default function HomeView() {
   return (
     <div className="overflow-hidden">
       <HeaderHome />
       <HeaderHeadline />
-      <VideoModalHome />
+      <WelcomeToHome />
       <AboutHome class={""} display={""} />
       <ServiceCardHome />
       <TeamsHome />
