@@ -3,15 +3,11 @@ import { IModal, openModal } from "@/store/slice/modal";
 import { useDispatch, useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
 import Image from "next/image";
-import VideoModal from "./video";
-import {
-  variantUpslide,
-  variantOpacity,
-  variantOpacityX,
-} from "../motion/motion";
+import VideoModalHome from "./videoHome";
+import { variantUpslide, variantOpacity } from "../motion/motion";
 import { motion } from "motion/react";
 
-export default function SummaryHome() {
+export default function WelcomeToHome() {
   const modal = useSelector((state: { modal: IModal }) => state.modal);
   const dispatch = useDispatch();
 
@@ -93,7 +89,7 @@ export default function SummaryHome() {
             <p className="font-light text-right mt-10">Best Regards</p>
           </motion.div>
         </div>
-        {modal.isOpen && <VideoModal />}
+        {modal.isOpen && <VideoModalHome />}
       </motion.div>
     </section>
   );

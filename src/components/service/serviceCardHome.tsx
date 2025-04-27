@@ -6,7 +6,7 @@ import { MotionDiv, variantOpacityX } from "../motion/motion";
 import TitleSlice from "../tittle/title";
 import ITitle from "@/types/title.interface";
 
-export default async function ServiceHome() {
+export default async function ServiceCardHome() {
   const service = await getServiceContentful();
   const title: ITitle = {
     subtitle: "OUR SERVICE",

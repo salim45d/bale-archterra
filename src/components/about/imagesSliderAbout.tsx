@@ -1,7 +1,7 @@
 import { div } from "motion/react-client";
 import Image from "next/image";
 
-export default function ImageSlider() {
+export default function ImageSliderAbout() {
   const image = [
     { id: 1, href: "/history3.jpg" },
     { id: 2, href: "/history1.jpg" },

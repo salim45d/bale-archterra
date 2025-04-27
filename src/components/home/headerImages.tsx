@@ -8,7 +8,7 @@ interface IHeader {
   tittle: string;
 }
 
-export default function Header(prop: IHeader) {
+export default function HeaderImages(prop: IHeader) {
   return (
     <header>
       <div className="relative bg-black pt-14 sm:pt-0">

@@ -1,13 +1,13 @@
-import Header from "@/components/header/header";
-import Headline from "@/components/headline/headline";
-import ServiceSectionAll from "@/components/service/serviceAll";
+import HeaderImages from "@/components/home/headerImages";
+import HeaderHeadline from "@/components/home/headerHeadline";
+import ServiceAllPage from "@/components/service/servicePage";
 
 export default function ServicesPage() {
   return (
     <div className="overflow-hidden">
-      <Header img={"/service.jpg"} tittle={"Our Service"} />
-      <Headline />
-      <ServiceSectionAll />
+      <HeaderImages img={"/service.jpg"} tittle={"Our Service"} />
+      <HeaderHeadline />
+      <ServiceAllPage />
     </div>
   );
 }

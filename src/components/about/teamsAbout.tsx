@@ -1,7 +1,7 @@
 import TeamsMember from "../team/components/teamsMember";
 import ContentfulPage from "./components/contentfulPage";
 
-export default function Team() {
+export default function TeamsAbout() {
   const entry = process.env.NEXT_PUBLIC_CONTENTFUL_ENTRY_ID_TEAM || "";
 
   return (

@@ -1,7 +1,7 @@
 import ContentfulPage from "./components/contentfulPage";
 
-export default function History() {
-  const entry = process.env.NEXT_PUBLIC_CONTENTFUL_ENTRY_ID_HISTORY || "";
+export default function CultureAbout() {
+  const entry = process.env.NEXT_PUBLIC_CONTENTFUL_ENTRY_ID_CULTURE || "";
 
   return (
     <ContentfulPage

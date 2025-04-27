@@ -1,10 +1,3 @@
-import { getServiceContentfulbySlug } from "@/api/api";
-import RedButton from "@/components/button/redButton";
-import Header from "@/components/header/header";
-import Headline from "@/components/headline/headline";
-import RichText from "@/components/richtext/richText";
-import ServiceHome from "@/components/service/serviceHome";
-import { IAsset } from "@/types/contentful.type";
 import {
   MotionDiv,
   MotionP,
@@ -13,9 +6,16 @@ import {
   variantOpacity,
   variantOpacityX,
 } from "@/components/motion/motion";
+import { getServiceContentfulbySlug } from "@/api/api";
+import { IAsset } from "@/types/contentful.type";
 import TitleSlice from "@/components/tittle/title";
+import RedButton from "@/components/button/redButton";
+import RichText from "@/components/richtext/richText";
+import HeaderImages from "@/components/home/headerImages";
+import HeaderHeadline from "@/components/home/headerHeadline";
+import ServiceCardHome from "@/components/service/serviceCardHome";
 
-export default async function ServiceSection({
+export default async function ServiceSlugPage({
   params,
 }: {
   params: { slug: string };
@@ -23,8 +23,8 @@ export default async function ServiceSection({
   const service = await getServiceContentfulbySlug(params.slug);
   return (
     <div>
-      <Header img={"/service.jpg"} tittle={`${service?.fields.tittle}`} />
-      <Headline />
+      <HeaderImages img={"/service.jpg"} tittle={`${service?.fields.tittle}`} />
+      <HeaderHeadline />
       <section className="flex justify-center bg-[whitesmoke] px-[5%] pt-[5%]">
         <MotionDiv
           initial="initial"
@@ -116,7 +116,7 @@ export default async function ServiceSection({
           </div>
         </MotionDiv>
       </section>
-      <ServiceHome />
+      <ServiceCardHome />
     </div>
   );
 }

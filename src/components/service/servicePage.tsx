@@ -13,7 +13,7 @@ import {
 import ITitle from "@/types/title.interface";
 import TitleSlice from "../tittle/title";
 
-export default async function ServiceSectionAll() {
+export default async function ServiceAllPage() {
   const service = await getServiceContentful();
   const title: ITitle = {
     subtitle: "OUR SERVICE",

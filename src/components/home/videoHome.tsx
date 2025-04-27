@@ -3,7 +3,7 @@ import { IModal, closeModal } from "@/store/slice/modal";
 import { useDispatch, useSelector } from "react-redux";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 
-export default function VideoModal() {
+export default function VideoModalHome() {
   const modal = useSelector((state: { modal: IModal }) => state.modal);
   const dispatch = useDispatch();
 

@@ -1,21 +1,21 @@
-import Header from "@/components/header/header";
-import Headline from "@/components/headline/headline";
-import History from "@/components/about/history";
+import TeamsAbout from "@/components/about/teamsAbout";
+import HistoryAbout from "@/components/about/historyAbout";
+import ImageSliderAbout from "@/components/about/imagesSliderAbout";
+import CultureAbout from "@/components/about/cultureAbout";
 import AboutHome from "@/components/about/aboutHome";
-import Team from "@/components/about/team";
-import Culture from "@/components/about/culture";
-import ImageSlider from "@/components/about/images";
+import HeaderImages from "@/components/home/headerImages";
+import HeaderHeadline from "@/components/home/headerHeadline";
 
 export default function AboutPage() {
   return (
     <div className="overflow-hidden">
-      <Header img={"/building.jpg"} tittle={"About us"} />
-      <Headline />
+      <HeaderImages img={"/building.jpg"} tittle={"About us"} />
+      <HeaderHeadline />
       <AboutHome class={"bg-[whitesmoke]"} display={"hidden"} />
-      <History />
-      <ImageSlider />
-      <Team />
-      <Culture />
+      <HistoryAbout />
+      <ImageSliderAbout />
+      <TeamsAbout />
+      <CultureAbout />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { motion } from "motion/react";
 import { variantOpacityX } from "../motion/motion";
 
-export default function Headline() {
+export default function HeaderHeadline() {
   const headLineItem = [
     {
       id: 1,
