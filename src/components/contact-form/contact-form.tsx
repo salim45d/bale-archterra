@@ -173,7 +173,7 @@ export default function ContactForm() {
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="rounded-md bg-red-700 px-20 py-2 text-sm font-bold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 hover:text-white hover:border hover:border-slate-100 mt-5"
+                    className="rounded-md bg-red-700 px-20 py-2 font-bold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 hover:text-white hover:border hover:border-slate-100 mt-5"
                   >
                     Send
                   </button>
