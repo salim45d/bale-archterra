@@ -1,6 +1,6 @@
 import { MotionDiv, variantUpslide } from "../motion/motion";
 import TeamPhotos from "./components/teamsPhotos";
-import TeamsTittle from "./teamsTitle";
+import TeamsTittle from "./components/teamsTitle";
 
 export default function TeamsHome() {
   return (

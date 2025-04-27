@@ -46,5 +46,6 @@ export const getTeam = async () => {
     return data;
   } catch (error) {
     const messageError = (error as Error).message;
+    console.log(messageError);
   }
 };
