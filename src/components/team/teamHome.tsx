@@ -10,7 +10,7 @@ export default function TeamsHome() {
         custom={0}
         initial="initial"
         whileInView="animate"
-        className={`grid grid-cols-1 sm:grid-cols-2 p-[3%] mx-0 md:mx-[2%] lg:mx-[5%] gap-5 sm:gap-8 lg:gap-5 bg-[whitesmoke] lg:max-w-7xl overflow-hidden rounded-xl`}
+        className={`grid grid-cols-1 sm:grid-cols-2 p-[5%] gap-5 sm:gap-8 lg:gap-5 bg-[whitesmoke] lg:max-w-7xl overflow-hidden rounded-xl`}
       >
         <TeamPhotos />
         <TeamsTittle display={""} />

@@ -29,8 +29,13 @@ export default function TeamsTittle(Prop: { display: string }) {
         our mettle as the finest team of architects, by displaying an
         outstanding track-record of design-excellence, coupled with service
         efficiency, responsiveness and a strong commitment towards project
-        deadlines as well as budgetary constraints. We welcome you to the Bale
-        Archterra.
+        deadlines as well as budgetary constraints. Our team takes over
+        everything, from an idea and concept development to realization. We
+        believe in traditions and incorporate them within our innovations. All
+        our projects incorporate a unique artistic image and functional
+        solutions. Client is the soul of the project. Our main goal is to
+        illustrate his/hers values and individuality through design. We welcome
+        you to the Bale Archterra.
       </MotionP>
       <MotionDiv
         variants={variantOpacityX}

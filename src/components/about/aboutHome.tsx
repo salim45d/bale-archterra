@@ -29,7 +29,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
               <motion.h1
                 variants={variantUpslide}
                 custom={1}
-                className="text-xs mb-5"
+                className="text-sm text-[#063852] font-semibold mb-3"
               >
                 ABOUT US
               </motion.h1>
@@ -46,7 +46,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
               <motion.p
                 variants={variantOpacityX}
                 custom={4}
-                className="mt-5 text-justify"
+                className="mt-5 text-justify text-[#063852] font-semibold"
               >
                 "With years of experience in the industry, we are commited to
                 delivering exceptional result that exceed our clients

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { variantUpslide, variantOpacityX } from "../motion/motion";
+import { variantUpslide} from "../motion/motion";
 
 export default function HeaderHome() {
   return (

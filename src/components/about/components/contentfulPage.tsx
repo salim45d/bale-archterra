@@ -8,7 +8,7 @@ import RichText from "@/components/richtext/richText";
 import TitleSlice from "@/components/tittle/title";
 import ITitle from "@/types/title.interface";
 
-export default async function ContentfulPage(Prop: {
+export default async function AboutContentfulPage(Prop: {
   entry: string;
   class: string;
   classTeam: string;

@@ -3,8 +3,12 @@ import { MotionDiv, MotionH1, MotionP, variantUpslide } from "../motion/motion";
 
 export default function TitleSlice(Prop: ITitle) {
   return (
-    <MotionDiv initial="initial" whileInView="animate" className="mb-16">
-      <MotionH1 variants={variantUpslide} custom={1} className="text-xs mb-5">
+    <MotionDiv initial="initial" whileInView="animate" className="mb-14">
+      <MotionH1
+        variants={variantUpslide}
+        custom={1}
+        className="text-sm text-[#063852] font-semibold mb-3"
+      >
         {Prop.subtitle}
       </MotionH1>
       <MotionH1
@@ -17,7 +21,7 @@ export default function TitleSlice(Prop: ITitle) {
       <MotionP
         variants={variantUpslide}
         custom={3}
-        className="mt-2 text-[#063852] font-semibold"
+        className="mt-1 text-[#063852] font-semibold"
       >
         {Prop.quote}
       </MotionP>

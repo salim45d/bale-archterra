@@ -1,10 +1,10 @@
-import ContentfulPage from "./components/contentfulPage";
+import AboutContentfulPage from "./components/contentfulPage";
 
 export default function CultureAbout() {
   const entry = process.env.NEXT_PUBLIC_CONTENTFUL_ENTRY_ID_CULTURE || "";
 
   return (
-    <ContentfulPage
+    <AboutContentfulPage
       entry={entry}
       class={"bg-[whitesmoke] p-[5%]"}
       classTeam={""}

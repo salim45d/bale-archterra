@@ -69,7 +69,7 @@ export default function TestimonialsSlider(Prop: {
                   beforeEnter={() => heightFix()}
                 >
                   <div className="relative top-4 left-1/2 -translate-x-1/2">
-                    <div className="text-4xl justify-items-center font-extrabold ">
+                    <div className="text-4xl justify-items-center font-extrabold inline-grid">
                       <RxAvatar />
                     </div>
                     <div className="ml-2">
@@ -86,9 +86,9 @@ export default function TestimonialsSlider(Prop: {
             </div>
           </div>
         </div>
-        <div className="mb-9 transition-all duration-150 delay-300 ease-in-out justify-items-center">
+        <div className="mb-9 transition-all duration-150 delay-300 ease-in-out">
           <div
-            className="relative  flex flex-col max-w-2xl"
+            className="relative max-w-2xl  justify-items-center inline-grid"
             ref={testimonialsRef}
           >
             {Prop.testimonials.map((testimonial, index) => (
