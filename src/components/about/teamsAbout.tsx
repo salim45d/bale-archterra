@@ -9,7 +9,7 @@ export default function TeamsAbout() {
     <>
       <AboutContentfulPage
         entry={entry}
-        class={""}
+        class={"px-[5%]"}
         classTeam={"bg-[whitesmoke] p-5 pb-16 md:p-[5%] md:pb-20  rounded-xl"}
       />
       <TeamsMemberCardSwiper teams={teams} />
