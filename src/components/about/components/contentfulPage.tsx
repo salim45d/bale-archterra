@@ -32,7 +32,7 @@ export default async function AboutContentfulPage(Prop: {
         <MotionDiv
           initial="initial"
           whileInView="animate"
-          className={`grid grid-cols-1 sm:grid-cols-2 gap-2 lg:max-w-7xl ${Prop.classTeam}`}
+          className={`grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-7xl ${Prop.classTeam}`}
         >
           <div className="mb-3 col-span-2 sm:col-span-1">
             <TitleSlice

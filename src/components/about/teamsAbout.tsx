@@ -1,4 +1,5 @@
-import TeamsMember from "../team/components/teamsMember";
+import { teams } from "@/types/team.interface";
+import TeamsMemberCardSwiper from "../team/components/teamsCardWiper";
 import AboutContentfulPage from "./components/contentfulPage";
 
 export default function TeamsAbout() {
@@ -8,10 +9,10 @@ export default function TeamsAbout() {
     <>
       <AboutContentfulPage
         entry={entry}
-        class={"px-[5%]"}
-        classTeam={"bg-[whitesmoke] p-5 sm:p-[5%] rounded-md"}
+        class={""}
+        classTeam={"bg-[whitesmoke] p-5 pb-16 md:p-[5%] md:pb-20  rounded-xl"}
       />
-      <TeamsMember />
+      <TeamsMemberCardSwiper teams={teams} />
     </>
   );
 }

@@ -1,5 +1,5 @@
 "use server";
-import { ISendEmail } from "@/types/sendEmail.interface";
+import ISendEmail from "@/types/sendEmail.interface";
 import nodemailer from "nodemailer";
 const USER = process.env.SMTP_SERVER_USER;
 const PASS = process.env.SMTP_SERVER_PASS;

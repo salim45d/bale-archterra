@@ -3,7 +3,7 @@ import { MotionDiv, MotionH1, MotionP, variantUpslide } from "../motion/motion";
 
 export default function TitleSlice(Prop: ITitle) {
   return (
-    <MotionDiv initial="initial" whileInView="animate" className="mb-14">
+    <MotionDiv initial="initial" whileInView="animate" className="mb-10">
       <MotionH1
         variants={variantUpslide}
         custom={1}

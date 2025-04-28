@@ -1,4 +1,4 @@
-export interface ISendEmail {
+export default interface ISendEmail {
   email: string;
   sendFrom: string;
   subject: string;

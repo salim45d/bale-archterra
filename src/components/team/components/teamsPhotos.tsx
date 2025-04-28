@@ -4,11 +4,11 @@ import { MotionDiv, variantOpacity } from "@/components/motion/motion";
 import { ITeam } from "@/types/team.interface";
 
 export default async function TeamPhotos() {
-  const teams: ITeam = await getTeam();
+  const teams: ITeam[] = await getTeam();
 
   return (
     <div className={`flex flex-wrap content-center justify-around`}>
-      {teams?.results.map((team, idx) => (
+      {teams?.map((team, idx) => (
         <MotionDiv
           key={idx}
           variants={variantOpacity}

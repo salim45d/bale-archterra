@@ -43,7 +43,7 @@ export const getTeam = async () => {
     const { data } = await axios.get(
       process.env.NEXT_PUBLIC_BASE_API_URL || ""
     );
-    return data;
+    return data.results;
   } catch (error) {
     const messageError = (error as Error).message;
     console.log(messageError);

@@ -18,6 +18,8 @@ export default function ServiceCardSwiper(Prop: {
         modules={[Pagination, Navigation, Autoplay]}
         spaceBetween={15}
         slidesPerView={1}
+        grabCursor={true}
+        loop={true}
         pagination={{
           clickable: true,
         }}
@@ -61,10 +63,10 @@ export default function ServiceCardSwiper(Prop: {
                   <h1 className="font-extrabold mb-2 text-lg lg:text-xl">
                     {item.fields.tittle}
                   </h1>
-                  <p className="text-sm md:text-base">{item.fields.cardText}</p>
+                  <p>{item.fields.cardText}</p>
                 </div>
                 <div>
-                  <p className="text-sm md:text-base font-bold italic mb-5 mt-10">
+                  <p className="font-bold italic mb-5 mt-10">
                     Start from Rp{item.fields.price}/m<sup>2</sup>
                   </p>
                   <WhiteButton
