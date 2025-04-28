@@ -20,11 +20,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
           whileInView="animate"
           className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.2fr_1fr] lg:max-w-7xl overflow-hidden"
         >
-          <motion.div
-            variants={variantUpslide}
-            custom={0}
-            className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-l-xl"
-          >
+          <div className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-l-xl">
             <div>
               <motion.h1
                 variants={variantUpslide}
@@ -53,7 +49,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
                 expectations".
               </motion.p>
             </div>
-          </motion.div>
+          </div>
           {/* Mobile Image UI */}
           <div className=" lg:hidden flex justify-center bg-[whitesmoke] px-2 sm:px-10">
             <div className="grid grid-cols-3 gap-1">
@@ -71,11 +67,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
               ))}
             </div>
           </div>
-          <motion.div
-            variants={variantUpslide}
-            custom={0}
-            className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-r-xl"
-          >
+          <div className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-r-xl">
             <motion.div variants={variantOpacityX} custom={6}>
               <div className="text-red-700 font-bold flex mb-3">
                 <GiCompass className="m-2 text-3xl" />
@@ -105,7 +97,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             >
               <RedButton href={"/about"} tittle={"Find more"} />
             </motion.div>
-          </motion.div>
+          </div>
           <div className=" hidden lg:block">
             {source.map((item, idx) => (
               <motion.img

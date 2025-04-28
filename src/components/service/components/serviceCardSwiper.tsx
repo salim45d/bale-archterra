@@ -16,9 +16,11 @@ export default function ServiceCardSwiper(Prop: {
     <div className="w-full">
       <Swiper
         modules={[Pagination, Navigation, Autoplay]}
-        spaceBetween={5}
+        spaceBetween={15}
         slidesPerView={1}
-        pagination={{ clickable: true }}
+        pagination={{
+          clickable: true,
+        }}
         navigation={true}
         autoplay={{
           delay: 6000,
