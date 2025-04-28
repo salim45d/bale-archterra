@@ -1,10 +1,13 @@
 "use client";
+import { ITeam } from "@/types/team.interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import { motion } from "motion/react";
+import { variantOpacityX, variantUpslide } from "@/components/motion/motion";
+import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { ITeam } from "@/types/team.interface";
 
 export default function TeamsMemberCardSwiper(Prop: { teams: ITeam[] }) {
   return (
@@ -54,15 +57,27 @@ export default function TeamsMemberCardSwiper(Prop: { teams: ITeam[] }) {
         >
           {Prop.teams.map((team, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-[#063852] rounded-md flex justify-between flex-col hover:bg-red-700 mb-10 text-white">
+              <motion.div
+                initial="initial"
+                whileInView="animate"
+                variants={variantOpacityX}
+                custom={idx}
+                className="bg-[#063852] rounded-md flex justify-between flex-col hover:bg-red-700 mb-10 text-white"
+              >
                 <div className="flex justify-center p-5">
-                  <img
+                  <motion.img
+                    variants={variantOpacityX}
+                    custom={idx + 2}
                     alt="Team-profile"
                     src={team.picture.large}
                     className="rounded-full sm:w-28 w-20 h-20 sm:h-28 ring-2 p-1 ring-gray-300"
                   />
                 </div>
-                <div className="p-[5%]">
+                <motion.div
+                  variants={variantUpslide}
+                  custom={idx + 3}
+                  className="p-[5%]"
+                >
                   <h2 className="font-bold text-lg text-center">
                     {team.name.first} {team.name.last}
                   </h2>{" "}
@@ -74,8 +89,8 @@ export default function TeamsMemberCardSwiper(Prop: { teams: ITeam[] }) {
                   <p className="text-lg font-bold">Contact me:</p>
                   <p>{team.email}</p>
                   <p>{team.phone}</p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -3,11 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Entry } from "contentful";
 import { IAsset, TypeServiceSkeleton } from "@/types/contentful.type";
+import { MotionDiv, variantOpacityX } from "@/components/motion/motion";
 import WhiteButton from "@/components/button/whiteButton";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { MotionDiv, variantOpacityX } from "@/components/motion/motion";
 
 export default function ServiceCardSwiper(Prop: {
   service: Entry<TypeServiceSkeleton, undefined, string>[] | undefined;

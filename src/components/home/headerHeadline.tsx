@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import WhiteButton from "../button/whiteButton";
-import { useSelector } from "react-redux";
 import { motion } from "motion/react";
 import { variantOpacityX } from "../motion/motion";
 
