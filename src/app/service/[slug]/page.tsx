@@ -1,10 +1,10 @@
 import { getServiceContentfulbySlug } from "@/api/api";
 import { Entry } from "contentful";
 import { TypeServiceSkeleton } from "@/types/contentful.type";
-import HeaderImages from "@/components/home/headerImages";
 import HeaderHeadline from "@/components/home/headerHeadline";
 import ServiceCardHome from "@/components/service/serviceCardHome";
 import ServiceContentfulPage from "@/components/service/components/serviceContentfulPage";
+import HeaderPages from "@/components/home/headerPages";
 
 export default async function ServiceSlugPage({
   params,
@@ -21,7 +21,7 @@ export default async function ServiceSlugPage({
 
   return (
     <div>
-      <HeaderImages
+      <HeaderPages
         img={"/service.jpg"}
         tittle={`${services[0]?.fields.tittle}`}
       />
