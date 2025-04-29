@@ -2,7 +2,7 @@ import { ITeam } from "@/types/team.interface";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface ITeams {
-  teams: ITeam[];
+  teams: ITeam[] | undefined;
 }
 
 interface IMessage {
@@ -10,7 +10,7 @@ interface IMessage {
 }
 
 const initialState = {
-  teams: [],
+  teams: undefined,
 };
 
 export const counterSlice = createSlice({

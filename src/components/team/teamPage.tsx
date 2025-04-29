@@ -5,7 +5,7 @@ export default function TeamPages() {
   return (
     <>
       <section className={`bg-[whitesmoke] flex justify-center p-[5%]`}>
-        <div className="flex justify-center content-center pb-16 sm:pb-12 max-w-7xl">
+        <div className="flex justify-center content-center max-w-7xl">
           <TeamsTittle display={"hidden"} />
         </div>
       </section>

@@ -8,7 +8,7 @@ interface IHeader {
   tittle: string;
 }
 
-export default function HeaderImages(prop: IHeader) {
+export default function HeaderPages(prop: IHeader) {
   return (
     <header>
       <div className="relative bg-black pt-14 sm:pt-0">
@@ -21,13 +21,13 @@ export default function HeaderImages(prop: IHeader) {
           height={200}
           priority={true}
         />
-        <div className="absolute w-[100%] h-[100%] top-0 text-center content-center">
+        <div className="absolute w-[100%] h-[100%] top-10 sm:top-0 content-center text-center p-[5%]">
           <motion.h1
             variants={variantUpslide}
             custom={0}
             initial="initial"
             whileInView="animate"
-            className="text-2xl sm:text-4xl font-extrabold text-yellow-500 mb-20"
+            className="text-3xl sm:text-4xl font-extrabold text-yellow-500 mb-20"
           >
             {prop.tittle}
           </motion.h1>

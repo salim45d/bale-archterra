@@ -16,29 +16,32 @@ import "swiper/css/navigation";
 
 export default function TeamsMemberCardSwiper() {
   const [teams, setTeams] = useState<ITeam[] | undefined>(undefined);
-  const teamsDataStore = useSelector(
+  const teamsDataStore: ITeam[] | undefined = useSelector(
     (state: { teams: ITeams }) => state.teams.teams
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (teamsDataStore.length > 0) {
-      setTeams(teamsDataStore);
-    } else if (teamsDataStore.length === 0) {
+    if (teamsDataStore === undefined) {
       const fetchData = async () => {
         const data = await getTeam();
+        if (data === undefined) {
+          dispatch(notify("Failed to load teams member"));
+          return;
+        }
+
         setTeams(data);
         dispatch(storeTeams(data));
       };
+
       fetchData();
-    } else {
-      dispatch(notify("Failed to load teams member"));
-      return;
+    } else if (teamsDataStore.length > 0) {
+      setTeams(teamsDataStore);
     }
   }, []);
 
   return (
-    <div className="flex justify-center px-[5%] -mt-16">
+    <div className="flex justify-center px-[5%] py-[2%]">
       <div className=" min-w-52 max-w-7xl">
         <Swiper
           modules={[EffectCoverflow, Pagination]}

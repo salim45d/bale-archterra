@@ -1,6 +1,7 @@
 "use client";
 import { getTeam } from "@/api/api";
 import { MotionDiv, variantOpacity } from "@/components/motion/motion";
+import { notify } from "@/store/slice/notify";
 import { ITeams, storeTeams } from "@/store/slice/teams";
 import { ITeam } from "@/types/team.interface";
 import { useEffect, useState } from "react";
@@ -8,23 +9,27 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function TeamPhotos() {
   const [teams, setTeams] = useState<ITeam[] | undefined>(undefined);
-  const teamsDataStore = useSelector(
+  const teamsDataStore: ITeam[] | undefined = useSelector(
     (state: { teams: ITeams }) => state.teams.teams
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (teamsDataStore.length > 0) {
-      setTeams(teamsDataStore);
-    } else if (teamsDataStore.length === 0) {
+    if (teamsDataStore === undefined) {
       const fetchData = async () => {
         const data = await getTeam();
+        if (data === undefined) {
+          dispatch(notify("Failed to load teams member"));
+          return;
+        }
+
         setTeams(data);
         dispatch(storeTeams(data));
       };
+
       fetchData();
-    } else {
-      return;
+    } else if (teamsDataStore.length > 0) {
+      setTeams(teamsDataStore);
     }
   }, []);
 

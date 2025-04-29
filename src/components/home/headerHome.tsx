@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { variantUpslide} from "../motion/motion";
+import { variantUpslide } from "../motion/motion";
 
 export default function HeaderHome() {
   return (
@@ -19,33 +19,33 @@ export default function HeaderHome() {
         <motion.div
           initial="initial"
           whileInView="animate"
-          className="absolute w-[100%] h-[100%] top-0 text-center content-center text-white font-extrabold"
+          className="absolute w-[100%] h-[100%] top-0 text-center content-center text-white font-extrabold p-[5%]"
         >
           <motion.h1
             variants={variantUpslide}
             custom={0}
-            className=" text-xl sm:text-3xl m-1"
+            className=" text-3xl m-1"
           >
             We Are Certified Engineers
           </motion.h1>
           <motion.h1
             variants={variantUpslide}
             custom={1}
-            className="text-2xl sm:text-4xl text-yellow-500 m-1"
+            className="text-3xl sm:text-4xl text-yellow-500 m-1"
           >
             CONSTRUCTION SERVICES
           </motion.h1>
           <motion.h1
             variants={variantUpslide}
             custom={2}
-            className="text-2xl sm:text-4xl text-yellow-500 m-1"
+            className="text-3xl sm:text-4xl text-yellow-500 m-1"
           >
             CREATIVE AND PROFESSIONAL
           </motion.h1>
           <motion.p
             variants={variantUpslide}
             custom={3}
-            className="text-md sm:text-lg"
+            className="text-base sm:text-lg"
           >
             "Build Properties for Your Statisfaction"
           </motion.p>
