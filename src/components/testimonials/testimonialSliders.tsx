@@ -43,7 +43,9 @@ export default function TestimonialsSlider(Prop: {
   }, []);
 
   return (
-    <section className={`flex justify-center content-center ${Prop.classHome}`}>
+    <section
+      className={`flex justify-center content-center p-[5%] ${Prop.classHome}`}
+    >
       <div className={`w-full max-w-7xl mx-auto text-center ${Prop.classTeam}`}>
         <TitleSlice
           subtitle={title.subtitle}

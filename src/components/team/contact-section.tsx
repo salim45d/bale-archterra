@@ -17,7 +17,7 @@ export default function ContactSection() {
 
   return (
     <section
-      className="bg-[whitesmoke] p-[5%] flex justify-center mt-[5%]"
+      className="bg-[whitesmoke] p-[5%] flex justify-center"
       id="contact-form"
     >
       <MotionDiv

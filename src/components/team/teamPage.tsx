@@ -1,11 +1,7 @@
-import { getTeam } from "@/api/api";
 import TeamsTittle from "./components/teamsTitle";
 import TeamsMemberCardSwiper from "./components/teamsCardWiper";
-import { teams } from "@/types/team.interface";
 
-export default async function TeamPages() {
-  // const teams = await getTeam();
-
+export default function TeamPages() {
   return (
     <>
       <section className={`bg-[whitesmoke] flex justify-center`}>
@@ -13,7 +9,7 @@ export default async function TeamPages() {
           <TeamsTittle display={"hidden"} />
         </div>
       </section>
-      <TeamsMemberCardSwiper teams={teams} />
+      <TeamsMemberCardSwiper />
     </>
   );
 }

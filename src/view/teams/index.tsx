@@ -11,7 +11,7 @@ export default function TeamsPage() {
       <HeaderHeadline />
       <TeamPages />
       <Testimonials
-        classHome={"px-[5%]"}
+        classHome={""}
         classTeam={"bg-[whitesmoke] p-5 sm:p-[5%] rounded-xl"}
       />
       <ContactSection />

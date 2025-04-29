@@ -1,3 +1,4 @@
+import { getTeam } from "@/api/api";
 import { MotionDiv, variantUpslide } from "../motion/motion";
 import TeamPhotos from "./components/teamsPhotos";
 import TeamsTittle from "./components/teamsTitle";

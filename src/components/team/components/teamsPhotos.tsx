@@ -1,10 +1,32 @@
-"use server";
+"use client";
 import { getTeam } from "@/api/api";
 import { MotionDiv, variantOpacity } from "@/components/motion/motion";
+import { ITeams, storeTeams } from "@/store/slice/teams";
 import { ITeam } from "@/types/team.interface";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-export default async function TeamPhotos() {
-  const teams: ITeam[] = await getTeam();
+export default function TeamPhotos() {
+  const [teams, setTeams] = useState<ITeam[] | undefined>(undefined);
+  const teamsDataStore = useSelector(
+    (state: { teams: ITeams }) => state.teams.teams
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (teamsDataStore.length > 0) {
+      setTeams(teamsDataStore);
+    } else if (teamsDataStore.length === 0) {
+      const fetchData = async () => {
+        const data = await getTeam();
+        setTeams(data);
+        dispatch(storeTeams(data));
+      };
+      fetchData();
+    } else {
+      return;
+    }
+  }, []);
 
   return (
     <div className={`flex flex-wrap content-center justify-around`}>

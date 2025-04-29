@@ -1,20 +1,45 @@
 "use client";
-import { ITeam } from "@/types/team.interface";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import { EffectCoverflow, Pagination } from "swiper/modules";
 import { motion } from "motion/react";
 import { variantOpacityX, variantUpslide } from "@/components/motion/motion";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { getTeam } from "@/api/api";
+import { ITeam } from "@/types/team.interface";
+import { ITeams, storeTeams } from "@/store/slice/teams";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function TeamsMemberCardSwiper(Prop: { teams: ITeam[] }) {
+export default function TeamsMemberCardSwiper() {
+  const [teams, setTeams] = useState<ITeam[] | undefined>(undefined);
+  const teamsDataStore = useSelector(
+    (state: { teams: ITeams }) => state.teams.teams
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (teamsDataStore.length > 0) {
+      setTeams(teamsDataStore);
+    } else if (teamsDataStore.length === 0) {
+      const fetchData = async () => {
+        const data = await getTeam();
+        setTeams(data);
+        dispatch(storeTeams(data));
+      };
+      fetchData();
+    } else {
+      return;
+    }
+  }, []);
+
   return (
-    <div className="flex justify-center px-[5%] pb-[5%] -mt-16">
+    <div className="flex justify-center px-[5%] -mt-16">
       <div className=" min-w-52 max-w-7xl">
         <Swiper
-          modules={[EffectCoverflow, Pagination, Navigation]}
+          modules={[EffectCoverflow, Pagination]}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
@@ -31,7 +56,6 @@ export default function TeamsMemberCardSwiper(Prop: { teams: ITeam[] }) {
           pagination={{
             clickable: true,
           }}
-          navigation={true}
           breakpoints={{
             300: {
               slidesPerView: 1.1,
@@ -55,7 +79,7 @@ export default function TeamsMemberCardSwiper(Prop: { teams: ITeam[] }) {
             },
           }}
         >
-          {Prop.teams.map((team, idx) => (
+          {teams?.map((team, idx) => (
             <SwiperSlide key={idx}>
               <motion.div
                 initial="initial"
@@ -70,13 +94,13 @@ export default function TeamsMemberCardSwiper(Prop: { teams: ITeam[] }) {
                     custom={idx + 2}
                     alt="Team-profile"
                     src={team.picture.large}
-                    className="rounded-full sm:w-28 w-20 h-20 sm:h-28 ring-2 p-1 ring-gray-300"
+                    className="rounded-full w-28 h-28 ring-2 p-1 ring-gray-300"
                   />
                 </div>
                 <motion.div
                   variants={variantUpslide}
                   custom={idx + 3}
-                  className="p-[5%]"
+                  className="px-[5%] pb-[5%]"
                 >
                   <h2 className="font-bold text-lg text-center">
                     {team.name.first} {team.name.last}
