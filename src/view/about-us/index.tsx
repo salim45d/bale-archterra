@@ -5,6 +5,7 @@ import CultureAbout from "@/components/about/cultureAbout";
 import AboutHome from "@/components/about/aboutHome";
 import HeaderHeadline from "@/components/home/headerHeadline";
 import HeaderPages from "@/components/home/headerPages";
+import ImagesSwiperGalery from "@/components/about/imagesSwiperGalery";
 
 export default function AboutPage() {
   return (
@@ -12,6 +13,7 @@ export default function AboutPage() {
       <HeaderPages img={"/building.jpg"} tittle={"About us"} />
       <HeaderHeadline />
       <AboutHome class={"bg-[whitesmoke]"} display={"hidden"} />
+      <ImagesSwiperGalery />
       <HistoryAbout />
       <ImageSliderAbout />
       <TeamsAbout />

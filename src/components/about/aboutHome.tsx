@@ -52,9 +52,13 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             </div>
           </div>
           {/* Mobile Image UI */}
-          <div className=" lg:hidden bg-[whitesmoke] px-2 sm:px-10">
+          <motion.div
+            variants={variantOpacityX}
+            custom={5}
+            className=" lg:hidden bg-[whitesmoke] px-2 sm:px-10"
+          >
             <ImagesThumbsSwiper />
-          </div>
+          </motion.div>
           <div className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-r-xl">
             <motion.div variants={variantOpacityX} custom={6}>
               <div className="text-red-700 font-bold flex mb-3">

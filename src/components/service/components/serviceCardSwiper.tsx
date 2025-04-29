@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
 import { Entry } from "contentful";
 import { IAsset, TypeServiceSkeleton } from "@/types/contentful.type";
 import { MotionDiv, variantOpacityX } from "@/components/motion/motion";
@@ -15,10 +15,13 @@ export default function ServiceCardSwiper(Prop: {
   return (
     <div className="w-full">
       <Swiper
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[Pagination, Navigation, Autoplay, Keyboard]}
         spaceBetween={15}
         slidesPerView={1}
-        grabCursor={true}
+        keyboard={{
+          enabled: true,
+        }}
+        centeredSlides={true}
         loop={true}
         pagination={{
           clickable: true,
@@ -47,7 +50,7 @@ export default function ServiceCardSwiper(Prop: {
               whileInView="animate"
               variants={variantOpacityX}
               custom={idx}
-              className={`bg-yellow-500 text-center hover:bg-red-700 hover:text-white rounded-md mb-10 p-1 overflow-hidden`}
+              className={`bg-yellow-500 text-center hover:bg-[#063852] hover:text-white rounded-md mb-10 p-1 overflow-hidden mySwiper-Slide`}
             >
               <img
                 className={`rounded-md rounded-b-none`}

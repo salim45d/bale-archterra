@@ -1,6 +1,11 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import {
+  Autoplay,
+  EffectCoverflow,
+  Keyboard,
+  Pagination,
+} from "swiper/modules";
 import { motion } from "motion/react";
 import { variantOpacityX, variantUpslide } from "@/components/motion/motion";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +17,6 @@ import { notify } from "@/store/slice/notify";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 export default function TeamsMemberCardSwiper() {
   const [teams, setTeams] = useState<ITeam[] | undefined>(undefined);
@@ -44,13 +48,16 @@ export default function TeamsMemberCardSwiper() {
     <div className="flex justify-center px-[5%] py-[2%]">
       <div className=" min-w-52 max-w-7xl">
         <Swiper
-          modules={[EffectCoverflow, Pagination]}
+          modules={[EffectCoverflow, Pagination, Autoplay, Keyboard]}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
           loop={true}
           spaceBetween={20}
           slidesPerView={1}
+          keyboard={{
+            enabled: true,
+          }}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
@@ -60,6 +67,11 @@ export default function TeamsMemberCardSwiper() {
           }}
           pagination={{
             clickable: true,
+          }}
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           breakpoints={{
             300: {
@@ -91,7 +103,7 @@ export default function TeamsMemberCardSwiper() {
                 whileInView="animate"
                 variants={variantOpacityX}
                 custom={idx}
-                className="bg-[#063852] rounded-md flex justify-between flex-col hover:bg-red-700 mb-10 text-white"
+                className="bg-[#063852] rounded-md flex justify-between flex-col hover:bg-[#eab308] hover:text-black mb-10 text-white mySwiper-Slide"
               >
                 <div className="flex justify-center p-5">
                   <motion.img
@@ -99,7 +111,7 @@ export default function TeamsMemberCardSwiper() {
                     custom={idx + 2}
                     alt="Team-profile"
                     src={team.picture.large}
-                    className="rounded-full w-28 h-28 ring-2 p-1 ring-gray-300"
+                    className="rounded-full w-28 h-28 ring-2 p-1 ring-gray-300 "
                   />
                 </div>
                 <motion.div

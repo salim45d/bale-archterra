@@ -43,15 +43,20 @@ body {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #eab308 !important;
+  background-color: #b91c1c !important;
 }
 
 .swiper-pagination-bullet {
-  background-color: #eab308 !important;
+  background-color: #b91c1c !important;
   padding: 7px;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #063852 !important;
+  color: #b91c1c !important;
+}
+
+.swiper-slide-active .mySwiper-Slide {
+  background-color: #b91c1c;
+  color: white;
 }
