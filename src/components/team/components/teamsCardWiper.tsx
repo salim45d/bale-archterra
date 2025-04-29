@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { getTeam } from "@/api/api";
 import { ITeam } from "@/types/team.interface";
 import { ITeams, storeTeams } from "@/store/slice/teams";
+import { notify } from "@/store/slice/notify";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -31,6 +32,7 @@ export default function TeamsMemberCardSwiper() {
       };
       fetchData();
     } else {
+      dispatch(notify("Failed to load teams member"));
       return;
     }
   }, []);
