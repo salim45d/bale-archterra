@@ -27,11 +27,11 @@ export default function Navbar() {
           <NavSocialIcon class={"justify-around text-3xl sm:text-xl "} />
         </div>
         <nav
-          className={`transitions fixed py-2 z-10 w-screen ${
+          className={`transitions fixed py-2 z-10 w-screen px-[5%] ${
             navbar.isScroll ? "bg-black top-0" : "bg-transparent top-7"
           }`}
         >
-          <div className="flex text-white px-[5%] justify-between">
+          <div className="flex text-white justify-between">
             <Navlogo />
             <Navlink />
           </div>

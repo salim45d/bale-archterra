@@ -4,6 +4,7 @@ import { FaRocket } from "react-icons/fa";
 import { GiCompass } from "react-icons/gi";
 import { motion } from "motion/react";
 import { variantUpslide, variantOpacityX } from "../motion/motion";
+import ImagesThumbsSwiper from "./components/imagesThumbsSwiper";
 
 export default function AboutHome(Prop: { class: string; display: string }) {
   const source = [
@@ -51,21 +52,8 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             </div>
           </div>
           {/* Mobile Image UI */}
-          <div className=" lg:hidden flex justify-center bg-[whitesmoke] px-2 sm:px-10">
-            <div className="grid grid-cols-3 gap-1">
-              {source.map((item, idx) => (
-                <motion.img
-                  key={idx}
-                  variants={variantOpacityX}
-                  custom={idx + 5}
-                  className="rounded-md"
-                  src={item.src}
-                  width={300}
-                  height={300}
-                  alt="Drafter"
-                />
-              ))}
-            </div>
+          <div className=" lg:hidden bg-[whitesmoke] px-2 sm:px-10">
+            <ImagesThumbsSwiper />
           </div>
           <div className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-r-xl">
             <motion.div variants={variantOpacityX} custom={6}>

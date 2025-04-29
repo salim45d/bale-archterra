@@ -9,8 +9,8 @@ export default function ImageSliderAbout() {
   ];
 
   return (
-    <summary>
-      <div className="flex overflow-hidden space-x-2 my-[7%]">
+    <summary className="flex justify-center">
+      <div className="flex overflow-hidden space-x-2 my-[7%] max-w-7xl">
         <div className="flex space-x-2 animate-loop-scroll">
           {image.map((item, idx) => (
             <div key={idx} className="inline-block content-center">

@@ -33,3 +33,11 @@ body {
 .transitions {
   transition: 1s all ease;
 }
+
+.mySwiper2 {
+  opacity: 0.4;
+}
+
+.swiper-slide-thumb-active {
+  opacity: 1;
+}
