@@ -1,5 +1,4 @@
-import { getTeam } from "@/api/api";
-import { MotionDiv, variantUpslide } from "../motion/motion";
+import { MotionDiv, variantOpacityX } from "../motion/motion";
 import TeamPhotos from "./components/teamsPhotos";
 import TeamsTittle from "./components/teamsTitle";
 
@@ -7,7 +6,7 @@ export default function TeamsHome() {
   return (
     <section className={`flex justify-center content-center p-[5%]`}>
       <MotionDiv
-        variants={variantUpslide}
+        variants={variantOpacityX}
         custom={0}
         initial="initial"
         whileInView="animate"
