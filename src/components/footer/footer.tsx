@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_4fr_1fr] gap-4 md:gap-3 text-white w-[90%] lg:max-w-7xl">
           <div className="col-span-3 lg:col-span-1 mb-5">
             <Image
-              src={"/bale-archterra.png"}
+              src={"/bale-archterra.svg"}
               alt={"bale-archterra-logo"}
               height={80}
               width={80}

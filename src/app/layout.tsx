@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/bale-archterra.png",
-        href: "/bale-archterra.png",
+        url: "/bale-archterra.svg",
+        href: "/bale-archterra.svg",
       },
     ],
   },

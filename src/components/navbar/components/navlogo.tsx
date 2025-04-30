@@ -15,7 +15,7 @@ export default function Navlogo() {
     >
       <Image
         className="mr-2 mb-1.5"
-        src={"/bale-archterra.png"}
+        src={"/bale-archterra.svg"}
         alt={"bale-archterra-icon"}
         width={30}
         height={30}
