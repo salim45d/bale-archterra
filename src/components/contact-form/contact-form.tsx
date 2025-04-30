@@ -61,12 +61,9 @@ export default function ContactForm() {
 
           return (
             <div>
-              <Form
-                className="text-black sm:pd-0 md:p-5 lg:p-10"
-                onSubmit={handleSubmit}
-              >
-                <div className="text-center">
-                  <h2 className="text-md md:text-xl font-bold leading-9 tracking-tight text-[#063852]">
+              <Form className="text-black" onSubmit={handleSubmit}>
+                <div className="text-center lg:p-10">
+                  <h2 className="text-lg md:text-xl font-bold leading-9 tracking-tight text-[#063852]">
                     Contact us
                   </h2>
                   <p className="text-sm md:text-md mt-2 mb-10">

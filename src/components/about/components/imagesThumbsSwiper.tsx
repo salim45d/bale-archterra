@@ -36,8 +36,12 @@ export default function ImagesThumbsSwiper() {
   ];
 
   return (
-    <div className="flex flex-col">
-      <div className="min-w-36 max-w-7xl">
+    <motion.div
+      initial="initial"
+      whileInView="animate"
+      className="flex flex-col min-w-36 max-w-7xl"
+    >
+      <div>
         <Swiper
           loop={true}
           spaceBetween={20}
@@ -58,7 +62,7 @@ export default function ImagesThumbsSwiper() {
               <motion.img
                 variants={variantOpacityX}
                 custom={idx + 1}
-                className="rounded-md object-cover w-full h-[20rem] sm:h-[25rem] md:h-[28rem] lg:h-[35rem]"
+                className="rounded-lg object-cover w-full h-[20rem] sm:h-[25rem] md:h-[28rem] lg:h-[35rem]"
                 src={item.src}
                 width={300}
                 height={200}
@@ -68,7 +72,7 @@ export default function ImagesThumbsSwiper() {
           ))}
         </Swiper>
       </div>
-      <div className="min-w-36 max-w-7xl mt-1.5">
+      <div className="mt-1.5">
         <Swiper
           onSwiper={setThumbsSwiper}
           loop={true}
@@ -88,8 +92,8 @@ export default function ImagesThumbsSwiper() {
             <SwiperSlide key={idx} className="mySwiper2">
               <motion.img
                 variants={variantOpacityX}
-                custom={idx + 2}
-                className="rounded-md w-full object-cover"
+                custom={idx + 3}
+                className="rounded-lg w-full object-cover"
                 src={item.src}
                 width={100}
                 height={100}
@@ -99,6 +103,6 @@ export default function ImagesThumbsSwiper() {
           ))}
         </Swiper>
       </div>
-    </div>
+    </motion.div>
   );
 }

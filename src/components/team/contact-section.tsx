@@ -16,10 +16,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section
-      className="bg-[whitesmoke] p-[5%] flex justify-center"
-      id="contact-form"
-    >
+    <section className="bg-[whitesmoke] p-[5%] flex justify-center">
       <MotionDiv
         initial="initial"
         whileInView="animate"
@@ -32,13 +29,13 @@ export default function ContactSection() {
             quote={title.quote}
           />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-5">
           <MotionDiv
             custom={4}
             variants={variantOpacity}
-            className="pd-0 md:pd-5 lg:p-10 text-center"
+            className="lg:p-10 text-center"
           >
-            <h2 className=" text-md md:text-xl font-bold leading-9 tracking-tight text-[#063852]">
+            <h2 className=" text-lg md:text-xl font-bold leading-9 tracking-tight text-[#063852]">
               Our Address
             </h2>
             <p className="text-sm md:text-md mt-2 mb-14">
@@ -55,7 +52,7 @@ export default function ContactSection() {
               ></iframe>
             </div>
           </MotionDiv>
-          <MotionDiv custom={5} variants={variantOpacityX}>
+          <MotionDiv custom={5} variants={variantOpacityX} id="contact-form">
             <ContactForm />
           </MotionDiv>
         </div>

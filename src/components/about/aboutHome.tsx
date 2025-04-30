@@ -21,7 +21,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
           whileInView="animate"
           className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.2fr_1fr] lg:max-w-7xl overflow-hidden"
         >
-          <div className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-l-xl">
+          <div className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-t-xl lg:rounded-l-xl">
             <div>
               <motion.h1
                 variants={variantUpslide}
@@ -52,14 +52,10 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             </div>
           </div>
           {/* Mobile Image UI */}
-          <motion.div
-            variants={variantOpacityX}
-            custom={5}
-            className=" lg:hidden bg-[whitesmoke] px-2 sm:px-10"
-          >
+          <div className=" lg:hidden bg-[whitesmoke] px-2 sm:px-10">
             <ImagesThumbsSwiper />
-          </motion.div>
-          <div className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-r-xl">
+          </div>
+          <div className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-b-xl lg:rounded-r-xl">
             <motion.div variants={variantOpacityX} custom={6}>
               <div className="text-red-700 font-bold flex mb-3">
                 <GiCompass className="m-2 text-3xl" />
