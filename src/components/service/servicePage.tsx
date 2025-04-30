@@ -20,7 +20,7 @@ export default async function ServiceAllPage() {
       viewport={{ once: true }}
       className="flex justify-center content-center p-[5%] bg-[whitesmoke]"
     >
-      <div className="lg:max-w-7xl">
+      <div className="max-w-7xl">
         <div className="text-center">
           <TitleSlice
             subtitle={title.subtitle}
