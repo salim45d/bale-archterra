@@ -35,7 +35,7 @@ export default function TestimonialsSlider(Prop: {
     <section
       className={`flex justify-center content-center p-[5%] ${Prop.classHome}`}
     >
-      <div className={`w-full max-w-7xl mx-auto text-center ${Prop.classTeam}`}>
+      <div className={`w-full max-w-7xl text-center ${Prop.classTeam}`}>
         <TitleSlice
           subtitle={title.subtitle}
           title={title.title}
@@ -76,7 +76,7 @@ export default function TestimonialsSlider(Prop: {
             </div>
           </div>
         </div>
-        {/* Testimonial Text*/}
+        {/* Testimonial */}
         <div className="mb-9 transition-all duration-150 delay-300 ease-in-out">
           <div className="relative max-w-2xl  justify-items-center inline-grid">
             {Prop.testimonials.map((testimonial, index) => (

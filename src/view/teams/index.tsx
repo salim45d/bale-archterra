@@ -12,7 +12,7 @@ export default function TeamsPage() {
       <TeamPages />
       <Testimonials
         classHome={""}
-        classTeam={"bg-[whitesmoke] p-5 sm:p-[5%] rounded-xl"}
+        classTeam={"bg-[whitesmoke] p-[5%] rounded-xl"}
       />
       <ContactSection />
     </div>
