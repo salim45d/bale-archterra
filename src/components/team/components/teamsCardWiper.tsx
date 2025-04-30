@@ -7,7 +7,7 @@ import {
   Pagination,
 } from "swiper/modules";
 import { motion } from "motion/react";
-import { variantOpacityX, variantUpslide } from "@/components/motion/motion";
+import { variantOpacity, variantUpslide } from "@/components/motion/motion";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getTeam } from "@/api/api";
@@ -103,14 +103,15 @@ export default function TeamsMemberCardSwiper() {
                 <motion.div
                   initial="initial"
                   whileInView="animate"
-                  variants={variantOpacityX}
-                  custom={idx}
+                  viewport={{ once: true }}
+                  variants={variantOpacity}
+                  custom={0}
                   className="bg-[#063852] rounded-md flex justify-between flex-col hover:bg-[#eab308] hover:text-black mb-10 text-white mySwiper-Slide"
                 >
                   <div className="flex justify-center p-5">
                     <motion.img
-                      variants={variantOpacityX}
-                      custom={idx + 2}
+                      variants={variantUpslide}
+                      custom={1}
                       alt="Team-profile"
                       src={team.picture.large}
                       className="rounded-full w-28 h-28 ring-2 p-1 ring-gray-300 "
@@ -118,7 +119,7 @@ export default function TeamsMemberCardSwiper() {
                   </div>
                   <motion.div
                     variants={variantUpslide}
-                    custom={idx + 3}
+                    custom={2}
                     className="px-[5%] pb-[5%]"
                   >
                     <h2 className="font-bold text-lg text-center">

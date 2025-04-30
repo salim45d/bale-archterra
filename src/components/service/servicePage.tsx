@@ -17,6 +17,7 @@ export default async function ServiceAllPage() {
     <MotionDiv
       initial="initial"
       whileInView="animate"
+      viewport={{ once: true }}
       className="flex justify-center content-center p-[5%] bg-[whitesmoke]"
     >
       <div className="lg:max-w-7xl">
@@ -28,7 +29,7 @@ export default async function ServiceAllPage() {
           />
           <MotionP
             variants={variantOpacityX}
-            custom={2}
+            custom={1}
             className="text-justify"
           >
             Look for contruction services with a proven back record of success

@@ -1,8 +1,7 @@
 "use client";
 import { getTeam } from "@/api/api";
-import { MotionDiv, variantOpacity } from "@/components/motion/motion";
+import { MotionDiv, variantUpslide } from "@/components/motion/motion";
 import PageNotFound from "@/components/not-found/pageNotFound";
-import { notify } from "@/store/slice/notify";
 import { ITeams, storeTeams } from "@/store/slice/teams";
 import { ITeam } from "@/types/team.interface";
 import { useEffect, useState } from "react";
@@ -45,10 +44,11 @@ export default function TeamPhotos() {
         {teams?.map((team, idx) => (
           <MotionDiv
             key={idx}
-            variants={variantOpacity}
+            variants={variantUpslide}
             custom={idx}
             initial="initial"
             whileInView="animate"
+            viewport={{ once: true }}
             className={`m-1 md:m-5`}
           >
             <img
