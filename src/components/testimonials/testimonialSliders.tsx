@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import { RxAvatar } from "react-icons/rx";
 import ITestimonials from "@/types/testimonials.interface";
@@ -11,7 +11,6 @@ export default function TestimonialsSlider(Prop: {
   classTeam: string;
   testimonials: ITestimonials[];
 }) {
-  const testimonialsRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<number>(0);
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const autorotateTiming: number = 5000;
@@ -32,16 +31,6 @@ export default function TestimonialsSlider(Prop: {
     return () => clearInterval(interval);
   }, [active, autorotate]);
 
-  // Untuk Mengatur Tinggi Container Secara Otomatis
-  const heightFix = () => {
-    if (testimonialsRef.current && testimonialsRef.current.parentElement)
-      testimonialsRef.current.parentElement.style.height = `${testimonialsRef.current.clientHeight}px`;
-  };
-
-  useEffect(() => {
-    heightFix();
-  }, []);
-
   return (
     <section
       className={`flex justify-center content-center p-[5%] ${Prop.classHome}`}
@@ -52,7 +41,7 @@ export default function TestimonialsSlider(Prop: {
           title={title.title}
           quote={title.quote}
         />
-        {/* Testimonial image*/}
+        {/* Testimonial User*/}
         <div className="relative h-32 mt-20">
           <div className="absolute top-0  left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-red-800/25 before:via-red-800/5 before:via-25% before:to-red-800/0 before:to-75% before:rounded-full before:-z-10">
             <div className="h-32 text-[#063852]">
@@ -68,7 +57,6 @@ export default function TestimonialsSlider(Prop: {
                   leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700"
                   leaveFrom="opacity-100 rotate-0"
                   leaveTo="opacity-0 rotate-[60deg]"
-                  beforeEnter={() => heightFix()}
                 >
                   <div className="relative top-4 left-1/2 -translate-x-1/2">
                     <div className="text-4xl justify-items-center font-extrabold inline-grid">
@@ -88,11 +76,9 @@ export default function TestimonialsSlider(Prop: {
             </div>
           </div>
         </div>
+        {/* Testimonial Text*/}
         <div className="mb-9 transition-all duration-150 delay-300 ease-in-out">
-          <div
-            className="relative max-w-2xl  justify-items-center inline-grid"
-            ref={testimonialsRef}
-          >
+          <div className="relative max-w-2xl  justify-items-center inline-grid">
             {Prop.testimonials.map((testimonial, index) => (
               <Transition
                 as="div"
@@ -104,7 +90,6 @@ export default function TestimonialsSlider(Prop: {
                 leave="transition ease-out duration-300 delay-300 absolute"
                 leaveFrom="opacity-100 translate-x-0"
                 leaveTo="opacity-0 translate-x-4"
-                beforeEnter={() => heightFix()}
               >
                 <div>
                   <p className="text-base lg:text-lg font-semibold text-black italic mb-3">
