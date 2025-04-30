@@ -6,6 +6,7 @@ import { MotionDiv, variantOpacityX } from "../motion/motion";
 import TitleSlice from "../tittle/title";
 import ITitle from "@/types/title.interface";
 import ServiceCardSwiper from "./components/serviceCardSwiper";
+import PageNotFound from "../not-found/pageNotFound";
 
 export default async function ServiceCardHome() {
   const service = await getServiceContentful();
@@ -16,24 +17,32 @@ export default async function ServiceCardHome() {
             in plan and build better properties"`,
   };
 
-  return (
-    <section className="flex justify-center content-center bg-[whitesmoke]">
-      <MotionDiv
-        className="flex flex-col p-[5%] text-center w-screen max-w-7xl"
-        initial="initial"
-        whileInView="animate"
-      >
-        {" "}
-        <TitleSlice
-          subtitle={title.subtitle}
-          title={title.title}
-          quote={title.quote}
-        />
-        <ServiceCardSwiper service={service} />
-        <MotionDiv variants={variantOpacityX} custom={3} className="text-right">
-          <RedButton href={"/service"} tittle={"All Service"} />
+  if (service === undefined) {
+    return <PageNotFound />;
+  } else {
+    return (
+      <section className="flex justify-center content-center bg-[whitesmoke]">
+        <MotionDiv
+          className="flex flex-col p-[5%] text-center w-screen max-w-7xl"
+          initial="initial"
+          whileInView="animate"
+        >
+          {" "}
+          <TitleSlice
+            subtitle={title.subtitle}
+            title={title.title}
+            quote={title.quote}
+          />
+          <ServiceCardSwiper service={service} />
+          <MotionDiv
+            variants={variantOpacityX}
+            custom={3}
+            className="text-right"
+          >
+            <RedButton href={"/service"} tittle={"All Service"} />
+          </MotionDiv>
         </MotionDiv>
-      </MotionDiv>
-    </section>
-  );
+      </section>
+    );
+  }
 }

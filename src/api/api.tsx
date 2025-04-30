@@ -11,7 +11,6 @@ export const getAboutContentfulPage = async (id: string) => {
     return data;
   } catch (error) {
     const messageError = (error as Error).message;
-    console.log(messageError);
   }
 };
 
@@ -24,7 +23,6 @@ export const getServiceContentful = async () => {
     return data.items;
   } catch (error) {
     const messageError = (error as Error).message;
-    console.log(messageError);
   }
 };
 
@@ -37,7 +35,6 @@ export const getServiceContentfulbySlug = async (slug: string) => {
     return data.items[0];
   } catch (error) {
     const messageError = (error as Error).message;
-    console.log(messageError);
   }
 };
 
