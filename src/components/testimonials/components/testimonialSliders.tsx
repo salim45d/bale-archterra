@@ -1,10 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
-import { RxAvatar } from "react-icons/rx";
 import ITestimonials from "@/types/testimonials.interface";
-import TitleSlice from "../tittle/title";
 import ITitle from "@/types/title.interface";
+import TitleSlice from "@/components/tittle/title";
 
 export default function TestimonialsSlider(Prop: {
   classHome: string;
@@ -58,14 +57,17 @@ export default function TestimonialsSlider(Prop: {
                   leaveFrom="opacity-100 rotate-0"
                   leaveTo="opacity-0 rotate-[60deg]"
                 >
-                  <div className="relative top-4 left-1/2 -translate-x-1/2">
-                    <div className="text-4xl justify-items-center font-extrabold inline-grid">
-                      <RxAvatar />
+                  <div className="relative top-2 left-1/2 -translate-x-1/2">
+                    <div className="justify-items-center inline-grid">
+                      <img
+                        src={testimonial.image}
+                        width={60}
+                        height={60}
+                        className="ring-1 rounded-full ring-gray-200"
+                      />
                     </div>
-                    <div className="ml-2">
-                      <h1 className="font-bold text-md lg:text-lg">
-                        {testimonial.name}
-                      </h1>
+                    <div>
+                      <h1 className="font-bold">{testimonial.name}</h1>
                       <p className="font-semibold text-xs sm:text-sm">
                         {testimonial.job}
                       </p>
@@ -92,7 +94,7 @@ export default function TestimonialsSlider(Prop: {
                 leaveTo="opacity-0 translate-x-4"
               >
                 <div>
-                  <p className="text-base lg:text-lg font-semibold text-black italic mb-3">
+                  <p className="font-semibold text-black italic my-5">
                     "{testimonial.testimony}"
                   </p>
                 </div>

@@ -16,8 +16,6 @@ import { Entry } from "contentful";
 export default function ServiceContentfulPage(Prop: {
   services: Entry<TypeServiceSkeleton, undefined, string>[] | undefined;
 }) {
-  console.log(Prop.services);
-
   if (Prop.services === undefined) {
     return <PageNotFound />;
   } else {

@@ -22,6 +22,8 @@ export default function ImagesThumbsSwiper() {
     { id: 6, src: "/about-green-building.jpg" },
     { id: 7, src: "/about-green-tower.jpg" },
     { id: 8, src: "/about-white-house.jpg" },
+    { id: 9, src: "/about-colorfull.jpg" },
+    { id: 10, src: "/about-square.jpg" },
   ];
 
   const images2 = [
@@ -33,6 +35,8 @@ export default function ImagesThumbsSwiper() {
     { id: 6, src: "/about-green-building-large.jpg" },
     { id: 7, src: "/about-green-tower-large.jpg" },
     { id: 8, src: "/about-white-house-large.jpg" },
+    { id: 9, src: "/about-colorfull-large.jpg" },
+    { id: 10, src: "/about-square-large.jpg" },
   ];
 
   return (

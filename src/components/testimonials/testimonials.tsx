@@ -1,5 +1,5 @@
 import { MotionDiv, variantOpacity } from "../motion/motion";
-import TestimonialsSlider from "./testimonialSliders";
+import TestimonialsSlider from "./components/testimonialSliders";
 
 export default function Testimonials(Prop: {
   classHome: string;
@@ -8,7 +8,7 @@ export default function Testimonials(Prop: {
   const testimonials = [
     {
       id: 1,
-      image: "",
+      image: "./avatar-male.svg",
       name: "James Robert",
       job: "Singer",
       testimony:
@@ -16,7 +16,7 @@ export default function Testimonials(Prop: {
     },
     {
       id: 2,
-      image: "",
+      image: "./avatar-female.svg",
       name: "Elena Jones",
       job: "Doctor",
       testimony:
@@ -24,7 +24,7 @@ export default function Testimonials(Prop: {
     },
     {
       id: 3,
-      image: "",
+      image: "./avatar-male.svg",
       name: "Max Tonus",
       job: "Gamer",
       testimony:
@@ -32,7 +32,7 @@ export default function Testimonials(Prop: {
     },
     {
       id: 4,
-      image: "",
+      image: "./avatar-male.svg",
       name: "Jeremy North",
       job: "Businessman",
       testimony:
@@ -40,7 +40,7 @@ export default function Testimonials(Prop: {
     },
     {
       id: 5,
-      image: "",
+      image: "./avatar-female.svg",
       name: "Bella Swan",
       job: "Actress",
       testimony:
@@ -48,7 +48,7 @@ export default function Testimonials(Prop: {
     },
     {
       id: 6,
-      image: "",
+      image: "./avatar-male.svg",
       name: "George Lee",
       job: "Developer",
       testimony:
@@ -56,7 +56,7 @@ export default function Testimonials(Prop: {
     },
     {
       id: 7,
-      image: "",
+      image: "./avatar-female.svg",
       name: "Angela White",
       job: "Teacher",
       testimony:
@@ -64,7 +64,7 @@ export default function Testimonials(Prop: {
     },
     {
       id: 8,
-      image: "",
+      image: "./avatar-male.svg",
       name: "Adam Rishe",
       job: "Banker",
       testimony:
