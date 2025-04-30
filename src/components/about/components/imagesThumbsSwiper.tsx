@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { variantOpacityX } from "@/components/motion/motion";
+import { variantXFast } from "@/components/motion/motion";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Autoplay, FreeMode, Keyboard, Thumbs } from "swiper/modules";
@@ -43,6 +43,7 @@ export default function ImagesThumbsSwiper() {
     <motion.div
       initial="initial"
       whileInView="animate"
+      viewport={{ once: true }}
       className="flex flex-col min-w-36 max-w-7xl"
     >
       <div>
@@ -64,7 +65,7 @@ export default function ImagesThumbsSwiper() {
           {images2.map((item, idx) => (
             <SwiperSlide key={idx}>
               <motion.img
-                variants={variantOpacityX}
+                variants={variantXFast}
                 custom={idx + 1}
                 className="rounded-lg object-cover w-full h-[20rem] sm:h-[25rem] md:h-[28rem] lg:h-[35rem]"
                 src={item.src}
@@ -95,7 +96,7 @@ export default function ImagesThumbsSwiper() {
           {images.map((item, idx) => (
             <SwiperSlide key={idx} className="mySwiper2">
               <motion.img
-                variants={variantOpacityX}
+                variants={variantXFast}
                 custom={idx + 3}
                 className="rounded-lg w-full object-cover"
                 src={item.src}

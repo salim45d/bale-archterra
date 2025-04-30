@@ -1,5 +1,12 @@
-import { MotionDiv, variantOpacity } from "../motion/motion";
+import ITitle from "@/types/title.interface";
+import {
+  MotionDiv,
+  variantOpacity,
+  variantOpacityX,
+  variantUpslide,
+} from "../motion/motion";
 import TestimonialsSlider from "./components/testimonialSliders";
+import TitleSlice from "../tittle/title";
 
 export default function Testimonials(Prop: {
   classHome: string;
@@ -72,18 +79,31 @@ export default function Testimonials(Prop: {
     },
   ];
 
+  const title: ITitle = {
+    subtitle: "OUR TESTIMONIALS",
+    title: "Bale Archterra Feedback from Our Clients",
+    quote: `"We are proudly driven to help design a better world, We are trusted by our clients and experienced to plan better"`,
+  };
+
   return (
-    <MotionDiv
-      initial="initial"
-      whileInView="animate"
-      variants={variantOpacity}
-      custom={2}
+    <section
+      className={`flex justify-center content-center p-[5%] ${Prop.classHome}`}
     >
-      <TestimonialsSlider
-        testimonials={testimonials}
-        classHome={Prop.classHome}
-        classTeam={Prop.classTeam}
-      />
-    </MotionDiv>
+      <MotionDiv
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        variants={variantOpacityX}
+        custom={2}
+        className={`w-full max-w-7xl text-center ${Prop.classTeam}`}
+      >
+        <TitleSlice
+          subtitle={title.subtitle}
+          title={title.title}
+          quote={title.quote}
+        />
+        <TestimonialsSlider testimonials={testimonials} />
+      </MotionDiv>
+    </section>
   );
 }

@@ -3,9 +3,8 @@ import {
   MotionDiv,
   MotionImg,
   MotionP,
-  variantOpacity,
-  variantOpacityX,
   variantUpslide,
+  variantXFast,
 } from "@/components/motion/motion";
 import PageNotFound from "@/components/not-found/pageNotFound";
 import RichText from "@/components/richtext/richText";
@@ -26,6 +25,7 @@ export default function ServiceContentfulPage(Prop: {
             key={idx}
             initial="initial"
             whileInView="animate"
+            viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-[5%]"
           >
             <div className="text-center col-span-1 md:col-span-2">
@@ -39,7 +39,7 @@ export default function ServiceContentfulPage(Prop: {
               <div className="grid grid-cols-2 gap-2">
                 <div className="inline-block content-end">
                   <MotionImg
-                    variants={variantUpslide}
+                    variants={variantXFast}
                     custom={idx + 1}
                     className={`rounded-md w-full object-cover h-auto`}
                     src={`https:${
@@ -52,7 +52,7 @@ export default function ServiceContentfulPage(Prop: {
                 </div>
                 <div className="inline-block content-end">
                   <MotionImg
-                    variants={variantUpslide}
+                    variants={variantXFast}
                     custom={idx + 2}
                     className={`rounded-md w-full object-cover h-auto`}
                     src={`https:${
@@ -64,7 +64,7 @@ export default function ServiceContentfulPage(Prop: {
                   />{" "}
                 </div>
                 <MotionImg
-                  variants={variantOpacity}
+                  variants={variantXFast}
                   custom={idx + 3}
                   className={`rounded-md w-full object-cover h-auto`}
                   src={`https:${
@@ -75,7 +75,7 @@ export default function ServiceContentfulPage(Prop: {
                   alt="service-image"
                 />{" "}
                 <MotionImg
-                  variants={variantOpacity}
+                  variants={variantXFast}
                   custom={idx + 4}
                   className={`rounded-md w-full object-cover h-auto`}
                   src={`https:${
@@ -89,7 +89,7 @@ export default function ServiceContentfulPage(Prop: {
             </div>
             <div>
               <MotionDiv
-                variants={variantOpacityX}
+                variants={variantXFast}
                 custom={idx + 5}
                 className="text-justify"
               >
@@ -99,7 +99,7 @@ export default function ServiceContentfulPage(Prop: {
               </MotionDiv>
 
               <MotionP
-                variants={variantOpacityX}
+                variants={variantXFast}
                 custom={idx + 6}
                 className="text-md lg:text-lg font-extrabold italic content-center text-red-700 pb-5 pt-16"
               >

@@ -19,30 +19,23 @@ export default function AboutHome(Prop: { class: string; display: string }) {
         <motion.div
           initial="initial"
           whileInView="animate"
+          viewport={{ once: true }}
           className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.2fr_1fr] lg:max-w-7xl overflow-hidden"
         >
           <div className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-t-xl lg:rounded-l-xl">
-            <div>
-              <motion.h1
-                variants={variantUpslide}
-                custom={1}
-                className="text-sm text-[#063852] font-semibold mb-3"
-              >
+            <motion.div variants={variantUpslide} custom={1}>
+              <h1 className="text-sm text-[#063852] font-semibold mb-3">
                 ABOUT US
-              </motion.h1>
+              </h1>
               <div className="text-2xl sm:text-4xl text-red-700 font-extrabold">
-                <motion.h1 variants={variantUpslide} custom={2}>
-                  Bale Archterra.
-                </motion.h1>
-                <motion.h1 variants={variantUpslide} custom={3}>
-                  Build Properties for Your Statisfaction
-                </motion.h1>
+                <h1>Bale Archterra.</h1>
+                <h1>Build Properties for Your Statisfaction</h1>
               </div>
-            </div>
+            </motion.div>
             <div>
               <motion.p
                 variants={variantOpacityX}
-                custom={4}
+                custom={2}
                 className="mt-5 text-justify text-[#063852] font-semibold"
               >
                 "With years of experience in the industry, we are commited to
@@ -56,7 +49,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             <ImagesThumbsSwiper />
           </div>
           <div className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-b-xl lg:rounded-r-xl">
-            <motion.div variants={variantOpacityX} custom={6}>
+            <motion.div variants={variantOpacityX} custom={3}>
               <div className="text-red-700 font-bold flex mb-3">
                 <GiCompass className="m-2 text-3xl" />
                 <h1 className="content-center text-lg">Our Mission</h1>
@@ -67,7 +60,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
                 environmental & economic needs.
               </p>
             </motion.div>
-            <motion.div variants={variantOpacityX} custom={7}>
+            <motion.div variants={variantOpacityX} custom={4}>
               <div className="text-red-700 font-bold flex mb-3">
                 <FaRocket className="m-2 text-3xl" />
                 <h1 className="text-lg content-center">Our Vission</h1>
@@ -80,7 +73,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             </motion.div>
             <motion.div
               variants={variantOpacityX}
-              custom={8}
+              custom={5}
               className={`${Prop.display} text-right`}
             >
               <RedButton href={"/about"} tittle={"Find more"} />
@@ -90,7 +83,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             {source.map((item, idx) => (
               <motion.img
                 variants={variantOpacityX}
-                custom={idx + 3}
+                custom={idx + 6}
                 key={idx}
                 className={`${item.class} rounded-tl-2xl rounded-br-2xl`}
                 src={item.src}

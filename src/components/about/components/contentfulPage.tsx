@@ -1,9 +1,5 @@
 import { getAboutContentfulPage } from "@/api/api";
-import {
-  MotionDiv,
-  variantOpacity,
-  variantOpacityX,
-} from "@/components/motion/motion";
+import { MotionDiv, variantXFast } from "@/components/motion/motion";
 import PageNotFound from "@/components/not-found/pageNotFound";
 import RichText from "@/components/richtext/richText";
 import TitleSlice from "@/components/tittle/title";
@@ -36,6 +32,7 @@ export default async function AboutContentfulPage(Prop: {
           <MotionDiv
             initial="initial"
             whileInView="animate"
+            viewport={{ once: true }}
             className={`grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-7xl ${Prop.classTeam}`}
           >
             <div className="mb-3 col-span-2 sm:col-span-1">
@@ -46,15 +43,15 @@ export default async function AboutContentfulPage(Prop: {
               />
             </div>
             <MotionDiv
-              variants={variantOpacityX}
+              variants={variantXFast}
               custom={4}
               className="text-justify leading-relaxed"
             >
               <RichText document={about?.fields.opening} />
             </MotionDiv>
             <MotionDiv
-              variants={variantOpacity}
-              custom={5}
+              variants={variantXFast}
+              custom={6}
               className="col-span-2 text-justify leading-relaxed"
             >
               <RichText document={about?.fields.body} />

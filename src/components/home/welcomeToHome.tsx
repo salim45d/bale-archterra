@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
 import Image from "next/image";
 import VideoModalHome from "./videoHome";
-import { variantUpslide, variantOpacity } from "../motion/motion";
+import { variantUpslide, variantXFast } from "../motion/motion";
 import { motion } from "motion/react";
 
 export default function WelcomeToHome() {
@@ -19,11 +19,12 @@ export default function WelcomeToHome() {
       <motion.div
         initial="initial"
         whileInView="animate"
+        viewport={{ once: true }}
         className="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2 max-w-7xl"
       >
         <motion.div
-          variants={variantOpacity}
-          custom={5}
+          variants={variantXFast}
+          custom={1}
           className="order-last lg:order-first relative lg:mx-5"
         >
           <Image
@@ -55,29 +56,18 @@ export default function WelcomeToHome() {
           </div>
         </motion.div>
         <div className=" text-[#063852]">
-          <motion.h1
-            variants={variantUpslide}
-            custom={0}
-            className="text-3xl md:text-4xl font-extrabold"
-          >
-            Welcome to Bale Archterra
-          </motion.h1>
-          <motion.h2
-            variants={variantUpslide}
-            custom={1}
-            className=" mb-5 text-lg font-extrabold"
-          >
-            Build Properties for Your Statisfaction
-          </motion.h2>
-          <motion.p
-            variants={variantUpslide}
-            custom={2}
-            className="font-bold mb-2 italic"
-          >
-            "Our Company provides a full range of services for the contruction
-            of private houses and cottages since 2000"
-          </motion.p>
-          <motion.div variants={variantOpacity} custom={3}>
+          <motion.div variants={variantXFast} custom={3}>
+            <h1 className="text-3xl md:text-4xl font-extrabold">
+              Welcome to Bale Archterra
+            </h1>
+            <h2 className=" mb-5 text-lg font-extrabold">
+              Build Properties for Your Statisfaction
+            </h2>
+            <p className="font-bold mb-2 italic">
+              "Our Company provides a full range of services for the contruction
+              of private houses and cottages since 2000"
+            </p>
+
             <p className="mb-5 text-justify">
               We successfully cope with tasks of varying complexity, provide
               long-term guarantees and regularly master new technologies. Our

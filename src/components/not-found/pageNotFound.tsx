@@ -11,6 +11,7 @@ export default function PageNotFound() {
       whileInView="animate"
       variants={variantOpacityX}
       custom={1}
+      viewport={{ once: true }}
       className="flex justify-center content-center p-[5%] bg-[whitesmoke]"
     >
       <div className="lg:max-w-7xl">

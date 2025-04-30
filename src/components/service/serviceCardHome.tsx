@@ -1,8 +1,5 @@
-import WhiteButton from "@/components/button/whiteButton";
 import RedButton from "../button/redButton";
 import { getServiceContentful } from "@/api/api";
-import { IAsset } from "@/types/contentful.type";
-import { MotionDiv, variantOpacityX } from "../motion/motion";
 import TitleSlice from "../tittle/title";
 import ITitle from "@/types/title.interface";
 import ServiceCardSwiper from "./components/serviceCardSwiper";
@@ -22,11 +19,7 @@ export default async function ServiceCardHome() {
   } else {
     return (
       <section className="flex justify-center content-center bg-[whitesmoke]">
-        <MotionDiv
-          className="flex flex-col p-[5%] text-center w-screen max-w-7xl"
-          initial="initial"
-          whileInView="animate"
-        >
+        <div className="flex flex-col p-[5%] text-center w-screen max-w-7xl">
           {" "}
           <TitleSlice
             subtitle={title.subtitle}
@@ -34,14 +27,10 @@ export default async function ServiceCardHome() {
             quote={title.quote}
           />
           <ServiceCardSwiper service={service} />
-          <MotionDiv
-            variants={variantOpacityX}
-            custom={3}
-            className="text-right"
-          >
+          <div className="text-right">
             <RedButton href={"/service"} tittle={"All Service"} />
-          </MotionDiv>
-        </MotionDiv>
+          </div>
+        </div>
       </section>
     );
   }

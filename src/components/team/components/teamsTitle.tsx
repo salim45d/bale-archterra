@@ -1,9 +1,5 @@
 import RedButton from "@/components/button/redButton";
-import {
-  MotionDiv,
-  MotionP,
-  variantOpacityX,
-} from "@/components/motion/motion";
+import { MotionDiv, variantXFast } from "@/components/motion/motion";
 import TitleSlice from "@/components/tittle/title";
 import ITitle from "@/types/title.interface";
 
@@ -15,13 +11,20 @@ export default function TeamsTittle(Prop: { display: string }) {
   };
 
   return (
-    <MotionDiv initial="initial" whileInView="animate" className="text-center">
+    <MotionDiv
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      variants={variantXFast}
+      custom={0}
+      className="text-center"
+    >
       <TitleSlice
         subtitle={title.subtitle}
         title={title.title}
         quote={title.quote}
       />
-      <MotionP variants={variantOpacityX} custom={2} className="text-justify">
+      <p className="text-justify">
         Fuelled by unbound creativity and cutting-edge technology, our
         Architectural, Civil and Interior Design Services are spearheaded to
         exceed the expectations of all those in need of an innovation,
@@ -36,14 +39,10 @@ export default function TeamsTittle(Prop: { display: string }) {
         solutions. Client is the soul of the project. Our main goal is to
         illustrate his/hers values and individuality through design. We welcome
         you to the Bale Archterra.
-      </MotionP>
-      <MotionDiv
-        variants={variantOpacityX}
-        custom={3}
-        className={`${Prop.display} text-right mt-10`}
-      >
+      </p>
+      <div className={`${Prop.display} text-right mt-10`}>
         <RedButton href={"/team"} tittle={"Find more"} />
-      </MotionDiv>
+      </div>
     </MotionDiv>
   );
 }
