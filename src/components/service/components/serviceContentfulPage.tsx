@@ -93,8 +93,6 @@ export default function ServiceContentfulPage(Prop: {
                 custom={idx + 5}
                 className="text-justify"
               >
-                <RichText document={item.fields.opening} />
-                <div className="m-1"></div>
                 <RichText document={item.fields.body} />
               </MotionDiv>
 

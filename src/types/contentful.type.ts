@@ -12,7 +12,6 @@ export interface TypeAboutFields {
   slug?: EntryFieldTypes.Symbol;
   opening?: EntryFieldTypes.RichText;
   body?: EntryFieldTypes.RichText;
-  closing?: EntryFieldTypes.RichText;
 }
 
 export interface TypeServiceFields {
@@ -20,7 +19,6 @@ export interface TypeServiceFields {
   subtitle: EntryFieldTypes.Symbol;
   cardText: EntryFieldTypes.Symbol;
   slug?: EntryFieldTypes.Symbol;
-  opening?: EntryFieldTypes.RichText;
   body?: EntryFieldTypes.RichText;
   price?: EntryFieldTypes.Integer;
   imageCard?: EntryFieldTypes.AssetLink;
