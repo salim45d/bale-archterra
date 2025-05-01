@@ -1,10 +1,17 @@
 import Link from "next/link";
-import RedButton from "../button/redButton";
 import { MotionDiv, variantUpslide } from "../motion/motion";
+import TitleSlice from "../tittle/title";
+import ITitle from "@/types/title.interface";
 
 export default function BannerContactUS() {
+  const title: ITitle = {
+    subtitle: "OUR CONTACT",
+    title: "Are you ready to be part of Bale Archterra?",
+    quote:
+      "We are always ready to discussing new projects, creative ideas or opportunities to be part of your visions.",
+  };
   return (
-    <section className="p-[5%] bg-red-50 flex justify-center ">
+    <section className="p-[5%] bg-red-50 flex justify-center">
       <MotionDiv
         initial="initial"
         whileInView="animate"
@@ -14,17 +21,11 @@ export default function BannerContactUS() {
         className="flex max-w-7xl"
       >
         <div className="text-left w-full sm:w-1/2">
-          <h1 className="text-sm text-[#063852] font-semibold mb-3">
-            CONTACT US
-          </h1>
-          <h1 className="text-2xl sm:text-4xl text-red-700 font-extrabold">
-            Are you ready to be part of Bale Archterra?
-          </h1>
-          <p className="mt-1 text-[#063852] font-semibold mb-14">
-            We are always ready to discussing new projects, creative ideas or
-            opportunities to be part of your visions.
-          </p>
-
+          <TitleSlice
+            subtitle={title.subtitle}
+            title={title.title}
+            quote={title.quote}
+          />
           <div className="text-left mb-3">
             <Link
               href={"/team#contact-form"}
@@ -36,7 +37,7 @@ export default function BannerContactUS() {
         </div>
         <div className="w-1/2 justify-items-end">
           <img
-            src="./question.svg"
+            src="../question.svg"
             alt="Contact us"
             width={300}
             height={300}
