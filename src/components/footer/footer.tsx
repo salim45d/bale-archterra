@@ -29,9 +29,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-row justify-between sm:justify-start sm:gap-x-20 lg:gap-0 lg:justify-evenly">
             <div>
-              <h2 className="text-lg lg:text-xl font-extrabold mb-2">
-                Navigation
-              </h2>
+              <h2 className="md:text-lg font-bold mb-2">QUICK LINK</h2>
               <div className="font-semibold content-center">
                 <div className="flex flex-col text-base lg:text-lg gap-3 lg:gap-2">
                   {navItem.map((item, idx) => (
@@ -48,7 +46,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h2 className="text-lg lg:text-xl font-extrabold mb-2">About</h2>
+              <h2 className="md:text-lg font-bold mb-2">COMPANY</h2>
               <div className="flex flex-col font-semibold text-base lg:text-lg gap-3 lg:gap-2">
                 <Link
                   className="hover:text-yellow-500"
@@ -74,9 +72,7 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <h2 className="text-lg lg:text-xl font-extrabold mb-2">
-                Service
-              </h2>
+              <h2 className="md:text-lg font-bold mb-2">SERVICES</h2>
               <div className="flex flex-col font-semibold text-base lg:text-lg gap-3 lg:gap-2">
                 <Link
                   className="hover:text-yellow-500"
@@ -106,8 +102,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-span-3 lg:col-span-1 ">
-            <h2 className="text-lg lg:text-xl font-extrabold mb-2 mt-5 lg:mt-0">
-              Contact
+            <h2 className="md:text-lg font-bold mb-2 mt-5 lg:mt-0">
+              <Link href={"/team#contact-form"}>CONTACT US</Link>
             </h2>
             <NavContacticon
               class={"flex-col text-xl"}
