@@ -35,7 +35,7 @@ export default function BannerContactUS() {
             </Link>
           </div>
         </div>
-        <div className="w-1/2 justify-items-end">
+        <div className="w-1/2 sm:flex sm:justify-end">
           <img
             src="../question.svg"
             alt="Contact us"

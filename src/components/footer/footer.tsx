@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-row justify-between sm:justify-start sm:gap-x-20 lg:gap-0 lg:justify-evenly">
             <div>
-              <h2 className="md:text-lg font-bold mb-2">QUICK LINK</h2>
+              <h2 className="md:text-lg font-bold mb-2">QUICK LINKS</h2>
               <div className="font-semibold content-center">
                 <div className="flex flex-col text-base lg:text-lg gap-3 lg:gap-2">
                   {navItem.map((item, idx) => (
