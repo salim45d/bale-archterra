@@ -9,7 +9,7 @@ type MotionPProps = HTMLMotionProps<"p">;
 type MotionImgProps = HTMLMotionProps<"img">;
 
 const variantUpslide = {
-  initial: { y: "100%", opacity: 0 },
+  initial: { y: "50%", opacity: 0 },
   animate: (custom: number) => ({
     y: "0%",
     opacity: 1,
@@ -22,7 +22,7 @@ const variantUpslide = {
 };
 
 const variantOpacity = {
-  initial: { opacity: 0, y: "10%" },
+  initial: { opacity: 0, y: "5%" },
   animate: (custom: number) => ({
     y: 1,
     opacity: 1,
@@ -35,7 +35,7 @@ const variantOpacity = {
 };
 
 const variantOpacityX = {
-  initial: { opacity: 0, x: "10%" },
+  initial: { opacity: 0, x: "5%" },
   animate: (custom: number) => ({
     x: 1,
     opacity: 1,
@@ -48,7 +48,7 @@ const variantOpacityX = {
 };
 
 const variantXFast = {
-  initial: { opacity: 0, x: "10%" },
+  initial: { opacity: 0, x: "5%" },
   animate: (custom: number) => ({
     x: 1,
     opacity: 1,
