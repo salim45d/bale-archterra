@@ -51,7 +51,7 @@ export default function ServiceCardSwiper(Prop: {
               variants={variantOpacityX}
               viewport={{ once: true }}
               custom={idx}
-              className={`bg-yellow-500 text-center hover:bg-[#063852] hover:text-white rounded-md mb-10 p-1 overflow-hidden mySwiper-Slide`}
+              className={`bg-yellow-500 text-center hover:bg-[#063852] hover:text-white rounded-md mb-12 p-1 overflow-hidden mySwiper-Slide`}
             >
               <img
                 className={`rounded-md rounded-b-none`}
