@@ -16,7 +16,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-[whitesmoke] p-[5%] flex justify-center">
+    <section
+      className="bg-[whitesmoke] p-[5%] flex justify-center"
+      id="contact-form"
+    >
       <MotionDiv
         initial="initial"
         whileInView="animate"
@@ -53,7 +56,7 @@ export default function ContactSection() {
               ></iframe>
             </div>
           </MotionDiv>
-          <MotionDiv custom={3} variants={variantOpacityX} id="contact-form">
+          <MotionDiv custom={3} variants={variantOpacityX}>
             <ContactForm />
           </MotionDiv>
         </div>
