@@ -14,8 +14,8 @@ const variantUpslide = {
     y: "0%",
     opacity: 1,
     transition: {
-      duration: 1,
-      delay: 0.2 * custom,
+      duration: 0.5,
+      delay: 0.1 * custom,
       ease: [0.37, 0, 0.63, 1],
     },
   }),
@@ -27,9 +27,9 @@ const variantOpacity = {
     y: 1,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: [0, 0.55, 0.45, 1],
-      delay: 0.2 * custom,
+      delay: 0.1 * custom,
     },
   }),
 };
@@ -40,9 +40,9 @@ const variantOpacityX = {
     x: 1,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: [0.5, 0, 0.75, 0],
-      delay: 0.2 * custom,
+      delay: 0.1 * custom,
     },
   }),
 };
@@ -53,9 +53,9 @@ const variantXFast = {
     x: 1,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: [0.12, 0, 0.39, 0],
-      delay: 0.2 * custom,
+      delay: 0.1 * custom,
     },
   }),
 };
