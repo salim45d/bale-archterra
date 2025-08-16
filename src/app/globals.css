@@ -31,7 +31,7 @@ body {
 }
 
 .transitions {
-  transition: 1s all ease;
+  transition: 0.1s all ease;
 }
 
 .mySwiper2 {
