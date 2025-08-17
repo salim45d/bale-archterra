@@ -106,7 +106,7 @@ export default function TeamsMemberCardSwiper() {
                   viewport={{ once: true }}
                   variants={variantOpacity}
                   custom={0}
-                  className="bg-[#063852] rounded-md flex justify-between flex-col hover:bg-[#eab308] hover:text-black mb-12 text-white mySwiper-Slide"
+                  className="bg-[#063852] rounded-md flex justify-between flex-col mb-12 text-white mySwiper-Slide"
                 >
                   <div className="flex justify-center p-5">
                     <motion.img

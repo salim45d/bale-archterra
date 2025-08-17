@@ -66,7 +66,7 @@ export default function HeaderHeadline() {
         <motion.div
           variants={variantOpacityX}
           custom={4}
-          className="bg-red-700 hover:bg-[#063852] text-white p-2 sm:p-5 text-center rounded-br-2xl overflow-hidden"
+          className="bg-red-700 text-white p-2 sm:p-5 text-center rounded-br-2xl overflow-hidden"
         >
           <div>
             <h1 className="font-bold mb-4 text-sm md:text-md lg:text-lg">
