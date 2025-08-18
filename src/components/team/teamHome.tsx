@@ -11,7 +11,7 @@ export default function TeamsHome() {
         custom={1}
         initial="initial"
         whileInView="animate"
-        className={`grid grid-cols-1 md:grid-cols-2 p-5 sm:p-10 gap-5 sm:gap-8 lg:gap-5 max-w-7xl overflow-hidden bg-red-100 rounded-xl`}
+        className={`grid grid-cols-1 md:grid-cols-2 p-5 gap-5 sm:gap-8 lg:gap-5 max-w-7xl overflow-hidden bg-red-100 rounded-xl`}
       >
         <TeamPhotos />
         <TeamsTittle display={""} />
