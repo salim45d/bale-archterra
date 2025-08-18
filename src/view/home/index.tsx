@@ -12,7 +12,7 @@ export default function HomeView() {
       <HeaderHome />
       <HeaderHeadline />
       <WelcomeToHome />
-      <AboutHome class={""} display={""} />
+      <AboutHome display={""} />
       <ServiceCardHome />
       <TeamsHome />
       <Testimonials classHome={"bg-[whitesmoke]"} classTeam={"p-0 sm:p-[3%]"} />
