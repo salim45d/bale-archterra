@@ -40,7 +40,9 @@ export default function TeamPhotos() {
     );
   } else {
     return (
-      <div className={`flex flex-wrap content-center justify-around`}>
+      <div
+        className={`flex flex-wrap content-center justify-around bg-white/20 rounded-xl p-2 backdrop-blur-md`}
+      >
         {teams?.map((team, idx) => (
           <MotionDiv
             key={idx}

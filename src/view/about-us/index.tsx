@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <div className="overflow-hidden">
       <HeaderPages img={"/building.jpg"} />
-      <AboutHome class={"bg-[whitesmoke]"} display={"hidden"} />
+      <AboutHome display={"hidden"} />
       <ImagesSwiperGalery />
       <HistoryAbout />
       <ImageSliderAbout />

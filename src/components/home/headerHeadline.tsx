@@ -32,7 +32,7 @@ export default function HeaderHeadline() {
     },
   ];
   return (
-    <summary className="flex justify-center bg-[whitesmoke]">
+    <summary className="flex justify-center">
       <motion.div
         initial="initial"
         whileInView="animate"

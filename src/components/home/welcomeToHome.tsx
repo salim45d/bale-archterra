@@ -12,10 +12,7 @@ export default function WelcomeToHome() {
   const dispatch = useDispatch();
 
   return (
-    <section
-      className="bg-[whitesmoke] p-[5%] flex justify-center"
-      id="about-home"
-    >
+    <section className="p-[5%] flex justify-center" id="about-home">
       <motion.div
         initial="initial"
         whileInView="animate"

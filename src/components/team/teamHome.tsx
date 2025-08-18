@@ -4,14 +4,14 @@ import TeamsTittle from "./components/teamsTitle";
 
 export default function TeamsHome() {
   return (
-    <section className={`flex justify-center content-center p-[5%]`}>
+    <section className="flex justify-center content-center px-[5%]">
       <MotionDiv
         variants={variantOpacity}
         viewport={{ once: true }}
         custom={1}
         initial="initial"
         whileInView="animate"
-        className={`grid grid-cols-1 md:grid-cols-2 p-[5%] gap-5 sm:gap-8 lg:gap-5 bg-[whitesmoke] max-w-7xl overflow-hidden rounded-xl`}
+        className={`grid grid-cols-1 md:grid-cols-2 p-5 sm:p-10 gap-5 sm:gap-8 lg:gap-5 max-w-7xl overflow-hidden bg-red-100 rounded-xl`}
       >
         <TeamPhotos />
         <TeamsTittle display={""} />

@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { variantUpslide, variantOpacityX } from "../motion/motion";
 import ImagesThumbsSwiper from "./components/imagesThumbsSwiper";
 
-export default function AboutHome(Prop: { class: string; display: string }) {
+export default function AboutHome(Prop: { display: string }) {
   const source = [
     { id: 1, class: "lg:ml-40", src: "/about-green.jpg", xy: 150 },
     { id: 2, class: "lg:-ml-10 lg:-mt-10", src: "/about-home.jpg", xy: 250 },
@@ -14,7 +14,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
   ];
 
   return (
-    <section className={`${Prop.class}`}>
+    <section>
       <div className="flex justify-center content-center p-[5%]">
         <motion.div
           initial="initial"
@@ -22,7 +22,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
           viewport={{ once: true }}
           className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.2fr_1fr] lg:max-w-7xl overflow-hidden"
         >
-          <div className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-t-xl lg:rounded-l-xl">
+          <div className="flex justify-between flex-col bg-red-100 p-5 sm:p-10 lg:pr-5 rounded-t-xl lg:rounded-l-xl lg:rounded-r-none">
             <motion.div variants={variantUpslide} custom={1}>
               <h1 className="text-sm text-[#063852] font-bold mb-3">
                 ABOUT US
@@ -45,10 +45,10 @@ export default function AboutHome(Prop: { class: string; display: string }) {
             </div>
           </div>
           {/* Mobile Image UI */}
-          <div className=" lg:hidden bg-[whitesmoke] px-2 sm:px-10">
+          <div className=" lg:hidden bg-red-100 px-2 sm:px-10">
             <ImagesThumbsSwiper />
           </div>
-          <div className="bg-[whitesmoke] p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-b-xl lg:rounded-r-xl">
+          <div className="bg-red-100 p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-b-xl lg:rounded-r-xl lg:rounded-l-none">
             <motion.div variants={variantOpacityX} custom={3}>
               <div className="text-red-700 font-bold flex mb-3">
                 <GiCompass className="m-2 text-3xl" />

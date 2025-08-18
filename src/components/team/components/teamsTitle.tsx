@@ -24,7 +24,7 @@ export default function TeamsTittle(Prop: { display: string }) {
         title={title.title}
         quote={title.quote}
       />
-      <p className="text-justify lg:px-[10%]">
+      <p className="text-justify">
         Fuelled by unbound creativity and cutting-edge technology, our
         Architectural, Civil and Interior Design Services are spearheaded to
         exceed the expectations of all those in need of an innovation,
@@ -47,7 +47,7 @@ export default function TeamsTittle(Prop: { display: string }) {
         with service efficiency, responsiveness and a strong commitment towards
         project deadlines as well as budgetary constraints.
       </p>
-      <div className={`${Prop.display} text-right mt-10`}>
+      <div className={`${Prop.display} text-right my-5`}>
         <RedButton href={"/team"} tittle={"Find more"} />
       </div>
     </MotionDiv>

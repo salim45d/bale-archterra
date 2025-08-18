@@ -11,7 +11,7 @@ export default function BannerContactUS() {
       "We are always ready to discussing new projects, creative ideas or opportunities to be part of your visions.",
   };
   return (
-    <section className="p-[5%] bg-red-50 flex justify-center">
+    <section className="p-[5%] bg-red-100 flex justify-center">
       <MotionDiv
         initial="initial"
         whileInView="animate"
