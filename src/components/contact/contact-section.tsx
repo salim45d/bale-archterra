@@ -1,7 +1,7 @@
 import ITitle from "@/types/title.interface";
-import ContactForm from "../contact-form/contact-form";
 import { MotionDiv, variantOpacityX, variantUpslide } from "../motion/motion";
 import TitleSlice from "../tittle/title";
+import ContactForm from "./components/contact-form";
 
 export default function ContactSection() {
   const title: ITitle = {

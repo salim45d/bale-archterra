@@ -24,7 +24,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
         >
           <div className="flex justify-between flex-col bg-[whitesmoke] p-5 sm:p-10 lg:pr-5 rounded-t-xl lg:rounded-l-xl">
             <motion.div variants={variantUpslide} custom={1}>
-              <h1 className="text-sm text-[#063852] font-semibold mb-3">
+              <h1 className="text-sm text-[#063852] font-bold mb-3">
                 ABOUT US
               </h1>
               <div className="text-2xl sm:text-4xl text-red-700 font-extrabold">
@@ -36,7 +36,7 @@ export default function AboutHome(Prop: { class: string; display: string }) {
               <motion.p
                 variants={variantOpacityX}
                 custom={2}
-                className="mt-5 text-justify text-[#063852] font-semibold"
+                className="mt-5 text-justify text-[#063852] font-bold"
               >
                 "With years of experience in the industry, we are commited to
                 delivering exceptional result that exceed our clients

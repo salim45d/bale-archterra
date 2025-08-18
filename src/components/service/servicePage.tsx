@@ -30,7 +30,7 @@ export default async function ServiceAllPage() {
           <MotionP
             variants={variantOpacityX}
             custom={1}
-            className="text-justify"
+            className="text-justify lg:px-[10%]"
           >
             Look for contruction services with a proven back record of success
             in plan and build better properties. Fuelled by unbound creativity
@@ -41,7 +41,21 @@ export default async function ServiceAllPage() {
             construction service firm, by displaying an outstanding track-record
             of design-excellence, coupled with service efficiency,
             responsiveness and a strong commitment towards project deadlines as
-            well as budgetary constraints.
+            well as budgetary constraints. Look for contruction services with a
+            proven back record of success in plan and build better properties.
+            Fuelled by unbound creativity and cutting-edge technology, our
+            Architectural, Civil and Interior Design Services are spearheaded to
+            exceed the expectations of all those in need of an innovation,
+            reliability and experience of a lifetime. Time and again, we have
+            proved our mettle as the finest construction service firm, by
+            displaying an outstanding track-record of design-excellence, coupled
+            with service efficiency, responsiveness and a strong commitment
+            towards project deadlines as well as budgetary constraints. Time and
+            again, we have proved our mettle as the finest construction service
+            firm, by displaying an outstanding track-record of
+            design-excellence, coupled with service efficiency, responsiveness
+            and a strong commitment towards project deadlines as well as
+            budgetary constraints.
           </MotionP>
         </div>
         <section className="mt-10">

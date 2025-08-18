@@ -5,7 +5,7 @@ import ITitle from "@/types/title.interface";
 
 export default function TeamsTittle(Prop: { display: string }) {
   const title: ITitle = {
-    subtitle: " OUR TEAM",
+    subtitle: "OUR TEAM",
     title: "Bale Archterra Specialist Team",
     quote: `"A successful team is a group of many hands and one mind."`,
   };
@@ -24,7 +24,7 @@ export default function TeamsTittle(Prop: { display: string }) {
         title={title.title}
         quote={title.quote}
       />
-      <p className="text-justify">
+      <p className="text-justify lg:px-[10%]">
         Fuelled by unbound creativity and cutting-edge technology, our
         Architectural, Civil and Interior Design Services are spearheaded to
         exceed the expectations of all those in need of an innovation,
@@ -38,7 +38,14 @@ export default function TeamsTittle(Prop: { display: string }) {
         our projects incorporate a unique artistic image and functional
         solutions. Client is the soul of the project. Our main goal is to
         illustrate his/hers values and individuality through design. We welcome
-        you to the Bale Archterra.
+        you to the Bale Archterra. Fuelled by unbound creativity and
+        cutting-edge technology, our Architectural, Civil and Interior Design
+        Services are spearheaded to exceed the expectations of all those in need
+        of an innovation, reliability and experience of a lifetime. Time and
+        again, we have proved our mettle as the finest team of architects, by
+        displaying an outstanding track-record of design-excellence, coupled
+        with service efficiency, responsiveness and a strong commitment towards
+        project deadlines as well as budgetary constraints.
       </p>
       <div className={`${Prop.display} text-right mt-10`}>
         <RedButton href={"/team"} tittle={"Find more"} />

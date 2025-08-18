@@ -75,7 +75,7 @@ export default function HeaderHeadline() {
             <p className="text-xs md:text-sm lg:text-md mb-4">
               Let's talk about your next project with us
             </p>
-            <WhiteButton href={"/team#contact-form"} tittle={"Contact us"} />
+            <WhiteButton href={"/contact"} tittle={"Contact us"} />
           </div>
         </motion.div>
       </motion.div>

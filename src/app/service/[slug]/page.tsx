@@ -1,11 +1,10 @@
-import { getServiceContentfulbySlug } from "@/api/api";
+import { getServiceContentful, getServiceContentfulbySlug } from "@/api/api";
 import { Entry } from "contentful";
 import { TypeServiceSkeleton } from "@/types/contentful.type";
-import HeaderHeadline from "@/components/home/headerHeadline";
-import ServiceCardHome from "@/components/service/serviceCardHome";
 import ServiceContentfulPage from "@/components/service/components/serviceContentfulPage";
 import HeaderPages from "@/components/home/headerPages";
 import PageNotFound from "@/components/not-found/pageNotFound";
+import ServiceHeadline from "@/components/service/serviceHeadline";
 
 export default async function ServiceSlugPage({
   params,
@@ -13,6 +12,7 @@ export default async function ServiceSlugPage({
   params: { slug: string };
 }) {
   const service = await getServiceContentfulbySlug(params.slug);
+  const serviceHeadline = await getServiceContentful();
 
   if (service !== undefined) {
     const services: Entry<TypeServiceSkeleton, undefined, string>[] = [];
@@ -20,24 +20,20 @@ export default async function ServiceSlugPage({
 
     return (
       <div>
-        <HeaderPages
-          img={"/service.jpg"}
-          tittle={`${services[0]?.fields.tittle}`}
-        />
-        <HeaderHeadline />
+        <HeaderPages img={"/about-building-large.jpg"} />
+        <ServiceHeadline serviceHeadline={serviceHeadline} />
         <section className="flex justify-center bg-[whitesmoke] px-[5%]">
           <div className="lg:max-w-7xl">
             <ServiceContentfulPage services={services} />
           </div>
         </section>
-        <ServiceCardHome />
       </div>
     );
   } else {
     return (
       <div>
-        <HeaderPages img={"/service.jpg"} tittle="Our Service" />
-        <HeaderHeadline />
+        <HeaderPages img={"/about-building-large.jpg"} />
+        <ServiceHeadline serviceHeadline={serviceHeadline} />
         <PageNotFound />
       </div>
     );

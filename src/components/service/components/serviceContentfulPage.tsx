@@ -26,7 +26,7 @@ export default function ServiceContentfulPage(Prop: {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-[5%]"
+            className="grid grid-cols-1 md:grid-cols-2 gap-5 my-[5%]"
           >
             <div className="text-center col-span-1 md:col-span-2">
               <TitleSlice
@@ -35,7 +35,11 @@ export default function ServiceContentfulPage(Prop: {
                 quote={item.fields.subtitle}
               />
             </div>
-            <div className="px-2 md:px-0 lg:px-5">
+            <div
+              className={`px-2 md:px-0 lg:px-5 ${
+                idx % 2 === 1 ? "order-last" : ""
+              }`}
+            >
               <div className="grid grid-cols-2 gap-2">
                 <div className="inline-block content-end">
                   <MotionImg
@@ -87,7 +91,7 @@ export default function ServiceContentfulPage(Prop: {
                 />{" "}
               </div>
             </div>
-            <div>
+            <div className={`${idx % 2 === 1 ? "text-end" : ""}`}>
               <MotionDiv
                 variants={variantXFast}
                 custom={idx + 5}
@@ -108,7 +112,7 @@ export default function ServiceContentfulPage(Prop: {
                 custom={idx + 7}
                 className="pb-16"
               >
-                <RedButton href={"/team#contact-form"} tittle={"Contact us"} />
+                <RedButton href={"/contact"} tittle={"Contact us"} />
               </MotionDiv>
             </div>
           </MotionDiv>

@@ -28,7 +28,7 @@ export default function BannerContactUS() {
           />
           <div className="text-left mb-3">
             <Link
-              href={"/team#contact-form"}
+              href={"/contact"}
               className="rounded-md bg-red-700 px-6 py-3 font-bold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 hover:text-white hover:border hover:border-slate-100 text-base sm:text-lg"
             >
               Let's Talk
