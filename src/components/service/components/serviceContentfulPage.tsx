@@ -37,7 +37,7 @@ export default function ServiceContentfulPage(Prop: {
             </div>
             <div
               className={`px-2 md:px-0 lg:px-5 ${
-                idx % 2 === 1 ? "order-last" : ""
+                idx % 2 === 1 ? "md:order-last" : ""
               }`}
             >
               <div className="grid grid-cols-2 gap-2">

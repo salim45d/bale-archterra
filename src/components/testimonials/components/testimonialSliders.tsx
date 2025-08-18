@@ -89,7 +89,7 @@ export default function TestimonialsSlider(Prop: {
         {Prop.testimonials.map((testimonial, index) => (
           <button
             key={index}
-            className={`rounded-md px-3 py-2 font-bold leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 mr-1 my-1 ${
+            className={`rounded-md px-7 sm:px-16 py-4 font-bold leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 mr-1 my-1 ${
               active === index
                 ? "bg-white text-red-700 hover:text-white  hover:bg-red-800 border border-red-800"
                 : "bg-red-700 hover:bg-red-800 text-white"

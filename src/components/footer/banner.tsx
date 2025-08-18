@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MotionDiv, variantUpslide } from "../motion/motion";
 import TitleSlice from "../tittle/title";
 import ITitle from "@/types/title.interface";
+import RedButton from "../button/redButton";
 
 export default function BannerContactUS() {
   const title: ITitle = {
@@ -27,12 +28,7 @@ export default function BannerContactUS() {
             quote={title.quote}
           />
           <div className="text-left mb-3">
-            <Link
-              href={"/contact"}
-              className="rounded-md bg-red-700 px-6 py-3 font-bold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 hover:text-white hover:border hover:border-slate-100 text-base sm:text-lg"
-            >
-              Let's Talk
-            </Link>
+            <RedButton href={"/contact"} tittle={"Let's Talk"} />
           </div>
         </div>
         <div className="w-1/2 sm:flex sm:justify-end">
