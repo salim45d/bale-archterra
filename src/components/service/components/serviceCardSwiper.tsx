@@ -16,7 +16,7 @@ export default function ServiceCardSwiper(Prop: {
     <div className="w-full">
       <Swiper
         modules={[Pagination, Navigation, Autoplay, Keyboard]}
-        spaceBetween={15}
+        spaceBetween={20}
         slidesPerView={1}
         keyboard={{
           enabled: true,
@@ -33,13 +33,14 @@ export default function ServiceCardSwiper(Prop: {
           pauseOnMouseEnter: true,
         }}
         breakpoints={{
-          450: {
-            slidesPerView: 2,
-            spaceBetween: 10,
+          550: {
+            slidesPerView: 1.5,
           },
-          900: {
+          750: {
+            slidesPerView: 2,
+          },
+          1024: {
             slidesPerView: 3,
-            spaceBetween: 20,
           },
         }}
       >

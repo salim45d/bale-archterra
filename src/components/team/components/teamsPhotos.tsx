@@ -34,8 +34,8 @@ export default function TeamPhotos() {
 
   if (teams === undefined) {
     return (
-      <div className="-m-[5%]">
-        <PageNotFound />;
+      <div className="h-full">
+        <PageNotFound />{" "}
       </div>
     );
   } else {
@@ -56,7 +56,7 @@ export default function TeamPhotos() {
             <img
               alt="Team-profile"
               src={team.picture.medium}
-              className="rounded-full w-16 sm:w-24 h-16 sm:h-24 hover:scale-110 ring-2 p-1 ring-gray-300"
+              className="rounded-full w-24 h-24 hover:scale-110 ring-2 p-1 ring-gray-300"
             />
             <p className="text-red-700 text-sm font-bold mt-1 text-center">
               {team.name.first}

@@ -49,7 +49,7 @@ export default function ServiceHeadline(Prop: {
               key={idx}
               variants={variantOpacityX}
               custom={idx + 1}
-              className={`bg-yellow-500 p-[5%] text-black text-center  rounded-2xl h-64 overflow-hidden`}
+              className={`bg-yellow-500 p-[5%] text-black text-center  rounded-md h-64 overflow-hidden`}
             >
               <Link
                 className="flex flex-col space-y-1 sm:space-y-2 items-center"

@@ -27,9 +27,6 @@ export default async function ServiceCardHome() {
             quote={title.quote}
           />
           <ServiceCardSwiper service={service} />
-          <div className="text-right">
-            <RedButton href={"/service"} tittle={"All Service"} />
-          </div>
         </div>
       </section>
     );

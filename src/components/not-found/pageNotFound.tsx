@@ -6,14 +6,14 @@ import RedButton from "../button/redButton";
 
 export default function PageNotFound() {
   return (
-    <div className="flex justify-center content-center p-[5%] bg-[whitesmoke]">
+    <div className="flex justify-center content-center mx-[10%] pb-[5%] rounded-md">
       <motion.div
         initial="initial"
         whileInView="animate"
         variants={variantOpacityX}
         custom={1}
         viewport={{ once: true }}
-        className="text-center mx-[8%] max-w-7xl"
+        className="text-center max-w-7xl"
       >
         <TitleSlice
           subtitle="ERROR"
@@ -22,7 +22,7 @@ export default function PageNotFound() {
             path. We can't seem to find the page you're looking for. Try Going
             back to the previous page or get touch with the website owner."
         />
-        <div className="inline-block content-center -mt-10 mb-4">
+        <div className="inline-block content-center">
           <motion.img
             src="../error.png"
             variants={variantOpacityX}

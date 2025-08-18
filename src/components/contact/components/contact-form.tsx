@@ -62,7 +62,7 @@ export default function ContactForm() {
           return (
             <div>
               <Form className="text-black" onSubmit={handleSubmit}>
-                <div className="text-center lg:p-10">
+                <div className="text-center lg:pt-10 lg:px-10">
                   <h2 className="text-lg md:text-xl font-bold leading-9 tracking-tight text-[#063852]">
                     Contact us
                   </h2>
@@ -170,7 +170,7 @@ export default function ContactForm() {
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="rounded-md bg-red-700 py-4 px-20 font-bold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 mt-5"
+                    className="rounded-md bg-red-700 py-4 w-full md:w-80 font-bold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 mt-5"
                   >
                     Send
                   </button>

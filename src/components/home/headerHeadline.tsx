@@ -8,7 +8,6 @@ export default function HeaderHeadline() {
   const headLineItem = [
     {
       id: 1,
-      class: "rounded-tl-2xl",
       image: "/architect.png",
       title: "Healty & Safety First",
       textBody:
@@ -16,7 +15,6 @@ export default function HeaderHeadline() {
     },
     {
       id: 2,
-      class: "",
       image: "/apartment.png",
       title: "Experienced Experts",
       textBody:
@@ -24,7 +22,6 @@ export default function HeaderHeadline() {
     },
     {
       id: 3,
-      class: "",
       image: "/gauge.png",
       title: "Innovative & Creative",
       textBody:
@@ -36,14 +33,14 @@ export default function HeaderHeadline() {
       <motion.div
         initial="initial"
         whileInView="animate"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-3 sm:-mt-16 w-[95%] lg:max-w-5xl z-0 gap-1"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-3 sm:-mt-28 w-[90%] lg:max-w-5xl z-0 gap-3 lg:gap-1"
       >
         {headLineItem.map((item, idx) => (
           <motion.div
             key={idx}
             variants={variantOpacityX}
             custom={idx + 1}
-            className={`${item.class} bg-yellow-500 p-5 text-center`}
+            className={`rounded-md bg-yellow-500 p-5 text-center`}
           >
             <div className="flex justify-center">
               <Image
@@ -59,15 +56,16 @@ export default function HeaderHeadline() {
             </div>
           </motion.div>
         ))}
+
         <motion.div
           variants={variantOpacityX}
           custom={4}
-          className="bg-red-700 text-white p-5 text-center rounded-br-2xl overflow-hidden"
+          className="bg-red-700 text-white p-5 text-center rounded-md overflow-hidden"
         >
           <div>
             <h1 className="font-bold mb-5 text-lg">Get Started</h1>
             <p className="mb-10">Let's talk about your next project with us</p>
-            <WhiteButton href={"/contact"} tittle={"Contact us"} />
+            <WhiteButton href={"/contact"} tittle={"Let's Talk"} />
           </div>
         </motion.div>
       </motion.div>
