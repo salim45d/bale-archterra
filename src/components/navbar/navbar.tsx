@@ -41,7 +41,7 @@ export default function Navbar() {
       </div>
       {/* Mobile Navbar */}
       <nav
-        className={`sm:hidden fixed top-2 right-2 left-2 z-10 w-auto rounded-lg pl-5 transitions
+        className={`sm:hidden fixed top-2 right-[5%] left-[5%] z-10 w-auto rounded-lg pl-5 transitions
           ${navbar.isScroll ? "py-3 bg-black/70 backdrop-blur-md" : "py-5"}`}
       >
         <div className="md:hidden flex flex-row items-center text-white">

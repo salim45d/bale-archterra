@@ -11,7 +11,7 @@ export default function MobileMenu() {
 
   return (
     <div
-      className={`z-20 p-5 -top-2 -right-2 -left-2 rounded-lg h-screen w-auto bg-black/70 backdrop-blur-md text-white transition-transform duration-300 transform ${
+      className={`z-20 p-5 -top-2 -right-[5%] -left-[5%] rounded-lg h-screen w-auto bg-black/70 backdrop-blur-md text-white transition-transform duration-300 transform ${
         navbar.isOpen ? "translate-x-0 fixed" : "translate-x-full hidden"
       }`}
     >
