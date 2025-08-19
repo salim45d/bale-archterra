@@ -39,8 +39,8 @@ export default function Navbar() {
       </div>
       {/* Mobile Navbar */}
       <nav
-        className={`sm:hidden fixed top-0 z-10 w-screen bg-black pl-5 transitions
-          ${navbar.isScroll ? "py-2" : "py-3"}`}
+        className={`sm:hidden fixed top-0 z-10 w-screen pl-5 transitions
+          ${navbar.isScroll ? "py-4 bg-black/70 backdrop-blur-2xl" : "py-5"}`}
       >
         <div className="md:hidden relative flex flex-row items-center text-white">
           <Navlogo />

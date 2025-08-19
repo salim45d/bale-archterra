@@ -6,7 +6,7 @@ import { variantUpslide } from "../motion/motion";
 export default function HeaderHome() {
   return (
     <header>
-      <div className="relative bg-black pt-14 sm:pt-0">
+      <div className="relative bg-black">
         <div className="absolute gradient"></div>
         <Image
           className="w-full h-screen sm:h-[40rem] object-cover"

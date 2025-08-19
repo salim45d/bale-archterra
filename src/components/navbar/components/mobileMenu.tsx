@@ -11,7 +11,7 @@ export default function MobileMenu() {
 
   return (
     <div
-      className={`fixed flex flex-col justify-between p-5 z-10 top-0 right-0 h-screen w-screen bg-black text-white transition-transform duration-300 transform ${
+      className={`fixed flex flex-col justify-between p-5 z-10 top-0 right-0 h-screen w-screen bg-black/70  backdrop-blur-2xl text-white transition-transform duration-300 transform ${
         navbar.isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >

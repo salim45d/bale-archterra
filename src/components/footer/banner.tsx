@@ -23,7 +23,7 @@ export default function BannerContactUS() {
         custom={1}
         className="lg:max-w-7xl w-full rounded-xl bg-red-100 backdrop-blur-2xl p-5 flex flex-col-reverse md:flex-row"
       >
-        <div className="text-left bg-white/20 rounded-xl p-5 backdrop-blur-md w-full md:w-1/2">
+        <div className="text-left bg-white/20 rounded-xl p-5 backdrop-blur-md w-full md:w-1/2 mt-5 md:mt-0">
           <TitleSlice
             subtitle={title.subtitle}
             title={title.title}
