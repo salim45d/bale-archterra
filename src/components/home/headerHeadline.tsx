@@ -33,7 +33,7 @@ export default function HeaderHeadline() {
       <motion.div
         initial="initial"
         whileInView="animate"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-3 sm:-mt-28 w-[90%] lg:max-w-5xl z-0 gap-3 lg:gap-1"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-3 sm:-mt-28 w-[90%] pb-[5%] lg:max-w-5xl z-0 gap-3 lg:gap-1"
       >
         {headLineItem.map((item, idx) => (
           <motion.div

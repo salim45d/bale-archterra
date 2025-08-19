@@ -4,7 +4,7 @@ import TeamsTittle from "./components/teamsTitle";
 
 export default function TeamsHome() {
   return (
-    <section className="flex justify-center content-center px-[5%]">
+    <section className="flex justify-center content-center p-[5%]">
       <MotionDiv
         variants={variantOpacity}
         viewport={{ once: true }}

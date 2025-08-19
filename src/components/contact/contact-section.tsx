@@ -16,10 +16,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section
-      className="bg-[whitesmoke] p-[5%] flex justify-center"
-      id="contact-form"
-    >
+    <section className="p-[5%] flex justify-center">
       <MotionDiv
         initial="initial"
         whileInView="animate"
@@ -34,8 +31,11 @@ export default function ContactSection() {
           />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-5">
+          <MotionDiv custom={2} variants={variantOpacityX}>
+            <ContactForm />
+          </MotionDiv>
           <MotionDiv
-            custom={2}
+            custom={3}
             variants={variantUpslide}
             className="lg:p-10 text-center"
           >
@@ -55,9 +55,6 @@ export default function ContactSection() {
                 title="Maps"
               ></iframe>
             </div>
-          </MotionDiv>
-          <MotionDiv custom={3} variants={variantOpacityX}>
-            <ContactForm />
           </MotionDiv>
         </div>
       </MotionDiv>
