@@ -11,13 +11,13 @@ export default function MobileMenu() {
 
   return (
     <div
-      className={`fixed flex flex-col justify-between p-5 z-10 top-0 right-0 h-screen w-screen bg-black/70  backdrop-blur-2xl text-white transition-transform duration-300 transform ${
+      className={`absolute z-20 p-5 top-0 right-0 h-screen w-screen bg-black/70 backdrop-blur-2xl text-white transition-transform duration-300 transform ${
         navbar.isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
       <div>
         <button
-          className="absolute right-7 top-4 p-3"
+          className="absolute right-2 top-2 p-3"
           aria-label="Close Menu"
           onClick={() => dispatch(closeNav())}
         >
@@ -37,7 +37,7 @@ export default function MobileMenu() {
           ))}
         </ul>
       </div>
-      <div>
+      <div className="absolute bottom-5">
         <p className="font-bold">Contact:</p>
         <NavContacticon
           class={"flex-col sm:flex-row text-xl font-extralight"}
