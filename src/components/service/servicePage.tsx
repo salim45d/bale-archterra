@@ -18,7 +18,7 @@ export default async function ServiceAllPage() {
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className="flex justify-center content-center p-[5%] bg-[whitesmoke]"
+      className="flex justify-center content-center px-[5%] pt-[5%]"
     >
       <div className="max-w-7xl">
         <div className="text-center">
@@ -58,7 +58,7 @@ export default async function ServiceAllPage() {
             budgetary constraints.
           </MotionP>
         </div>
-        <section className="mt-10">
+        <section className="mt-[5%]">
           <ServiceContentfulPage services={services} />
         </section>
       </div>

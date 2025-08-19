@@ -26,7 +26,9 @@ export default function ServiceContentfulPage(Prop: {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5 my-[5%]"
+            className={`grid grid-cols-1 md:grid-cols-2 gap-5 p-5 my-[5%] ${
+              idx % 2 === 0 ? "bg-red-100 rounded-lg" : ""
+            }`}
           >
             <div className="text-center col-span-1 md:col-span-2">
               <TitleSlice
@@ -37,7 +39,9 @@ export default function ServiceContentfulPage(Prop: {
             </div>
             <div
               className={`px-2 md:px-0 lg:px-5 ${
-                idx % 2 === 1 ? "md:order-last" : ""
+                idx % 2 === 1
+                  ? "md:order-last"
+                  : "bg-white/20 backdrop-blur-md rounded-lg p-5"
               }`}
             >
               <div className="grid grid-cols-2 gap-2">
@@ -107,11 +111,7 @@ export default function ServiceContentfulPage(Prop: {
               >
                 Start from Rp{item.fields.price}/m<sup>2</sup>
               </MotionP>
-              <MotionDiv
-                variants={variantUpslide}
-                custom={idx + 7}
-                className="pb-16"
-              >
+              <MotionDiv variants={variantUpslide} custom={idx + 7}>
                 <RedButton href={"/contact"} tittle={"Contact us"} />
               </MotionDiv>
             </div>
