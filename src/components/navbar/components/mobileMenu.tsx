@@ -11,13 +11,13 @@ export default function MobileMenu() {
 
   return (
     <div
-      className={`z-20 p-5 -top-2 -right-[5%] -left-[5%] rounded-lg h-screen w-auto bg-black/70 backdrop-blur-md text-white transition-transform duration-300 transform ${
+      className={`z-20 px-8 py-5 -top-2 -right-4 -left-4 rounded-lg h-screen w-auto bg-black/70 backdrop-blur-md text-white transition-transform duration-300 transform ${
         navbar.isOpen ? "translate-x-0 fixed" : "translate-x-full hidden"
       }`}
     >
       <div>
         <button
-          className="absolute right-3 top-3 p-3"
+          className="absolute right-4 top-2 p-4"
           aria-label="Close Menu"
           onClick={() => dispatch(closeNav())}
         >
