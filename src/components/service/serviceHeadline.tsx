@@ -14,9 +14,9 @@ export default function ServiceHeadline(Prop: {
   serviceHeadline: Entry<TypeServiceSkeleton, undefined, string>[] | undefined;
 }) {
   return (
-    <summary className="w-full flex justify-center bg-[whitesmoke]">
+    <summary className="w-full flex justify-center">
       <Swiper
-        className="-mt-32 w-[95%] lg:max-w-5xl z-0"
+        className="-mt-32 w-[90%] lg:max-w-5xl z-0"
         modules={[Navigation, Autoplay, Keyboard]}
         spaceBetween={5}
         slidesPerView={1}
