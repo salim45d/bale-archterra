@@ -27,8 +27,10 @@ export default function Navbar() {
           <NavSocialIcon class={"justify-around text-3xl sm:text-xl "} />
         </div>
         <nav
-          className={`transitions fixed py-2 z-10 w-screen px-[5%] ${
-            navbar.isScroll ? "bg-black top-0" : "bg-transparent top-7"
+          className={`transitions fixed py-3 z-10 px-[5%] ${
+            navbar.isScroll
+              ? "bg-black/70 backdrop-blur-md top-2 left-2 right-2 rounded-lg w-auto"
+              : "bg-transparent top-7 w-screen"
           }`}
         >
           <div className="flex text-white justify-between">
@@ -39,8 +41,8 @@ export default function Navbar() {
       </div>
       {/* Mobile Navbar */}
       <nav
-        className={`sm:hidden fixed top-0 z-10 w-screen pl-5 transitions
-          ${navbar.isScroll ? "py-4 bg-black/70 backdrop-blur-2xl" : "py-5"}`}
+        className={`sm:hidden fixed top-2 right-2 left-2 z-10 w-auto rounded-lg pl-5 transitions
+          ${navbar.isScroll ? "py-3 bg-black/70 backdrop-blur-md" : "py-5"}`}
       >
         <div className="md:hidden flex flex-row items-center text-white">
           <Navlogo />

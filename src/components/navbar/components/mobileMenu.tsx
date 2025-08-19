@@ -11,13 +11,13 @@ export default function MobileMenu() {
 
   return (
     <div
-      className={`absolute z-20 p-5 top-0 right-0 h-screen w-screen bg-black/70 backdrop-blur-2xl text-white transition-transform duration-300 transform ${
-        navbar.isOpen ? "translate-x-0" : "translate-x-full"
+      className={`z-20 p-5 -top-2 -right-2 -left-2 rounded-lg h-screen w-auto bg-black/70 backdrop-blur-md text-white transition-transform duration-300 transform ${
+        navbar.isOpen ? "translate-x-0 fixed" : "translate-x-full hidden"
       }`}
     >
       <div>
         <button
-          className="absolute right-2 top-2 p-3"
+          className="absolute right-3 top-3 p-3"
           aria-label="Close Menu"
           onClick={() => dispatch(closeNav())}
         >
@@ -30,7 +30,7 @@ export default function MobileMenu() {
               key={item.id}
               href={item.href}
               onClick={() => dispatch(closeNav())}
-              className="text-lg font-semibold hover:bg-yellow-500 rounded-lg p-2 hover:text-black"
+              className="text-lg font-semibold hover:bg-yellow-500/70 rounded-lg p-2 hover:text-black"
             >
               {item.navtext}
             </Link>
