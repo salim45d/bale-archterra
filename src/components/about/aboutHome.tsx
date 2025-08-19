@@ -8,47 +8,49 @@ import ImagesThumbsSwiper from "./components/imagesThumbsSwiper";
 
 export default function AboutHome(Prop: { display: string }) {
   const source = [
-    { id: 1, class: "lg:ml-40", src: "/about-green.jpg", xy: 150 },
-    { id: 2, class: "lg:-ml-10 lg:-mt-10", src: "/about-home.jpg", xy: 250 },
-    { id: 3, class: "lg:-mt-24 lg:ml-28", src: "/about-work.jpg", xy: 200 },
+    { id: 1, class: "lg:ml-28", src: "/about-green.jpg", xy: 150 },
+    { id: 2, class: "lg:-ml-7 lg:-mt-10", src: "/about-home.jpg", xy: 250 },
+    { id: 3, class: "lg:-mt-20 lg:ml-16", src: "/about-work.jpg", xy: 200 },
   ];
 
   return (
     <section>
-      <div className="flex justify-center content-center p-[5%]">
+      <div className="flex justify-center content-center p-[5%] m-">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.2fr_1fr] lg:max-w-7xl overflow-hidden"
+          className="grid grid-cols-1 lg:grid-cols-[1.3fr_1.3fr_1fr] lg:max-w-7xl overflow-hidden"
         >
-          <div className="flex justify-between flex-col bg-red-100 p-5 sm:p-10 lg:pr-5 rounded-t-xl lg:rounded-l-xl lg:rounded-r-none">
-            <motion.div variants={variantUpslide} custom={1}>
-              <h1 className="text-sm text-[#063852] font-bold mb-3">
-                ABOUT US
-              </h1>
-              <div className="text-2xl sm:text-4xl text-red-700 font-extrabold">
-                <h1>Bale Archterra.</h1>
-                <h1>Build Properties for Your Statisfaction</h1>
+          <div className="bg-red-100 py-5 pl-5 pr-5 lg:pr-0 rounded-t-xl lg:rounded-l-xl lg:rounded-r-none">
+            <div className="flex justify-between flex-col bg-white/20  backdrop-blur-md h-full rounded-xl p-5">
+              <motion.div variants={variantUpslide} custom={1}>
+                <h1 className="text-sm text-[#063852] font-bold mb-3">
+                  ABOUT US
+                </h1>
+                <div className="text-2xl sm:text-4xl text-red-700 font-extrabold">
+                  <h1>Bale Archterra.</h1>
+                  <h1>Build Properties for Your Statisfaction</h1>
+                </div>
+              </motion.div>
+              <div>
+                <motion.p
+                  variants={variantOpacityX}
+                  custom={2}
+                  className="mt-5 text-justify text-[#063852] font-bold"
+                >
+                  "With years of experience in the industry, we are commited to
+                  delivering exceptional result that exceed our clients
+                  expectations".
+                </motion.p>
               </div>
-            </motion.div>
-            <div>
-              <motion.p
-                variants={variantOpacityX}
-                custom={2}
-                className="mt-5 text-justify text-[#063852] font-bold"
-              >
-                "With years of experience in the industry, we are commited to
-                delivering exceptional result that exceed our clients
-                expectations".
-              </motion.p>
             </div>
           </div>
           {/* Mobile Image UI */}
-          <div className=" lg:hidden bg-red-100 px-2 sm:px-10">
+          <div className=" lg:hidden bg-red-100 px-5">
             <ImagesThumbsSwiper />
           </div>
-          <div className="bg-red-100 p-5 sm:p-10 lg:pl-5 lg:pr-20 flex flex-col justify-between rounded-b-xl lg:rounded-r-xl lg:rounded-l-none">
+          <div className="bg-red-100 p-5 lg:pr-12 flex flex-col justify-between rounded-b-xl lg:rounded-r-xl lg:rounded-l-none">
             <motion.div variants={variantOpacityX} custom={3}>
               <div className="text-red-700 font-bold flex mb-3">
                 <GiCompass className="m-2 text-3xl" />

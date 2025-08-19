@@ -9,7 +9,7 @@ export default function HeaderHome() {
       <div className="relative bg-black pt-14 sm:pt-0">
         <div className="absolute gradient"></div>
         <Image
-          className="w-full h-screen sm:h-[38rem] object-cover"
+          className="w-full h-screen sm:h-[40rem] object-cover"
           src="/header-img.jpg"
           alt="Building Image"
           width={500}
