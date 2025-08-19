@@ -35,7 +35,7 @@ export default async function AboutContentfulPage(Prop: {
             viewport={{ once: true }}
             className={`grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-7xl ${Prop.classTeam}`}
           >
-            <div className="mb-3 col-span-2 sm:col-span-1 flex items-center">
+            <div className="col-span-2 sm:col-span-1 flex items-center rounded-xl bg-white/20 backdrop-blur-md p-5">
               <TitleSlice
                 subtitle={title.subtitle}
                 title={title.title}
@@ -45,7 +45,7 @@ export default async function AboutContentfulPage(Prop: {
             <MotionDiv
               variants={variantXFast}
               custom={4}
-              className="text-justify leading-relaxed"
+              className="text-justify leading-relaxed lg:p-5"
             >
               <RichText document={about?.fields.opening} />
             </MotionDiv>

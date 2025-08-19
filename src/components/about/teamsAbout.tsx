@@ -8,8 +8,8 @@ export default function TeamsAbout() {
     <>
       <AboutContentfulPage
         entry={entry}
-        class={"px-[5%]"}
-        classTeam={"bg-[whitesmoke] p-5 pb-16 md:p-[5%] md:pb-20  rounded-xl"}
+        class={"p-[5%]"}
+        classTeam={"bg-red-100 p-5 rounded-xl"}
       />
       <TeamsMemberCardSwiper />
     </>

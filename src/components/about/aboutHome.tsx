@@ -15,7 +15,7 @@ export default function AboutHome(Prop: { display: string }) {
 
   return (
     <section>
-      <div className="flex justify-center content-center p-[5%] m-">
+      <div className="flex justify-center content-center p-[5%]">
         <motion.div
           initial="initial"
           whileInView="animate"

@@ -6,7 +6,7 @@ export default function CultureAbout() {
   return (
     <AboutContentfulPage
       entry={entry}
-      class={"bg-[whitesmoke] p-[5%]"}
+      class={"p-[5%]"}
       classTeam={""}
     />
   );
