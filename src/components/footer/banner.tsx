@@ -29,7 +29,7 @@ export default function BannerContactUS() {
             title={title.title}
             quote={title.quote}
           />
-          <div className="">
+          <div>
             <RedButton href={"/contact"} tittle={"Let's Talk"} />
           </div>
         </div>
