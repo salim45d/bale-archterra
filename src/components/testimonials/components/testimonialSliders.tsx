@@ -45,7 +45,7 @@ export default function TestimonialsSlider(Prop: {
                       src={testimonial.image}
                       width={60}
                       height={60}
-                      className="ring-1 rounded-full ring-gray-200"
+                      className="ring-1 rounded-full ring-[#063852]"
                     />
                   </div>
                   <div>
