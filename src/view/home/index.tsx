@@ -15,7 +15,7 @@ export default function HomeView() {
       <AboutHome display={""} />
       <ServiceCardHome />
       <TeamsHome />
-      <Testimonials classHome={"bg-[whitesmoke]"} classTeam={"p-0 sm:p-[3%]"} />
+      <Testimonials />
     </div>
   );
 }

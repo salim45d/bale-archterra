@@ -7,10 +7,7 @@ export default function TeamsPage() {
     <div className="overflow-hidden">
       <HeaderPages img={"/team.jpg"} />
       <TeamPages />
-      <Testimonials
-        classHome={""}
-        classTeam={"bg-[whitesmoke] p-[5%] rounded-xl"}
-      />
+      <Testimonials />
     </div>
   );
 }

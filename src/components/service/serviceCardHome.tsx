@@ -18,7 +18,7 @@ export default async function ServiceCardHome() {
     return <PageNotFound />;
   } else {
     return (
-      <section className="flex justify-center content-center bg-[whitesmoke]">
+      <section className="flex justify-center content-center">
         <div className="flex flex-col p-[5%] text-center w-screen max-w-7xl">
           {" "}
           <TitleSlice

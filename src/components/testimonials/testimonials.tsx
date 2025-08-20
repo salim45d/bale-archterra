@@ -1,17 +1,9 @@
 import ITitle from "@/types/title.interface";
-import {
-  MotionDiv,
-  variantOpacity,
-  variantOpacityX,
-  variantUpslide,
-} from "../motion/motion";
+import { MotionDiv, variantOpacityX } from "../motion/motion";
 import TestimonialsSlider from "./components/testimonialSliders";
 import TitleSlice from "../tittle/title";
 
-export default function Testimonials(Prop: {
-  classHome: string;
-  classTeam: string;
-}) {
+export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
@@ -86,16 +78,14 @@ export default function Testimonials(Prop: {
   };
 
   return (
-    <section
-      className={`flex justify-center content-center p-[5%] ${Prop.classHome}`}
-    >
+    <section className={`flex justify-center content-center p-[5%]`}>
       <MotionDiv
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
         variants={variantOpacityX}
         custom={2}
-        className={`w-full max-w-7xl text-center ${Prop.classTeam}`}
+        className={`w-full max-w-7xl text-center`}
       >
         <TitleSlice
           subtitle={title.subtitle}
