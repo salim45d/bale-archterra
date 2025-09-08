@@ -10,16 +10,18 @@ export default function Navlogo() {
       custom={0}
       initial="initial"
       whileInView="animate"
-      className="text-2xl font-bold text-yellow-500 flex items-center"
+      className="flex items-center space-x-1"
     >
       <Image
-        className="mr-2"
         src={"/bale-archterra.svg"}
         alt={"bale-archterra-icon"}
         width={25}
         height={25}
       />
-      <Link className="text-md sm:text-2xl overflow-hidden" href={"/"}>
+      <Link
+        className="text-lg sm:text-2xl overflow-hidden text-yellow-500 font-bold"
+        href={"/"}
+      >
         {" "}
         <h1>Bale Archterra</h1>
       </Link>

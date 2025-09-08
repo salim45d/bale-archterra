@@ -9,7 +9,7 @@ export default function MobileButton() {
       type="button"
       aria-label="Open Menu"
       onClick={() => dispatch(openNav())}
-      className="text-lg p-2 bg-black/50 rounded-md"
+      className="p-2 bg-black/50 rounded-md"
     >
       <SlMenu />
     </button>
