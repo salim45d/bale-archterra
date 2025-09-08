@@ -10,41 +10,38 @@ export default function MobileMenu() {
   const dispatch = useDispatch();
 
   return (
-    <div
-      className={`z-20 px-8 py-5 -top-2 -right-4 -left-4 rounded-lg h-screen w-auto bg-black/80 backdrop-blur-md text-white transition-transform duration-300 transform ${
-        navbar.isOpen ? "translate-x-0 fixed" : "translate-x-full hidden"
-      }`}
-    >
-      <div>
+    <div className="fixed md:hidden translate-x-0 z-20 top-0 left-0 w-full">
+      <div
+        className="absolute h-full w-full bg-black/50 z-5"
+        onClick={() => dispatch(closeNav())}
+      ></div>
+      <div className="p-5 rounded-lg h-screen w-full sm:w-2/3 bg-black/80 backdrop-blur-lg text-white transition-transform duration-300 transform z-10">
         <button
-          className="absolute right-4 top-2 p-4"
+          className="absolute right-5 top-5 p-2 bg-white/10 rounded-full"
           aria-label="Close Menu"
           onClick={() => dispatch(closeNav())}
         >
-          <AiOutlineClose className="text-3xl" />
+          <AiOutlineClose className="text-2xl" />
         </button>
         <Navlogo />
-        <ul className="flex flex-col space-y-1 pt-10">
+        <ul className="flex flex-col space-y-1 pt-5">
           {navbar.navItem.map((item) => (
             <Link
               key={item.id}
               href={item.href}
               onClick={() => dispatch(closeNav())}
-              className="text-lg font-semibold hover:bg-yellow-500/70 rounded-lg p-2 hover:text-black"
+              className="text-lg font-semibold hover:bg-yellow-500 rounded-lg p-2 hover:text-black bg-black/90 text-center"
             >
               {item.navtext}
             </Link>
           ))}
-        </ul>
-      </div>
-      <div className="absolute bottom-5">
-        <p className="font-bold">Contact:</p>
-        <NavContacticon
-          class={"flex-col sm:flex-row text-xl font-extralight"}
-          classText={"text-sm sm:text-xs"}
-        />
-        <div className="mt-5">
-          <NavSocialIcon class={"justify-around text-3xl sm:text-xl "} />
+        </ul>{" "}
+        <div className="absolute bottom-5 w-2/3">
+          <p className="font-bold">Contact:</p>
+          <NavContacticon class={"flex-col text-2xl"} classText={"text-sm"} />
+          <div className="mt-5 w-full">
+            <NavSocialIcon class={"justify-around text-2xl "} />
+          </div>
         </div>
       </div>
     </div>

@@ -1,12 +1,10 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
-import { NavContacticon, NavSocialIcon } from "./components/navicon";
 import { INavbar, scrollNav } from "@/store/slice/navbar";
-import MobileButton from "./components/mobileButton";
-import MobileMenu from "./components/mobileMenu";
-import Navlink from "./components/navlink";
-import Navlogo from "./components/navlogo";
 import { useEffect } from "react";
+import NavbarDesktop from "./navbarDesktop";
+import NavbarMobile from "./navbarMobile";
+import MobileMenu from "./components/mobileMenu";
 
 export default function Navbar() {
   const navbar = useSelector((state: { navbar: INavbar }) => state.navbar);
@@ -14,42 +12,30 @@ export default function Navbar() {
 
   useEffect(() => {
     window.addEventListener("scroll", () => dispatch(scrollNav()));
+    return () => {
+      window.removeEventListener("scroll", () => dispatch(scrollNav()));
+    };
   }, [navbar]);
 
   return (
-    <div>
-      <div className="hidden relative sm:flex flex-col justify-center">
-        <div className="text-white bg-black py-1 px-[2%] md:px-[4%] flex justify-between">
-          <NavContacticon
-            class={"flex-col sm:flex-row text-xl font-extralight"}
-            classText={"text-sm sm:text-xs"}
-          />
-          <NavSocialIcon class={"justify-around text-3xl sm:text-xl "} />
-        </div>
-        <nav
-          className={`transitions fixed py-3 z-10 px-[5%] ${
-            navbar.isScroll
-              ? "bg-black/70 backdrop-blur-md top-2 left-[5%] right-[5%] rounded-lg w-auto"
-              : "bg-transparent top-7 w-screen"
-          }`}
-        >
-          <div className="flex text-white justify-between">
-            <Navlogo />
-            <Navlink />
-          </div>
-        </nav>
-      </div>
-      {/* Mobile Navbar */}
-      <nav
-        className={`sm:hidden fixed top-2 right-4 left-4 z-10 w-auto rounded-lg pl-5 transitions
-          ${navbar.isScroll ? "py-3 bg-black/70 backdrop-blur-md" : "py-5"}`}
+    <div
+      className={`transtitions fixed z-10 px-[5%] ${
+        navbar.isScroll
+          ? "top-2 left-0 right-0 rounded-lg"
+          : "top-1 sm:top-7 left-0 right-0"
+      }`}
+    >
+      <div
+        className={`lg:max-w-7xl lg:mx-auto ${
+          navbar.isScroll
+            ? "py-3 px-3 md:px-5 bg-black/70 backdrop-blur-lg rounded-md"
+            : "bg-transparent py-4"
+        } ${navbar.isOpen ? "-translate-y-20" : "translate-y-0"}`}
       >
-        <div className="md:hidden flex flex-row items-center text-white">
-          <Navlogo />
-          <MobileButton />
-          <MobileMenu />
-        </div>
-      </nav>
+        <NavbarDesktop />
+        <NavbarMobile />
+      </div>
+      {navbar.isOpen && <MobileMenu />}
     </div>
   );
 }

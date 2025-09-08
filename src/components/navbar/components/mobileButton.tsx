@@ -8,10 +8,10 @@ export default function MobileButton() {
     <button
       type="button"
       aria-label="Open Menu"
-      className="absolute right-5"
       onClick={() => dispatch(openNav())}
+      className="text-lg p-2 bg-black/50 rounded-md"
     >
-      <SlMenu className="text-2xl" />
+      <SlMenu />
     </button>
   );
 }
