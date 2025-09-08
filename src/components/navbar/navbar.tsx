@@ -28,7 +28,7 @@ export default function Navbar() {
       <div
         className={`lg:max-w-7xl lg:mx-auto ${
           navbar.isScroll
-            ? "py-3 px-3 md:px-5 bg-black/70 backdrop-blur-lg rounded-md"
+            ? "py-3 px-3 md:px-5 bg-black/70 backdrop-blur-lg rounded-xl"
             : "bg-transparent py-4"
         } ${navbar.isOpen ? "-translate-y-20" : "translate-y-0"}`}
       >

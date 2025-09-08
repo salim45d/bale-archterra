@@ -30,7 +30,7 @@ export default function MobileMenu() {
               key={item.id}
               href={item.href}
               onClick={() => dispatch(closeNav())}
-              className="text-lg font-semibold hover:bg-yellow-500 rounded-lg p-2 hover:text-black bg-black/90 text-center"
+              className="text-lg font-semibold hover:bg-red-800 rounded-lg p-2 bg-red-700 text-center"
             >
               {item.navtext}
             </Link>
