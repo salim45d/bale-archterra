@@ -15,13 +15,13 @@ export default function MobileMenu() {
         className="absolute h-full w-full bg-black/50 z-5"
         onClick={() => dispatch(closeNav())}
       ></div>
-      <div className="p-5 rounded-lg h-screen w-full sm:w-2/3 bg-black/80 backdrop-blur-lg text-white transition-transform duration-300 transform z-10">
+      <div className="p-5 rounded-lg h-screen w-full sm:w-2/3 bg-black/70 backdrop-blur-lg text-white transition-transform duration-300 transform z-10">
         <button
-          className="absolute right-5 top-5 p-2 bg-white/10 rounded-full"
+          className="absolute right-5 top-5 p-2 bg-black/50 rounded-full"
           aria-label="Close Menu"
           onClick={() => dispatch(closeNav())}
         >
-          <AiOutlineClose className="text-2xl" />
+          <AiOutlineClose />
         </button>
         <Navlogo />
         <ul className="flex flex-col space-y-1 pt-5">
