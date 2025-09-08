@@ -42,7 +42,7 @@ const variantOpacityX = {
     transition: {
       duration: 0.5,
       ease: [0.5, 0, 0.75, 0],
-      delay: 0.3 * custom,
+      delay: 0.1 * custom,
     },
   }),
 };
