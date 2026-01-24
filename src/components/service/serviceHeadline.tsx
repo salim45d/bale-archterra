@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
-import { variantOpacityX } from "../motion/motion";
 import { IAsset, TypeServiceSkeleton } from "@/types/contentful.type";
 import { Entry } from "contentful";
-import { Autoplay, Keyboard, Navigation } from "swiper/modules";
+import { Keyboard, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -38,13 +36,11 @@ export default function ServiceHeadline(Prop: {
       >
         {Prop.serviceHeadline?.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              key={idx}
-              variants={variantOpacityX}
-              custom={idx + 1}
+            <div
               className={`bg-yellow-500 p-[5%] text-black text-center  rounded-md h-64 overflow-hidden`}
+              data-aos={
+                idx === 0 ? "fade-right" : idx === 3 ? "fade-left" : "fade-up"
+              }
             >
               <Link
                 className="flex flex-col space-y-1 sm:space-y-2 items-center"
@@ -61,7 +57,7 @@ export default function ServiceHeadline(Prop: {
 
                 <p className="text-sm md:text-xs">{item.fields.cardText}</p>
               </Link>
-            </motion.div>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

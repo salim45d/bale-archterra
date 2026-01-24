@@ -1,5 +1,4 @@
 import ITitle from "@/types/title.interface";
-import { MotionDiv, variantOpacityX, variantUpslide } from "../motion/motion";
 import TitleSlice from "../tittle/title";
 import ContactForm from "./components/contact-form";
 
@@ -17,12 +16,7 @@ export default function ContactSection() {
 
   return (
     <section className="p-[5%] flex justify-center">
-      <MotionDiv
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className=" max-w-7xl"
-      >
+      <div className=" max-w-7xl">
         <div className="text-center mx-0 sm:mx-[10%]">
           <TitleSlice
             subtitle={title.subtitle}
@@ -31,14 +25,10 @@ export default function ContactSection() {
           />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-5">
-          <MotionDiv custom={2} variants={variantOpacityX}>
+          <div data-aos="fade-down-right">
             <ContactForm />
-          </MotionDiv>
-          <MotionDiv
-            custom={3}
-            variants={variantUpslide}
-            className="lg:p-10 text-center"
-          >
+          </div>
+          <div className="lg:p-10 text-center" data-aos="fade-down-left">
             <h2 className=" text-lg md:text-xl font-bold leading-9 tracking-tight text-[#063852]">
               Our Address
             </h2>
@@ -55,9 +45,9 @@ export default function ContactSection() {
                 title="Maps"
               ></iframe>
             </div>
-          </MotionDiv>
+          </div>
         </div>
-      </MotionDiv>
+      </div>
     </section>
   );
 }

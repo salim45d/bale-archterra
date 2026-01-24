@@ -19,7 +19,7 @@ export default function Navlogo() {
         height={25}
       />
       <Link
-        className="text-lg sm:text-2xl overflow-hidden text-yellow-500 font-bold"
+        className="text-xl sm:text-2xl overflow-hidden text-yellow-500 font-bold"
         href={"/"}
       >
         {" "}

@@ -1,5 +1,4 @@
 import { getServiceContentful } from "@/api/api";
-import { MotionDiv, MotionP, variantOpacityX } from "../motion/motion";
 import ITitle from "@/types/title.interface";
 import TitleSlice from "../tittle/title";
 import ServiceContentfulPage from "./components/serviceContentfulPage";
@@ -14,24 +13,15 @@ export default async function ServiceAllPage() {
               in plan and build better properties"`,
   };
   return (
-    <MotionDiv
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-      className="flex justify-center content-center px-[5%] pt-[5%]"
-    >
+    <div className="flex justify-center content-center px-[5%] pt-[5%]">
       <div className="max-w-7xl">
-        <div className="text-center">
+        <div className="text-center" data-aos="flip-right">
           <TitleSlice
             subtitle={title.subtitle}
             title={title.title}
             quote={title.quote}
           />
-          <MotionP
-            variants={variantOpacityX}
-            custom={1}
-            className="text-justify lg:px-[10%]"
-          >
+          <p className="text-justify lg:px-[10%]">
             Look for contruction services with a proven back record of success
             in plan and build better properties. Fuelled by unbound creativity
             and cutting-edge technology, our Architectural, Civil and Interior
@@ -56,12 +46,12 @@ export default async function ServiceAllPage() {
             design-excellence, coupled with service efficiency, responsiveness
             and a strong commitment towards project deadlines as well as
             budgetary constraints.
-          </MotionP>
+          </p>
         </div>
         <section className="mt-[5%]">
           <ServiceContentfulPage services={services} />
         </section>
       </div>
-    </MotionDiv>
+    </div>
   );
 }

@@ -1,11 +1,4 @@
 import RedButton from "@/components/button/redButton";
-import {
-  MotionDiv,
-  MotionImg,
-  MotionP,
-  variantUpslide,
-  variantXFast,
-} from "@/components/motion/motion";
 import PageNotFound from "@/components/not-found/pageNotFound";
 import RichText from "@/components/richtext/richText";
 import TitleSlice from "@/components/tittle/title";
@@ -21,14 +14,12 @@ export default function ServiceContentfulPage(Prop: {
     return (
       <>
         {Prop.services?.map((item, idx) => (
-          <MotionDiv
+          <div
             key={idx}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
             className={`grid grid-cols-1 md:grid-cols-2 gap-5 p-5 my-[5%] ${
               idx % 2 === 0 ? "bg-red-100 rounded-lg" : ""
             }`}
+            data-aos="zoom-in-up"
           >
             <div className="text-center col-span-1 md:col-span-2">
               <TitleSlice
@@ -46,9 +37,7 @@ export default function ServiceContentfulPage(Prop: {
             >
               <div className="grid grid-cols-2 gap-2">
                 <div className="inline-block content-end">
-                  <MotionImg
-                    variants={variantXFast}
-                    custom={idx + 1}
+                  <img
                     className={`rounded-md w-full object-cover h-auto`}
                     src={`https:${
                       (item.fields.image1 as IAsset).fields.file.url
@@ -59,9 +48,7 @@ export default function ServiceContentfulPage(Prop: {
                   />{" "}
                 </div>
                 <div className="inline-block content-end">
-                  <MotionImg
-                    variants={variantXFast}
-                    custom={idx + 2}
+                  <img
                     className={`rounded-md w-full object-cover h-auto`}
                     src={`https:${
                       (item.fields.image2 as IAsset).fields.file.url
@@ -71,9 +58,7 @@ export default function ServiceContentfulPage(Prop: {
                     alt="service-image"
                   />{" "}
                 </div>
-                <MotionImg
-                  variants={variantXFast}
-                  custom={idx + 3}
+                <img
                   className={`rounded-md w-full object-cover h-auto`}
                   src={`https:${
                     (item.fields.image3 as IAsset).fields.file.url
@@ -82,9 +67,7 @@ export default function ServiceContentfulPage(Prop: {
                   height={400}
                   alt="service-image"
                 />{" "}
-                <MotionImg
-                  variants={variantXFast}
-                  custom={idx + 4}
+                <img
                   className={`rounded-md w-full object-cover h-auto`}
                   src={`https:${
                     (item.fields.image4 as IAsset).fields.file.url
@@ -96,26 +79,18 @@ export default function ServiceContentfulPage(Prop: {
               </div>
             </div>
             <div className={`${idx % 2 === 1 ? "text-end" : ""}`}>
-              <MotionDiv
-                variants={variantXFast}
-                custom={idx + 5}
-                className="text-justify"
-              >
+              <div className="text-justify">
                 <RichText document={item.fields.body} />
-              </MotionDiv>
+              </div>
 
-              <MotionP
-                variants={variantXFast}
-                custom={idx + 6}
-                className="text-md lg:text-lg font-extrabold italic content-center text-red-700 pb-5 pt-16"
-              >
+              <p className="text-md lg:text-lg font-extrabold italic content-center text-red-700 pb-5 pt-16">
                 Start from Rp{item.fields.price}/m<sup>2</sup>
-              </MotionP>
-              <MotionDiv variants={variantUpslide} custom={idx + 7}>
+              </p>
+              <div>
                 <RedButton href={"/contact"} tittle={"Contact us"} />
-              </MotionDiv>
+              </div>
             </div>
-          </MotionDiv>
+          </div>
         ))}
       </>
     );

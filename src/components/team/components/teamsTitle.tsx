@@ -10,7 +10,7 @@ export default function TeamsTittle(Prop: { display: string }) {
   };
 
   return (
-    <div className="text-center" data-aos="fade-left" data-aos-delay="100">
+    <div className="text-center" data-aos="flip-right">
       <TitleSlice
         subtitle={title.subtitle}
         title={title.title}

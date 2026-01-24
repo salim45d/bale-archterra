@@ -1,13 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Autoplay,
-  EffectCoverflow,
-  Keyboard,
-  Pagination,
-} from "swiper/modules";
-import { motion } from "motion/react";
-import { variantOpacity, variantUpslide } from "@/components/motion/motion";
+import { EffectCoverflow, Keyboard, Pagination } from "swiper/modules";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getTeam } from "@/api/api";
@@ -21,7 +14,7 @@ import PageNotFound from "@/components/not-found/pageNotFound";
 export default function TeamsMemberCardSwiper() {
   const [teams, setTeams] = useState<ITeam[] | undefined>(undefined);
   const teamsDataStore: ITeam[] | undefined = useSelector(
-    (state: { teams: ITeams }) => state.teams.teams
+    (state: { teams: ITeams }) => state.teams.teams,
   );
   const dispatch = useDispatch();
 
@@ -50,7 +43,7 @@ export default function TeamsMemberCardSwiper() {
       <div className="flex justify-center px-[5%] py-[2%]">
         <div className=" min-w-52 max-w-7xl">
           <Swiper
-            modules={[EffectCoverflow, Pagination, Autoplay, Keyboard]}
+            modules={[EffectCoverflow, Pagination, Keyboard]}
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
@@ -69,11 +62,6 @@ export default function TeamsMemberCardSwiper() {
             }}
             pagination={{
               clickable: true,
-            }}
-            autoplay={{
-              delay: 6000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
             }}
             breakpoints={{
               300: {
@@ -100,28 +88,24 @@ export default function TeamsMemberCardSwiper() {
           >
             {teams?.map((team, idx) => (
               <SwiperSlide key={idx}>
-                <motion.div
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  variants={variantOpacity}
-                  custom={0}
+                <div
                   className="bg-[#063852] rounded-md flex justify-between flex-col mb-12 text-white mySwiper-Slide"
+                  data-aos={
+                    idx === 0
+                      ? "fade-up"
+                      : idx === teams.length - 1
+                        ? "fade-right"
+                        : "fade-left"
+                  }
                 >
                   <div className="flex justify-center p-5">
-                    <motion.img
-                      variants={variantUpslide}
-                      custom={1}
+                    <img
                       alt="Team-profile"
                       src={team.picture.large}
                       className="rounded-full w-28 h-28 ring-2 p-1 ring-gray-300 "
                     />
                   </div>
-                  <motion.div
-                    variants={variantUpslide}
-                    custom={2}
-                    className="px-[5%] pb-[5%]"
-                  >
+                  <div className="px-[5%] pb-[5%]">
                     <h2 className="font-bold text-lg text-center">
                       {team.name.first} {team.name.last}
                     </h2>{" "}
@@ -133,8 +117,8 @@ export default function TeamsMemberCardSwiper() {
                     <p className="text-lg font-bold">Contact me:</p>
                     <p>{team.email}</p>
                     <p>{team.phone}</p>
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>

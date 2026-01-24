@@ -21,7 +21,7 @@ export default function Navbar() {
     <div
       className={`transtitions fixed z-10 px-[5%] ${
         navbar.isScroll
-          ? "top-2 left-0 right-0 rounded-lg"
+          ? "top-1 left-0 right-0 rounded-lg"
           : "top-1 sm:top-7 left-0 right-0"
       }`}
     >

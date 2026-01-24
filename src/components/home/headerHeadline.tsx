@@ -32,7 +32,6 @@ export default function HeaderHeadline() {
         {headLineItem.map((item, idx) => (
           <div
             data-aos={idx === 0 ? "fade-right" : "fade-up"}
-            data-aos-delay={idx * 100}
             key={idx}
             className={`rounded-md bg-yellow-500 p-5 text-center`}
           >
