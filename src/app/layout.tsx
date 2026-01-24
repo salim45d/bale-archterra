@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import AOSWrapper from "@/components/aos/aos";
 
 const mulish = localFont({
   src: "./fonts/Mulish-VariableFont_wght.ttf",
@@ -30,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${mulish.className}`}>
-        <AOSWrapper>{children}</AOSWrapper>
+        {children}
         <Analytics />
       </body>
     </html>
