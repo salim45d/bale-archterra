@@ -1,5 +1,4 @@
 import { getAboutContentfulPage } from "@/api/api";
-import { MotionDiv, variantXFast } from "@/components/motion/motion";
 import PageNotFound from "@/components/not-found/pageNotFound";
 import RichText from "@/components/richtext/richText";
 import TitleSlice from "@/components/tittle/title";
@@ -29,10 +28,8 @@ export default async function AboutContentfulPage(Prop: {
           }`}
           id={about?.fields.slug}
         >
-          <MotionDiv
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
+          <div
+            data-aos="zoom-in-up"
             className={`grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-7xl ${Prop.classTeam}`}
           >
             <div className="col-span-2 sm:col-span-1 flex items-center rounded-xl bg-white/20 backdrop-blur-md p-5">
@@ -42,21 +39,20 @@ export default async function AboutContentfulPage(Prop: {
                 quote={title.quote}
               />
             </div>
-            <MotionDiv
-              variants={variantXFast}
-              custom={4}
+            <div
+              data-aos="fade-left"
+              data-aos-delay="200"
               className="text-justify leading-relaxed lg:p-5"
             >
               <RichText document={about?.fields.opening} />
-            </MotionDiv>
-            <MotionDiv
-              variants={variantXFast}
-              custom={6}
+            </div>
+            <div
+              data-aos="fade-up"
               className="col-span-2 text-justify leading-relaxed"
             >
               <RichText document={about?.fields.body} />
-            </MotionDiv>
-          </MotionDiv>
+            </div>
+          </div>
         </section>
       </div>
     );

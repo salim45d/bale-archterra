@@ -17,7 +17,7 @@ export default function ServiceHeadline(Prop: {
     <summary className="w-full flex justify-center">
       <Swiper
         className="-mt-32 w-[90%] lg:max-w-5xl z-0"
-        modules={[Navigation, Autoplay, Keyboard]}
+        modules={[Navigation, Keyboard]}
         spaceBetween={5}
         slidesPerView={1}
         keyboard={{
@@ -25,11 +25,6 @@ export default function ServiceHeadline(Prop: {
         }}
         loop={true}
         navigation={true}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
         breakpoints={{
           450: {
             slidesPerView: 2,

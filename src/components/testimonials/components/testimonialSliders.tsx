@@ -14,7 +14,7 @@ export default function TestimonialsSlider(Prop: {
     if (!autorotate) return;
     const interval = setInterval(() => {
       setActive(
-        active + 1 === Prop.testimonials.length ? 0 : (active) => active + 1
+        active + 1 === Prop.testimonials.length ? 0 : (active) => active + 1,
       );
     }, autorotateTiming);
     return () => clearInterval(interval);
@@ -23,7 +23,7 @@ export default function TestimonialsSlider(Prop: {
   return (
     <>
       {/* Testimonial User*/}
-      <div className="relative h-32 mt-20">
+      <div className="relative h-32 mt-20" data-aos="flip-right">
         <div className="absolute top-0  left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-red-800/25 before:via-red-800/5 before:via-25% before:to-red-800/0 before:to-75% before:rounded-full before:-z-10">
           <div className="h-32 text-[#063852]">
             {Prop.testimonials.map((testimonial, index) => (
@@ -61,7 +61,10 @@ export default function TestimonialsSlider(Prop: {
         </div>
       </div>
       {/* Testimonial */}
-      <div className="mb-9 transition-all duration-150 delay-300 ease-in-out">
+      <div
+        className="mb-9 transition-all duration-150 delay-300 ease-in-out"
+        data-aos="fade-left"
+      >
         <div className="relative max-w-2xl  justify-items-center inline-grid">
           {Prop.testimonials.map((testimonial, index) => (
             <Transition
@@ -85,7 +88,10 @@ export default function TestimonialsSlider(Prop: {
         </div>
       </div>
       {/* Buttons */}
-      <div className="flex flex-wrap justify-center -m-1.5">
+      <div
+        className="flex flex-wrap justify-center -m-1.5"
+        data-aos="fade-right"
+      >
         {Prop.testimonials.map((testimonial, index) => (
           <button
             key={index}
