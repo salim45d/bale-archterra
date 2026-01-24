@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import WhiteButton from "../button/whiteButton";
-import { motion } from "motion/react";
-import { variantOpacityX } from "../motion/motion";
 
 export default function HeaderHeadline() {
   const headLineItem = [
@@ -30,16 +28,12 @@ export default function HeaderHeadline() {
   ];
   return (
     <summary className="flex justify-center">
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-3 sm:-mt-28 w-[90%] pb-[5%] lg:max-w-5xl z-0 gap-3 lg:gap-1"
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-3 sm:-mt-28 w-[90%] pb-[5%] lg:max-w-5xl z-0 gap-3 lg:gap-1">
         {headLineItem.map((item, idx) => (
-          <motion.div
+          <div
+            data-aos={idx === 0 ? "fade-right" : "fade-up"}
+            data-aos-delay={idx * 100}
             key={idx}
-            variants={variantOpacityX}
-            custom={idx + 1}
             className={`rounded-md bg-yellow-500 p-5 text-center`}
           >
             <div className="flex justify-center">
@@ -54,12 +48,11 @@ export default function HeaderHeadline() {
               <h1 className="font-bold mb-2 mt-5 text-lg">{item.title}</h1>
               <p>{item.textBody}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
 
-        <motion.div
-          variants={variantOpacityX}
-          custom={4}
+        <div
+          data-aos="fade-left"
           className="bg-red-700 text-white p-5 text-center rounded-md overflow-hidden"
         >
           <div>
@@ -67,8 +60,8 @@ export default function HeaderHeadline() {
             <p className="mb-10">Let's talk about your next project with us</p>
             <WhiteButton href={"/contact"} tittle={"Let's Talk"} />
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </summary>
   );
 }

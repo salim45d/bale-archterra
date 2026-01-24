@@ -1,9 +1,8 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
+import { Keyboard, Navigation, Pagination } from "swiper/modules";
 import { Entry } from "contentful";
 import { IAsset, TypeServiceSkeleton } from "@/types/contentful.type";
-import { MotionDiv, variantOpacityX } from "@/components/motion/motion";
 import WhiteButton from "@/components/button/whiteButton";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,23 +14,18 @@ export default function ServiceCardSwiper(Prop: {
   return (
     <div className="w-full">
       <Swiper
-        modules={[Pagination, Navigation, Autoplay, Keyboard]}
+        modules={[Pagination, Navigation, Keyboard]}
         spaceBetween={20}
         slidesPerView={1}
         keyboard={{
           enabled: true,
         }}
         centeredSlides={true}
-        loop={true}
         pagination={{
           clickable: true,
         }}
         navigation={true}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
+        loop={true}
         breakpoints={{
           550: {
             slidesPerView: 1.5,
@@ -46,12 +40,11 @@ export default function ServiceCardSwiper(Prop: {
       >
         {Prop.service?.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <MotionDiv
-              initial="initial"
-              whileInView="animate"
-              variants={variantOpacityX}
-              viewport={{ once: true }}
-              custom={idx}
+            <div
+              data-aos={
+                idx === 0 ? "fade-up" : idx === 1 ? "fade-left" : "fade-right"
+              }
+              data-aos-delay={idx * 100}
               className={`bg-yellow-500 text-center rounded-md mb-12 p-1 overflow-hidden mySwiper-Slide`}
             >
               <img
@@ -80,7 +73,7 @@ export default function ServiceCardSwiper(Prop: {
                   />
                 </div>
               </div>
-            </MotionDiv>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

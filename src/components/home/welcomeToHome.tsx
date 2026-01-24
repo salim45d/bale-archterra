@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
 import Image from "next/image";
 import VideoModalHome from "./videoHome";
-import { variantUpslide, variantXFast } from "../motion/motion";
-import { motion } from "motion/react";
 
 export default function WelcomeToHome() {
   const modal = useSelector((state: { modal: IModal }) => state.modal);
@@ -13,16 +11,10 @@ export default function WelcomeToHome() {
 
   return (
     <section className="p-[5%] flex justify-center" id="about-home">
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2 max-w-7xl"
-      >
-        <motion.div
-          variants={variantXFast}
-          custom={1}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2 max-w-7xl">
+        <div
           className="order-last lg:order-first relative lg:mx-5"
+          data-aos="fade-right"
         >
           <Image
             className="rounded-md object-cover w-full h-96"
@@ -51,36 +43,34 @@ export default function WelcomeToHome() {
               </button>
             </div>
           </div>
-        </motion.div>
-        <div className=" text-[#063852]">
-          <motion.div variants={variantXFast} custom={3}>
-            <h1 className="text-3xl md:text-4xl font-extrabold">
-              Welcome to Bale Archterra
-            </h1>
-            <h2 className=" mb-5 text-lg font-extrabold">
-              Build Properties for Your Statisfaction
-            </h2>
-            <p className="font-bold mb-2 italic">
-              "Our Company provides a full range of services for the contruction
-              of private houses and cottages since 2000"
-            </p>
+        </div>
+        <div className=" text-[#063852]" data-aos="fade-left">
+          <h1 className="text-3xl md:text-4xl font-extrabold">
+            Welcome to Bale Archterra
+          </h1>
+          <h2 className=" mb-5 text-lg font-extrabold">
+            Build Properties for Your Statisfaction
+          </h2>
+          <p className="font-bold mb-2 italic">
+            "Our Company provides a full range of services for the contruction
+            of private houses and cottages since 2000"
+          </p>
 
-            <p className="mb-5 text-justify">
-              We successfully cope with tasks of varying complexity, provide
-              long-term guarantees and regularly master new technologies. Our
-              portfolio includes dozens of successfully completed projects of
-              houses of different storeys, with high–quality finishes and good
-              repairs. Building houses is our vocation!
-            </p>
-            <h2 className="mb-12">
-              Let's work together to create sustainable and innovative
-              construction solutions.
-            </h2>
-            <p className="text-right mt-10">Best Regards</p>
-          </motion.div>
+          <p className="mb-5 text-justify">
+            We successfully cope with tasks of varying complexity, provide
+            long-term guarantees and regularly master new technologies. Our
+            portfolio includes dozens of successfully completed projects of
+            houses of different storeys, with high–quality finishes and good
+            repairs. Building houses is our vocation!
+          </p>
+          <h2 className="mb-12">
+            Let's work together to create sustainable and innovative
+            construction solutions.
+          </h2>
+          <p className="text-right mt-10">Best Regards</p>
         </div>
         {modal.isOpen && <VideoModalHome />}
-      </motion.div>
+      </div>
     </section>
   );
 }

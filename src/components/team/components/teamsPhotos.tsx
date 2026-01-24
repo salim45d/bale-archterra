@@ -1,6 +1,5 @@
 "use client";
 import { getTeam } from "@/api/api";
-import { MotionDiv, variantUpslide } from "@/components/motion/motion";
 import PageNotFound from "@/components/not-found/pageNotFound";
 import { ITeams, storeTeams } from "@/store/slice/teams";
 import { ITeam } from "@/types/team.interface";
@@ -10,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default function TeamPhotos() {
   const [teams, setTeams] = useState<ITeam[] | undefined>(undefined);
   const teamsDataStore: ITeam[] | undefined = useSelector(
-    (state: { teams: ITeams }) => state.teams.teams
+    (state: { teams: ITeams }) => state.teams.teams,
   );
   const dispatch = useDispatch();
 
@@ -44,15 +43,7 @@ export default function TeamPhotos() {
         className={`flex flex-wrap content-center justify-around bg-white/20 rounded-xl p-2 backdrop-blur-md`}
       >
         {teams?.map((team, idx) => (
-          <MotionDiv
-            key={idx}
-            variants={variantUpslide}
-            custom={idx}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className={`m-1 md:m-5`}
-          >
+          <div className={`m-1 md:m-5`} data-aos="zoom-in-up" key={idx}>
             <img
               alt="Team-profile"
               src={team.picture.medium}
@@ -61,7 +52,7 @@ export default function TeamPhotos() {
             <p className="text-red-700 text-sm font-bold mt-1 text-center">
               {team.name.first}
             </p>
-          </MotionDiv>
+          </div>
         ))}{" "}
       </div>
     );

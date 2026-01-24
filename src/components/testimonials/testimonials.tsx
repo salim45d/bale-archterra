@@ -1,5 +1,4 @@
 import ITitle from "@/types/title.interface";
-import { MotionDiv, variantOpacityX } from "../motion/motion";
 import TestimonialsSlider from "./components/testimonialSliders";
 import TitleSlice from "../tittle/title";
 
@@ -79,21 +78,14 @@ export default function Testimonials() {
 
   return (
     <section className={`flex justify-center content-center p-[5%]`}>
-      <MotionDiv
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={variantOpacityX}
-        custom={2}
-        className={`w-full max-w-7xl text-center`}
-      >
+      <div className={`w-full max-w-7xl text-center`} data-aos="fade-up">
         <TitleSlice
           subtitle={title.subtitle}
           title={title.title}
           quote={title.quote}
         />
         <TestimonialsSlider testimonials={testimonials} />
-      </MotionDiv>
+      </div>
     </section>
   );
 }

@@ -1,9 +1,6 @@
-import Link from "next/link";
-import { MotionDiv, variantUpslide } from "../motion/motion";
 import TitleSlice from "../tittle/title";
 import ITitle from "@/types/title.interface";
 import RedButton from "../button/redButton";
-import ImagesSwiperGalery from "../about/imagesSwiperGalery";
 import ImageSliderAbout from "../about/imagesSliderAbout";
 
 export default function BannerContactUS() {
@@ -15,13 +12,9 @@ export default function BannerContactUS() {
   };
   return (
     <section className="p-[5%] flex justify-center">
-      <MotionDiv
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={variantUpslide}
-        custom={1}
+      <div
         className="lg:max-w-7xl w-full rounded-xl bg-red-100 backdrop-blur-2xl p-5 flex flex-col-reverse md:flex-row"
+        data-aos="fade-left"
       >
         <div className="text-left bg-white/20 rounded-xl p-5 backdrop-blur-md w-full md:w-1/2 mt-5 md:mt-0">
           <TitleSlice
@@ -36,7 +29,7 @@ export default function BannerContactUS() {
         <div className="w-full md:w-1/2 md:pl-5">
           <ImageSliderAbout />
         </div>
-      </MotionDiv>
+      </div>
     </section>
   );
 }

@@ -3,8 +3,6 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { variantXFast } from "@/components/motion/motion";
-import { motion } from "motion/react";
 import { useState } from "react";
 import { Autoplay, FreeMode, Keyboard, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -40,13 +38,8 @@ export default function ImagesThumbsSwiper() {
   ];
 
   return (
-    <motion.div
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-      className="flex flex-col min-w-36 max-w-7xl"
-    >
-      <div>
+    <div className="flex flex-col min-w-36 max-w-7xl">
+      <div data-aos="fade-up">
         <Swiper
           loop={true}
           spaceBetween={20}
@@ -64,9 +57,7 @@ export default function ImagesThumbsSwiper() {
         >
           {images2.map((item, idx) => (
             <SwiperSlide key={idx}>
-              <motion.img
-                variants={variantXFast}
-                custom={idx + 1}
+              <img
                 className="rounded-lg object-cover w-full h-[20rem] sm:h-[25rem] md:h-[28rem] lg:h-[35rem]"
                 src={item.src}
                 width={300}
@@ -95,9 +86,8 @@ export default function ImagesThumbsSwiper() {
         >
           {images.map((item, idx) => (
             <SwiperSlide key={idx} className="mySwiper2">
-              <motion.img
-                variants={variantXFast}
-                custom={idx + 3}
+              <img
+                data-aos="zoom-in-up"
                 className="rounded-lg w-full object-cover"
                 src={item.src}
                 width={100}
@@ -108,6 +98,6 @@ export default function ImagesThumbsSwiper() {
           ))}
         </Swiper>
       </div>
-    </motion.div>
+    </div>
   );
 }

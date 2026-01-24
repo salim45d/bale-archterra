@@ -1,5 +1,4 @@
 import RedButton from "@/components/button/redButton";
-import { MotionDiv, variantXFast } from "@/components/motion/motion";
 import TitleSlice from "@/components/tittle/title";
 import ITitle from "@/types/title.interface";
 
@@ -11,14 +10,7 @@ export default function TeamsTittle(Prop: { display: string }) {
   };
 
   return (
-    <MotionDiv
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-      variants={variantXFast}
-      custom={0}
-      className="text-center"
-    >
+    <div className="text-center" data-aos="fade-left" data-aos-delay="100">
       <TitleSlice
         subtitle={title.subtitle}
         title={title.title}
@@ -50,6 +42,6 @@ export default function TeamsTittle(Prop: { display: string }) {
       <div className={`${Prop.display} text-right my-5`}>
         <RedButton href={"/team"} tittle={"Find more"} />
       </div>
-    </MotionDiv>
+    </div>
   );
 }
