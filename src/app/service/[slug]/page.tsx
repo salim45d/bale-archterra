@@ -34,7 +34,9 @@ export default async function ServiceSlugPage({
       <div>
         <HeaderPages img={"/about-building-large.jpg"} />
         <ServiceHeadline serviceHeadline={serviceHeadline} />
-        <PageNotFound />
+        <div className="pt-[5%]">
+          <PageNotFound />
+        </div>
       </div>
     );
   }

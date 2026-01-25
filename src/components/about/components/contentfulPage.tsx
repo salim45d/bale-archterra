@@ -18,7 +18,11 @@ export default async function AboutContentfulPage(Prop: {
   };
 
   if (about === undefined) {
-    return <PageNotFound />;
+    return (
+      <div className="pt-[5%]">
+        <PageNotFound />
+      </div>
+    );
   } else {
     return (
       <div>
