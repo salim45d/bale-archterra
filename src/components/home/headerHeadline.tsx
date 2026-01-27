@@ -52,7 +52,7 @@ export default function HeaderHeadline() {
 
         <div
           data-aos="fade-left"
-          className="bg-red-700 text-white p-5 text-center rounded-md overflow-hidden"
+          className="bg-red-700 text-white px-5 pt-5 text-center rounded-md overflow-hidden"
         >
           <div>
             <h1 className="font-bold mb-5 text-lg">Get Started</h1>
