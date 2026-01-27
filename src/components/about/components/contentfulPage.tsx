@@ -34,9 +34,9 @@ export default async function AboutContentfulPage(Prop: {
         >
           <div
             data-aos="zoom-in-up"
-            className={`grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-7xl ${Prop.classTeam}`}
+            className={`grid grid-cols-1 sm:grid-cols-[1.5fr_2fr] gap-2 max-w-7xl ${Prop.classTeam}`}
           >
-            <div className="col-span-2 sm:col-span-1 flex items-center rounded-xl bg-white/20 backdrop-blur-md p-5">
+            <div className="col-span-2 sm:col-span-1 flex rounded-xl bg-white/20 backdrop-blur-md p-5">
               <TitleSlice
                 subtitle={title.subtitle}
                 title={title.title}

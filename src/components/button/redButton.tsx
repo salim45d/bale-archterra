@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function RedButton(Prop: IButton) {
   return (
-    <div className="my-5">
+    <div className="my-5" data-aos="zoom-in-up">
       <Link href={Prop.href}>
         <button className="rounded-md bg-red-700 py-4 w-full md:w-72 font-bold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
           {Prop.tittle}

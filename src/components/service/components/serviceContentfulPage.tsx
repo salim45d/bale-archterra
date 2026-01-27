@@ -29,6 +29,7 @@ export default function ServiceContentfulPage(Prop: {
               />
             </div>
             <div
+              data-aos="flip-right"
               className={`px-2 md:px-0 lg:px-5 ${
                 idx % 2 === 1
                   ? "md:order-last"
@@ -79,11 +80,13 @@ export default function ServiceContentfulPage(Prop: {
               </div>
             </div>
             <div className={`${idx % 2 === 1 ? "text-end" : ""}`}>
-              <div className="text-justify">
+              <div data-aos="fade-up" className="text-justify">
                 <RichText document={item.fields.body} />
               </div>
-
-              <p className="text-md lg:text-lg font-extrabold italic content-center text-red-700 pb-5 pt-16">
+              <p
+                data-aos="zoom-in-up"
+                className="text-md lg:text-lg font-extrabold italic content-center text-red-700 pb-5 pt-16"
+              >
                 Start from Rp{item.fields.price}/m<sup>2</sup>
               </p>
               <div>
