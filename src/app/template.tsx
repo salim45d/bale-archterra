@@ -14,7 +14,7 @@ import "aos/dist/aos.css";
 export default function Template({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 600,
       once: false,
     });
   }, []);
